@@ -1,7 +1,6 @@
 # Olivia
 
 ## Exercice
-## Exercice
 ### Boolean methods
 J'ai testé les différentes implémentations des méthodes booléennes.
 ```
