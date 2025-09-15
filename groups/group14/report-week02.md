@@ -150,4 +150,39 @@ Définition : analyser un système pour identifier ses composants pour recréer 
 
 
 # Lan
-## Pratice message dispatch
+## Boolean
+- Using **|**
+```
+true|true -> true
+true|false -> true
+false|false -> false
+```
+=> Like **|** in Java, **|** in Pharo is a Bitwise OR. It returns "true" if at least one operand is true; otherwise, it is "false".
+- Using **or:**
+```
+true or: false -> true
+true or: false -> true
+false or: false -> false
+true or: [ 5 > 10] -> true
+```
+=> Nonevaluating disjunction. If the receiver is false, answer the value of the argument, alternativeBlock; otherwise answer true without evaluating the argument.
+- Using **ifTrue:ifFalse:**
+```
+"(true ifTrue: [ '123' ] ifFalse: [ '345' ]) >>> '123'"
+"(false ifTrue: [ '678' ] ifFalse: [ '890' ])  >>> '678'"
+```
+=> If the receiver is true (i.e., the condition is true), then answer the value of the argument trueAlternativeBlock. If the receiver is false, answer the result of evaluating the argument falseAlternativeBlock. If the receiver is a nonBoolean then create an error notification. Execution does not actually reach here because the expression is compiled in-line.
+## self == super
+- Self: the receiver of the current message.
+- Super the receiver but for accessing overridden methods. Super only affects method lookup, not the identity of the receiver.
+=> When we execute self == super, it returns true because these two are refer to one receiver.
+## Dispatch
+
+
+## Dice program
+Link github: https://github.com/LaCoir/Dice
+## Source:
+- Lecture slides
+- https://files.pharo.org/media/pharoCheatSheet.pdf
+- https://books.pharo.org/booklet-WithStyle/pdf/WithStyle.pdf
+- https://books.pharo.org/updated-pharo-by-example/pdf/2018-09-29-UpdatedPharoByExample.pdf?utm_source=chatgpt.com
