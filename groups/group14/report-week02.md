@@ -139,3 +139,15 @@ Reverse engineering (le concept est encore abstrait, je n'ai pas du tout compris
 
 ### Reverse Engineering
 Définition : analyser un système pour identifier ses composants pour recréer le système sous une différente forme. Le but étant de comprendre comment fonctionne un système / un programme.
+
+
+
+
+
+
+
+
+
+
+# Lan
+## Pratice message dispatch
