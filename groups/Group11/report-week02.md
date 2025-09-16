@@ -50,51 +50,37 @@ test
 
 ## SUPER and SELF exercise
 
--Creating 3 classes : A, B and C.
--The class A has a 2 methods : bar and foo
-bar
-	^self foo
-foo
-	^10
+- Creating 3 classes : `A`, `B` and `C`.
+- The class `A` has 2 methods : `bar` and `foo`
+
+```smalltalk
+ClassA >> bar
+    ^self foo
+
+ClassA >> foo
+    ^10
 
 - The class B inherits ClassA and has one method : bar
 
-bar 
-	^super bar + self foo
+ClassB >> bar
+    ^super bar + self foo
 
 - The class C inherits ClassB and has one method : foo
-foo 
-	^50
 
-# Testing in the playground
+ClassC >> foo
+    ^50
+
 
 |a|
 
 a := ClassA new.
-
-Transcript show: a bar
-
->10
+Transcript show: a bar.   "=> 10"
 
 a := ClassB new.
-
-Transcript show: a foo
-
->10
+Transcript show: a foo.   "=> 10"
 
 a := ClassC new.
-
-Transcript show: a foo
-
->50'''
-
-- Super refers to the receiver of the message (just like self)
-- The method lookup starts in the superclass of the class containing the super
-- expression
-- Super is static and Self is dynamic
-
-
-
+Transcript show: a foo.   "=> 50"
 
         
     
