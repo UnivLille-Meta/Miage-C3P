@@ -86,7 +86,35 @@ Transcript show: a foo.   "=> 10"
 a := ClassC new.
 Transcript show: a foo.   "=> 50"
 ```
-        
+
+## Flag exercise
+
+- Testing in the playgroung somes codes
+  
+```smalltalk
+|c|
+
+c := RSCanvas new.
+
+blueBox := RSBox new
+
+size:80;
+color: #blue.
+
+redBox := RSBox new
+size:80;
+color: #red.
+
+c
+	add: blueBox;
+	add: redBox.
+	
+blueBox translateBy: 40@20.
+
+c
+```
+
+> Watching videos for the next module
     
 
     
