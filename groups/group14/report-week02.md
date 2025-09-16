@@ -145,7 +145,9 @@ Définition : analyser un système pour identifier ses composants pour recréer 
 
 # Julien
 
-## Boolean methods
+## Exercice 
+
+### Boolean methods : 
 
 ### Implementation de l'opérateur **|** 
 
@@ -218,7 +220,7 @@ ifTrue: block ifFalse: block2
 
 Pour informations on doit mettre value car sinon on renvoie le block donc par exemple au lieu de récuperer 55 on aura [55] 
 
-## LookUp
+### LookUp : 
 
 J'ai bien refait les exercices sur lookup dans les vidéos/diaporama avec notamment super et self.
 
@@ -228,9 +230,10 @@ M1-4 et M1-5
 
 ## Exercice 
 Flags :  https://github.com/Frontaz1/Country (A partir de la Page 14 je n'arrive pas à le faire fonctionner)
+
 Dice : https://github.com/Frontaz1/Dice (Jusqu'a 1.10, 1.11 en cours)
 
-### Message dispatch
+## Message dispatch
 
 lien github : https://github.com/Frontaz1/TestMessageDispatch
 
@@ -274,7 +277,7 @@ Ceci renvoie 10, les étapes :
 - On cherche la méthode foo, elle existe
 - On l'execute
 - Renvoie 10
-- 
+
 ```
 Voiture new foo
 ```
@@ -288,7 +291,7 @@ Ceci va renvoyer 50, en effet en envoyant le message foo au receveur de la class
 ```
 Voiture new bar
 ```
-J'aurais cru qu'il renverrai  'Je suis une voiture'. mais cela renvoie **a Voiture**
+J'aurais cru qu'il renverrai  'Je suis une voiture'. mais cela renvoie **a Voiture** => Le type d'objet
 
 Dernier test pour le report
 ```
