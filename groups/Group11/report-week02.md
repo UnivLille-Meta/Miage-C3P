@@ -46,49 +46,47 @@ test
 > Correct assumption and have information only with Pharo alone with Playground
 
 
-## Obede
+# Obede
 
-### SUPER and SELF exercise
+## SUPER and SELF exercise
 
-"Creating 3 classes : A, B and C."
-"The class A has a 2 methods : bar and foo"
-
-'''smalltalk
-ClassA>>bar
-    ^self foo
-ClassA>>foo
-    ^10'''
+-Creating 3 classes : A, B and C.
+-The class A has a 2 methods : bar and foo
+bar
+	^self foo
+foo
+	^10
 
 - The class B inherits ClassA and has one method : bar
-'''ClassA<<ClassB
-    ClassB>>bar
-        ^super bar + self foo
 
-The class C inherits ClassB and has one method : foo
-ClassB<<ClassC
-    ClassC>>foo
-        ^50'''
+bar 
+	^super bar + self foo
 
-- testing in the playground
-'''|a|
+- The class C inherits ClassB and has one method : foo
+foo 
+	^50
+
+# Testing in the playground
+
+|a|
 
 a := ClassA new.
 
 Transcript show: a bar
 
->>>>10
+>10
 
 a := ClassB new.
 
 Transcript show: a foo
 
->>>>10
+>10
 
 a := ClassC new.
 
 Transcript show: a foo
 
->>>>50'''
+>50'''
 
 - Super refers to the receiver of the message (just like self)
 - The method lookup starts in the superclass of the class containing the super
