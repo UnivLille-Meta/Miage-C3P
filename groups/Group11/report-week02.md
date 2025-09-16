@@ -62,16 +62,20 @@ ClassA >> foo
 ```
 - The class B inherits ClassA and has one method : bar
 
-```ClassB >> bar
+```smalltalk
+ClassB >> bar
     ^super bar + self foo
-`````
-- The class C inherits ClassB and has one method : foo
 ```
+- The class C inherits ClassB and has one method : foo
+
+```smalltalk
 ClassC >> foo
     ^50
 ```
 - Testing in the playgroung
-```|a|
+
+```smalltalk
+|a|
 
 a := ClassA new.
 Transcript show: a bar.   "=> 10"
