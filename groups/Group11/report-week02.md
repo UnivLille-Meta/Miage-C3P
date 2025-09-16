@@ -48,28 +48,29 @@ test
 
 ## Obede
 
-SUPER and SELF exercise
+####SUPER and SELF exercise
 
-Creating 3 classes : A, B and C,
+- Creating 3 classes : A, B and C,
 
-The class A has a 2 methods : bar and foo
-ClassA>>bar
+- The class A has a 2 methods : bar and foo
+
+'''ClassA>>bar
     ^self foo
 ClassA>>foo
-    ^10
+    ^10'''
 
-The class B inherits ClassA and has one method : bar
-ClassA<<ClassB
+- The class B inherits ClassA and has one method : bar
+'''ClassA<<ClassB
     ClassB>>bar
         ^super bar + self foo
 
 The class C inherits ClassB and has one method : foo
 ClassB<<ClassC
     ClassC>>foo
-        ^50
+        ^50'''
 
-testing in the playground
-|a|
+- testing in the playground
+'''|a|
 
 a := ClassA new.
 
@@ -87,12 +88,12 @@ a := ClassC new.
 
 Transcript show: a foo
 
->>>>50
+>>>>50'''
 
-Super refers to the receiver of the message (just like self)
-The method lookup starts in the superclass of the class containing the super
-expression
-Super is static and Self is dynamic
+- Super refers to the receiver of the message (just like self)
+- The method lookup starts in the superclass of the class containing the super
+- expression
+- Super is static and Self is dynamic
 
 
 
