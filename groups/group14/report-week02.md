@@ -133,6 +133,9 @@ aBGame va renvoyer également 'This is a game'
 ### Exercice Flags
 [Lien github Flags](https://github.com/olivia-lang/Flags_Miage)
 
+### Exercice Dice 
+[Lien github Flags](https://github.com/olivia-lang/Dice_Miage)
+
 ### Modules vus
 Module 1 : M1-2 (PDF), M1-3 (PDF)
 Reverse engineering (le concept est encore abstrait, je n'ai pas du tout compris)
@@ -140,14 +143,165 @@ Reverse engineering (le concept est encore abstrait, je n'ai pas du tout compris
 ### Reverse Engineering
 Définition : analyser un système pour identifier ses composants pour recréer le système sous une différente forme. Le but étant de comprendre comment fonctionne un système / un programme.
 
+# Julien
 
+## Boolean methods
 
+### Implementation de l'opérateur **|** 
 
+Test : 
+```
+true | true => true
+true | false => true
+false | true => true
+false | false => false
+```
+Pour l'implémentation on peut imaginer ceci : 
 
+Quand on envoie un message a True(Le receveur)
 
+```
+Dans la classe True
+| aBool
+	^true
+Dans la classe False
+| aBool
+	^aBool
+```
 
+On peut aussi écrire 
+```
+5 | 6 => 7 (Calcul de bit surement)
+```
+### Implementation de l'opérateur **or:** 
 
+Test : 
+```
+6 or: [ 2 ]. => Must be boolean 
+true or: [ false ] => true.
+true or: [ true ]. => true.
+true or: [ 2 ]. => true.
+false or: [ 2 ]. => 2.
+false or: [ true ]. => true.
+false or: [ false ]. => false.
+```
 
+On ne peut donc pas écrire autre chose que des boolean pour l'opérateur **or:**
+
+On peut donc imaginer la même implémentation que |
+
+```
+Dans la classe True
+or: aBool
+	^true 
+Dans la classe False
+or: aBool
+	^aBool value 
+```
+### Implementation de l'opérateur **ifTrue:ifFalse:** 
+
+Test : 
+```
+false ifTrue: [ 'oui' ] ifFalse: [ 'non' ]. => Renvoie non
+true ifTrue: [55] ifFalse: [22]. => Renvoie 55
+```
+On peut donc imaginer la même implémentation que ifTrue:ifFalse: 
+
+```
+Dans la classe True
+ifTrue: block ifFalse: block2
+	^block value
+Dans la classe False
+ifTrue: block ifFalse: block2
+	^block2 value
+```
+
+Pour informations on doit mettre value car sinon on renvoie le block donc par exemple au lieu de récuperer 55 on aura [55] 
+
+## LookUp
+
+J'ai bien refait les exercices sur lookup dans les vidéos/diaporama avec notamment super et self.
+
+M1-4 et M1-5
+
+## self==super
+
+## Exercice 
+Flags :  https://github.com/Frontaz1/Country (A partir de la Page 14 je n'arrive pas à le faire fonctionner)
+Dice : https://github.com/Frontaz1/Dice (Jusqu'a 1.10, 1.11 en cours)
+
+### Message dispatch
+
+lien github : https://github.com/Frontaz1/TestMessageDispatch
+
+Pour tester les messages dispatch j'ai créer une classe mère Vehicule avec deux classes filles Voiture et Moto.
+
+Classe vehicule : 
+```
+Vehicule >> foo
+	^50
+vehicule >> type
+	^ 'Je suis la classe Vehicule'
+vehicule >> powerVehicule 
+	^self power
+vehicule >> bar
+	^self type
+```
+
+Classe Moto : 
+```
+Moto >> foo
+	^10
+Moto >> type
+	^ 'Je suis une Moto',super type.
+Moto >> power
+	^60
+```
+
+Classe Voiture :
+```
+Voiture >> type
+	^ 'Je suis une voiture'.
+```
+
+Avec ceci j'ai pu faire plusieurs test dans le playground :
+
+```
+Moto new foo
+```
+Ceci renvoie 10, les étapes : 
+- On cherche la classe Moto
+- On cherche la méthode foo, elle existe
+- On l'execute
+- Renvoie 10
+- 
+```
+Voiture new foo
+```
+Ceci va renvoyer 50, en effet en envoyant le message foo au receveur de la classe Voiture les étapes pour l'appel de la méthode sont les suivantes : 
+- On cherche la classe voiture
+- On cherche la méthode foo, ici elle n'existe pas
+- On fait un lookup dans Vehicule, on trouve foo
+- foo est éxecuté
+- Renvoie 50
+
+```
+Voiture new bar
+```
+J'aurais cru qu'il renverrai  'Je suis une voiture'. mais cela renvoie **a Voiture**
+
+Dernier test pour le report
+```
+Moto new type
+```
+Le résultat est bien :  Je suis une Moto Je suis la classe Vehicule
+Les étapes : 
+- On cherche la classe Moto
+- On cherche la méthode type, on la trouve
+- Elle l'execute on renvoie Je suis une voiture, super type
+- On fait donc un lookup dans la classe Vehicule, on cherche la méthode type
+- On execute et renvoie le résultat Je suis la classe Vehicule dans la méthode type de Moto
+- Renvoie  Je suis une Moto Je suis la classe Vehicule
 
 # Lan
 ## Boolean
