@@ -48,13 +48,13 @@ test
 
 ## Obede
 
-###SUPER and SELF exercise
+### SUPER and SELF exercise
 
-- Creating 3 classes : A, B and C,
+"Creating 3 classes : A, B and C."
+"The class A has a 2 methods : bar and foo"
 
-- The class A has a 2 methods : bar and foo
-
-'''ClassA>>bar
+'''smalltalk
+ClassA>>bar
     ^self foo
 ClassA>>foo
     ^10'''
