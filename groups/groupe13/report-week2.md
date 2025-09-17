@@ -1,5 +1,21 @@
 ## Gautam Demeulemeester
 Cette semaine je me suis consacré au tp DSL avec les lancés de dés. Le cours en début d'heure de jeudi dernier m'a permis de mieux comprendre le principe d'heritage en Pharo.
+Je travaillais avec deux class Die representant un dé et DieHandle une poignée de dés. Ces deux classes contenant une méthode roll représentant le lancé :
+```
+Die >> roll
+    ^ faces atRandom.
+```
+```
+DieHandle >> dice
+    ^ dice.
+
+DieHandle >> roll
+    ^ dice inject: 0 into: [:sum :die | sum + die roll ].
+```
+L'utilisation de roll m'a permis de comprendre comment fonctionne l'héritage en Pharo bien que je ne soit pas encore arrivée à la fin du TP. Les résultats obtenus étaient fidèles à ce que j'attendais. \n
+J'ai également lu les pdf demandés mais je n'ai pas de questions pour l'instant.
+
+
 
 ## Heddi Abdelkader 
 
