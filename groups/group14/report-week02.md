@@ -337,7 +337,7 @@ true or: [ 5 > 10] -> true
 => When we execute self == super, it returns true because these two are refer to one receiver.
 ## Dispatch
 **Dispatch + super vs self**
-- Define the classes
+- **Define the classes**
 + Class Animal
 ```
 Object subclass: #Animal
@@ -402,8 +402,8 @@ d introduce.     "-> 'I am an animal but actually a dog'"
 **What it shows**
 - Override + super: reuse parent method’s behavior and extend it.
 - Dispatch is always dynamic:
-+ self is always the real receiver (Dog).
-+ super tells the system to start lookup in the superclass.
++ **self** is always the real receiver (Dog).
++ **super** tells the system to start lookup in the superclass.
 
 ## Dice program
 Link github: https://github.com/LaCoir/Dice
