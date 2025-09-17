@@ -60,3 +60,8 @@ expression
 
 ### Exercices
 > Les deux exercices (DSL et Flags.pdf) sont présents sur ce dépot github : https://github.com/LeoDefossez/C3P_projects
+>
+### Questions
+J'ai essayer d'ajouter le svg au présenteur EarthCountryBrowser, en ajoutant de la même façon que l'image, mais en utilisant un présenteur instantié par self newRoassal.
+Malgré le fait que l'objet de canvas est bien construit, la fenêtre n'affiche pas le SVG. 
+Comment ajouter le SVG à EarthCountryBrowser avec newRoassal?
