@@ -61,7 +61,46 @@ expression
 ### Exercices
 > Les deux exercices (DSL et Flags.pdf) sont présents sur ce dépot github : https://github.com/LeoDefossez/C3P_projects
 >
-### Questions
-J'ai essayer d'ajouter le svg au présenteur EarthCountryBrowser, en ajoutant de la même façon que l'image, mais en utilisant un présenteur instantié par self newRoassal.
-Malgré le fait que l'objet de canvas est bien construit, la fenêtre n'affiche pas le SVG. 
-Comment ajouter le SVG à EarthCountryBrowser avec newRoassal?
+### Question
+> J'ai essayé d'ajouter le svg au presenter EarthCountryBrowser, en ajoutant de la même façon que l'image, mais en utilisant un presenter instantié par self newRoassal.  
+> Voici les 4 méthodes impactées par ce changement. 
+> ```
+> EarthCountryBrowser << defaultLayout
+>
+>	^ SpBoxLayout newTopToBottom
+>		  add: (SpBoxLayout newLeftToRight
+>				   add: countryList expand: true;
+>				   add: countryCode width: 40)
+>		  height: self class toolbarHeight;
+>		  add: countryFlag height: 350;
+>		  add: countrySvg height: 350;
+>		  yourself
+> ```
+> ```
+> EarthCountryBrowser << initializePresenters
+> ...
+> countryFlag := self newImage.
+> countrySvg := self newRoassal
+> ```
+> ```
+> EarthCountryBrowser << onCountrySelected: countryItem
+>
+>	countryCode text: ' ' , countryItem code.
+>
+>	countryFlag image: (self flagForCountryCode: countryItem code).
+>	countrySvg canvas: (self canvaForSvg: countryItem svgPath)
+> ```
+> ```
+> EarthCountryBrowser << canvaForSvg: aSvgPath
+>	| c svg |
+>	c := RSCanvas new.
+>	svg := RSSVGPath new
+>		       color: Color blue;
+>		       svgPath: aSvgPath.
+>	c add: svg.
+>	c @ RSCanvasController.
+>	^ c   
+>```
+> En suivant le debugger, j'ai pu comprendre que la génération du canvas et du SpRoassalPresenter ne présentais pas de problèmes.  
+> Cependant après plus d'une heure à essayer de comprendre quel était le problème sans trouver de solutions, j'ai décidé d'abandonner et poser la question suivante :
+> Pourquoi le SpRoassalPresenter n'affiche rien alors que le RSCanvas semble correctement généré ?
