@@ -336,6 +336,161 @@ true or: [ 5 > 10] -> true
 - Super the receiver but for accessing overridden methods. Super only affects method lookup, not the identity of the receiver.
 => When we execute self == super, it returns true because these two are refer to one receiver.
 ## Dispatch
+**Dispatch + super vs self**
+
+**Define the classes**
+
+
+
+**``**
+
+Object subclass: #Animal
+
+&nbsp;   instanceVariableNames: ''
+
+&nbsp;   classVariableNames: ''
+
+&nbsp;   package: 'DispatchDemo'.
+
+
+
+Animal >> speak
+
+&nbsp;   ^ 'generic sound'.
+
+
+
+Animal >> introduce
+
+&nbsp;   ^ 'I am an animal'.
+
+
+
+"Subclass Dog"
+
+Animal subclass: #Dog
+
+&nbsp;   instanceVariableNames: ''
+
+&nbsp;   classVariableNames: ''
+
+&nbsp;   package: 'DispatchDemo'.
+
+
+
+Dog >> speak
+
+&nbsp;   ^ 'woof'.
+
+
+
+Dog >> introduce
+
+&nbsp;   ^ super introduce , ' but actually a dog'.
+
+
+
+"Subclass Cat"
+
+Animal subclass: #Cat
+
+&nbsp;   instanceVariableNames: ''
+
+&nbsp;   classVariableNames: ''
+
+&nbsp;   package: 'DispatchDemo'.
+
+
+
+Cat >> speak
+
+&nbsp;   ^ 'meow'.
+
+``
+
+
+
+**Tests in Playground**
+
+
+
+``
+
+a := Animal new.
+
+d := Dog new.
+
+c := Cat new.
+
+
+
+a speak.         "-> 'speak'"
+
+d speak.         "-> 'woof'"
+
+c speak.         "-> 'meow'"
+
+
+
+a introduce.     "-> 'I am an animal'"
+
+d introduce.     "-> 'I am an animal but actually a dog'"
+
+``
+
+**Dispatch reasoning**
+
+
+
+* d speak
+
+
+
+&nbsp;	lookup in Dog → finds speak → returns 'woof'.
+
+
+
+* d introduce
+
+
+
+&nbsp;	lookup in Dog → finds introduce.
+
+
+
+&nbsp;	Executes: super introduce , ' but actually a dog'.
+
+
+
+&nbsp;	super changes lookup start point to superclass Animal.
+
+
+
+&nbsp;	In Animal, finds introduce → 'I am an animal'.
+
+
+
+&nbsp;	Concatenate → 'I am an animal but actually a dog'.
+
+
+
+* c speak → 'meow' (normal override).
+
+
+
+* a introduce → 'I am an animal'.
+
+
+
+**What it shows**
+
+
+
+* Override + super: You can reuse parent method’s behavior and extend it.
+
+
+
+* Dispatch is always dynamic: self is always the real receiver (Dog), but super tells the system to start the lookup in the superclass.
 
 
 ## Dice program
