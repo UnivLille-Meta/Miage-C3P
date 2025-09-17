@@ -281,7 +281,9 @@ Ceci renvoie 10, les étapes :
 ```
 Voiture new foo
 ```
-Ceci va renvoyer 50, en effet en envoyant le message foo au receveur de la classe Voiture les étapes pour l'appel de la méthode sont les suivantes : 
+Ceci va renvoyer 50, en effet en envoyant le message foo au receveur de la classe Voiture, l'héritage fonctionne et va faire appel a la méthode dans la classe mère.
+
+Les étapes pour l'appel de la méthode sont les suivantes : 
 - On cherche la classe voiture
 - On cherche la méthode foo, ici elle n'existe pas
 - On fait un lookup dans Vehicule, on trouve foo
