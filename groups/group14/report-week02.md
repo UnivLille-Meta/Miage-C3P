@@ -388,16 +388,16 @@ d introduce.     "-> 'I am an animal but actually a dog'"
 ```
 
 **Dispatch reasoning**
-- d speak
-+ Lookup in Dog → finds speak → returns 'woof'.
-+ d introduce
-+ Lookup in Dog → finds introduce.
-+ Executes: super introduce , ' but actually a dog'.
-+ super changes lookup start point to superclass Animal.
-+ In Animal, finds introduce → 'I am an animal'.
-+ Concatenate → 'I am an animal but actually a dog'.
-- c speak → 'meow' (normal override).
-- a introduce → 'I am an animal'.
+- **d speak**
++ Lookup in **Dog** → finds **speak** → returns **'woof'**.
+- **d introduce**
++ Lookup in **Dog** → finds **introduce.**
++ Executes: **super introduce , ' but actually a dog'**.
++ **super** changes lookup start point to superclass **Animal**.
++ In **Animal**, finds **introduce** → **'I am an animal'**.
++ Concatenate → **'I am an animal but actually a dog'**.
+- **c speak** → **'meow'** (normal override).
+- **a introduce** → **'I am an animal'**.
 
 **What it shows**
 - Override + super: reuse parent method’s behavior and extend it.
@@ -411,5 +411,5 @@ Link github: https://github.com/LaCoir/Dice
 - Lecture slides
 - https://files.pharo.org/media/pharoCheatSheet.pdf
 - https://books.pharo.org/booklet-WithStyle/pdf/WithStyle.pdf
-- https://books.pharo.org/updated-pharo-by-example/pdf/2018-09-29-UpdatedPharoByExample.pdf?utm_source=chatgpt.com
-- https://books.pharo.org/pharo-by-example9/pdf/2022-03-26-index.pdf?utm_source=chatgpt.com
+- https://books.pharo.org/updated-pharo-by-example/pdf/2018-09-29-UpdatedPharoByExample.pdf?
+- https://books.pharo.org/pharo-by-example9/pdf/2022-03-26-index.pdf?
