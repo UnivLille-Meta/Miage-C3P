@@ -117,13 +117,13 @@ c
 
 ---
 
-#Jean-Alexis
+# Jean-Alexis
 
 I tried to represent a company hierarchy and his system to calculate salaries.
 
 So first I define the main class : the basic Employee and his methods.
 
-```
+```smalltalk
 Employee >> baseSalary
 	^ 1000
 
@@ -135,7 +135,7 @@ Here the salary methods returns the baseSalary, but later we can imagine adding 
 
 Then, the manager (which inherits the Employee class) who earn the current salary of an employee plus the base one.
 
-```
+```smalltalk
 Manager >> salary
 	^ super salary + self baseSalary
 ```
@@ -144,14 +144,14 @@ I use the self baseSalary because we could use this methods for the highter hier
 
 That's the case here with the Director (which inherits the Manager class) :
 
-```
+```smalltalk
 Director >> baseSalary
 	^ 5000
 ```
 
 Now we have all the employees in the company we can calculate their salary :
 
-```
+```smalltalk
 | employee manager director |
 
 employee := Employee new.
@@ -171,6 +171,7 @@ For the last one, it take the inherit salary methods cause Director dosn't have 
 
 I also did the DSL exercise about Dice game. I wrote until the DieHandle roll method and I tried to add the Integer method extension but It doesn't worked. Actually when I create a protocol with the "*Dice" it tell me that the '*Something" annotation reserved for class Exension. I search on the web how to do it but I didn't found anything (you can tell me I don't now how to search I already know it !).
 
+---
 
 > Watching videos for the next module
     
