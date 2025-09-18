@@ -130,15 +130,15 @@
 
 On peut se baser sur les petits exo : avec par exemple le Or pour la Class False et True, où l'on évite le plus possible de devoir réaliser du test conditionel. On voit bien dans ces deux exemples de cas qu'on dit directement. Je dis à la class True ce que je veux faire et même chose pour False. Je veux le résultat qu'elle doit retourner avec sa propre logique par rapport au message reçu.
 
-![(course False)](./img/Gautier/courseFalse.png)
+![course False](./img/Gautier/courseFalse.png)
 
-![(courseTrue)](./img/Gautier/courseTrue.png)
+![courseTrue](./img/Gautier/courseTrue.png)
 
 ### Petite revu sur 'super' et comment je l'ai compris :
 
 > Pour commencer, j'ai refait de mon côté le petit challenge dans les slides :
 > 
-> ![(ImageSuperChallenge)](./img/Gautier/ChallengeSuper.png)
+> ![ImageSuperChallenge](./img/Gautier/ChallengeSuper.png)
 > 
 > Pour moi "Super" fait un lookUp sur tout le code hiérarchiquement au-dessus du message auquel il fait référence, donc sa SuperClass.
 > 
