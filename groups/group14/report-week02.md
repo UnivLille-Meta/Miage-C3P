@@ -134,7 +134,8 @@ aBGame va renvoyer également 'This is a game'
 [Lien github Flags](https://github.com/olivia-lang/Flags_Miage)
 
 ### Exercice Dice 
-[Lien github Flags](https://github.com/olivia-lang/Dice_Miage)
+[Lien github Dice](https://github.com/olivia-lang/Dice_Miage)
+Je n'ai pas fait la dernière partie sur les classes Integer
 
 ### Modules vus
 Module 1 : M1-2 (PDF), M1-3 (PDF)
