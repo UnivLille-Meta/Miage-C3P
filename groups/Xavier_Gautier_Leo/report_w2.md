@@ -219,7 +219,7 @@ False << ifFalse: execution
 
 Do a pass on the lookup exercises from the slides. Do you get the correct result? Do you understand why? Try arriving until the cases with super sends.
 
-![img.png](img/Xavier/w2/slideFoo.png)
+![slideFoo.png](img/Xavier/w2/slideFoo.png)
 
 Dans ce cas : 
 
@@ -239,8 +239,11 @@ self et super font tout les deux référence au même Objet, il serait donc coh�
 
 ### Exercices
 
+- L'exercie sur le DSL se trouve sur le lien suivant : [lien dsl](https://github.com/Moyon-Xavier/trainC3p/tree/main/src/MyDSL)
 
+J'ai trouvé très intéressant de pouvoir définir de nouveaux messages sur d'autres classe d'un autre package via les extensions et le fait que ces messages ne soient connus que si le package est chargé.
+- L'exercice sur les pays se trouve sur le lien suivant. (Il n'est cependant pas encore complet) : [lien flag](https://github.com/Moyon-Xavier/trainC3p/tree/main/src/MyFlag)
 
 ### Question
 
-Comment fonctionne self et super concretement, serait-il possible d'avoir un exemple comme pour True et False ? 
+Comment fonctionnent self et super concretement, serait-il possible d'avoir un exemple comme pour True et False ? 
