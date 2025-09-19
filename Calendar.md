@@ -3,11 +3,11 @@
 - 01 Week: 04-05 Sep **Module 1:** Introduction / "TDD" Level 0 Counter Tests / Pharo starter
 - 02 Week: 11-12 Sep **Module 2:** OOP refresh
 - 03 Week: 18-19 Sep **Module 3:** TDD level 1: Rover Kata
-- 04 Week: 25-26 Sep **Module 4:** Rover Kata continued
+- 04 Week: 25-26 Sep **Module 4:**  Hook and templates / Rover Kata continued
 - 05 Week: 02-03 Oct **Module 5:** Reverse engineering / Chess 1
 - 06 Week: 09-10 Oct **Module 6:** Test Quality / Chess2 
 - 16-17 Oct Pas de cours
-- 07 Week: 23-24 **Module 6:** Examen  (Seb?) Hook and templates / Chess 3
+- 07 Week: 23-24 **Module 6:** Examen  (Seb?) / Chess 3
 - Break 30-31 Oct Pas de cours
 - 08 Week 06-07 Nov  **Module 9:**  TDD level 2: Refactoring process Exo: Bloc/Microdown 1
 - 09 Week 13-14 Nov Double dispatch Exo: Bloc/Microdown 2
