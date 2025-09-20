@@ -3,4 +3,4 @@
 [Lien github Rover](https://github.com/olivia-lang/Rover)
 
 ## Kata OddEven
-[Lien github OddEvenNumbers]([https://github.com/olivia-lang/Rover](https://github.com/olivia-lang/Kata-OddEven))
+[Lien github OddEvenNumbers](https://github.com/olivia-lang/Kata-OddEven)
