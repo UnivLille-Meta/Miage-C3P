@@ -9,7 +9,7 @@
 - 16-17 Oct Pas de cours
 - 07 Week: 23-24 **Module 6:** Examen  (Seb?) / Chess 3
 - Break 30-31 Oct Pas de cours
-- 08 Week 06-07 Nov  **Module 9:**  TDD level 2: Refactoring process Exo: Bloc/Microdown 1
+- 08 Week 06-07 Nov  **Module 9:**  TDD level 2: Refactoring process Exo: Bloc/Microdown 1 [ No guille ]
 - 09 Week 13-14 Nov Double dispatch Exo: Bloc/Microdown 2
 - 10 Week 20-21 Nov **Modules 7 and 8:** Composite + Visitor Exo: Bloc/Microdown 3
 - 11 Week 27-28 Dec **Module 11** Explain your design
