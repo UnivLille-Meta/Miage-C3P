@@ -4,3 +4,6 @@
 
 ## Kata OddEven
 [Lien github OddEvenNumbers](https://github.com/olivia-lang/Kata-OddEven)
+
+## Modules revus
+Iterators, Parenthesis vs brackets, Class methods, Yourself, Messages
