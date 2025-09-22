@@ -7,7 +7,7 @@
 - 05 Week: 02-03 Oct **Module 5:** Reverse engineering / Chess 1
 - 06 Week: 09-10 Oct **Module 6:** Test Quality / Chess2 
 - 16-17 Oct Pas de cours
-- 07 Week: 23-24 **Module 6:** Examen  (Seb?) / Chess 3
+- 07 Week: 23-24 **Module 6:** Examen  (Seb?) / Chess 3 [ No guille ]
 - Break 30-31 Oct Pas de cours
 - 08 Week 06-07 Nov  **Module 9:**  TDD level 2: Refactoring process Exo: Bloc/Microdown 1 [ No guille ]
 - 09 Week 13-14 Nov Double dispatch Exo: Bloc/Microdown 2
