@@ -1,4 +1,4 @@
-##Obede
+###Obede
 
 This week, I focused on deepening my understanding of Pharo syntax and core object-oriented programming concepts. I watched video tutorials on basic syntax, experimented with exercises, and practiced coding with small examples.
 
@@ -45,10 +45,12 @@ Dog >> speak
 4.	Unit Testing
 Practiced writing unit tests to ensure methods behave as expected:
 
+
+```smalltalk
 TestCase subclass: #CalculatorTest.
 CalculatorTest >> testAddition
     self assert: (calculator add: 2 to: 3) equals: 5.
-
+```
 
 5.	Kata Exercises
 Revisited coding exercises using the Kata approach to reinforce my understanding of loops, inheritance, and testing.
