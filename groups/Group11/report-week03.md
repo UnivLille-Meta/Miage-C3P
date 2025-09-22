@@ -1,4 +1,4 @@
-###Obede
+# Obede
 
 This week, I focused on deepening my understanding of Pharo syntax and core object-oriented programming concepts. I watched video tutorials on basic syntax, experimented with exercises, and practiced coding with small examples.
 
