@@ -72,3 +72,37 @@ I wasn't able to work in “pair-working” mode, but I still took some time to 
 By the way, this training allowed me to review Pharo syntax and become even more comfortable with it. Now I'm starting to enjoy coding in this new language more.
 
 You can find my version of the Kata exercise by [clicking here](https://github.com/JA-DEL2/Kata-Group2).
+
+# Adil 
+
+This week, I watched the assigned videos to watch (+ all module 2) and read PDF.
+
+## Example code tested
+
+```smalltalk
+Fruit class >> description
+    ^ 'I produce fruits.'
+
+Banana class >> description
+    ^ super description , ' but only bananas.'
+````
+
+Running this code in the Playground:
+
+```smalltalk
+Transcript show: Fruit description; cr.
+" => I produce fruits."
+
+Transcript show: Banana description; cr.
+" => I produce fruits. but only bananas."
+```
+
+## Observations
+
+* The `Banana class >> description` method uses `super` to call the method from its superclass `Fruit class >> description`.
+* If the `description` method is removed from `Fruit class`, a `MessageNotUnderstood` error occurs because `super` cannot find the method in the superclass like in my report 02.
+
+Moreover, here is my version with Gautam of the kata rover called in the repo MyRober : https://github.com/GautamDemeulemeester/C3P-Gautam-Demeulemeester
+
+
+
