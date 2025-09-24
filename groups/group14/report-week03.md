@@ -6,4 +6,22 @@
 [Lien github OddEvenNumbers](https://github.com/olivia-lang/Kata-OddEven)
 
 ## Modules revus
-Iterators, Parenthesis vs brackets, Class methods, Yourself, Messages
+Iterators, Parenthesis vs brackets, Class methods, Yourself, Messages, Syntaxe
+
+# Julien
+
+## Kata rover 
+Nous avons apportés quelques modifications notamment la lecture d'une chaine de caractère par exemple : 'MRM' et quelques tests.
+
+Lien : https://github.com/Frontaz1/Kata-Group2_Lan_Julien
+
+
+## Kata Sequence num
+
+J'ai effectué ce kata, j'ai pu manipuler  while true
+
+Lien : https://github.com/Frontaz1/kataSequenceSum
+
+## Révision
+
+J'ai revu toutes les vidéos/PDF du M0-1 - M0-12 et M1-1 a M1-6 + ProfStef
