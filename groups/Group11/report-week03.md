@@ -71,4 +71,4 @@ I used the TDD principle by writing the tests before the features. It's a little
 I wasn't able to work in “pair-working” mode, but I still took some time to think about how to develop everything. This obviously let me code much faster.
 By the way, this training allowed me to review Pharo syntax and become even more comfortable with it. Now I'm starting to enjoy coding in this new language more.
 
-You can find my version of the Kata exercise by (clicking here)[https://github.com/JA-DEL2/Kata-Group2].
+You can find my version of the Kata exercise by [clicking here](https://github.com/JA-DEL2/Kata-Group2).
