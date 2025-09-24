@@ -80,16 +80,16 @@
 
 > ### Kata
 > 
-> 1. J'ai vraiment aimé ce type d'exercice, ça nous force à travailler avec des approches différentes de celle que j'utilise un raisonnement différent de mes camarades. J'ai trouvé ça très enrichissant.
-> 2. J'ai remarqué que nous sommes arrivés à un consensus commun, celui de prendre du temps sur certaines itérations à réfléchir sur notre implémentation en pensant le pour et le contre de chacune de nos idées en essayant de les implémenter avec le test de celui qui a le clavier en main.
-> 3. Je trouve que faire ce Kata avec mon groupe de projet à renforcer notre cohésion et notre motivation. Et aussi de nous permettre de découvrir comment chacun code et réfléchi sur l'implémentation d'une spec.
-> 4. Pour finir sur le Kata rover et Kata 2 j'ai été surpris de voir que dans Pharo, on pense à une idée et on l'essaye et "ho bah ça existe, alors utilisons le" j'ai eu cette réaction en proposant la création d'un rectangle de point ou le rover pouvait évoluer. En regardant le code existant nous avons donc pu utiliser directement les méthodes fournies.
-> 5. Pour finir, j'ai trouvé très utile l'ajout des dictionnaires de la part de Léo et j'ai remarqué que cela s'intégrait très bien avec la logique "Tell dont ask".
+> - J'ai vraiment aimé ce type d'exercice, ça nous force à travailler avec des approches différentes de celle que j'utilise un raisonnement différent de mes camarades. J'ai trouvé ça très enrichissant.
+> - J'ai remarqué que nous sommes arrivés à un consensus commun, celui de prendre du temps sur certaines itérations à réfléchir sur notre implémentation en pensant le pour et le contre de chacune de nos idées en essayant de les implémenter avec le test de celui qui a le clavier en main.
+> - Je trouve que faire ce Kata avec mon groupe de projet à renforcer notre cohésion et notre motivation. Et aussi de nous permettre de découvrir comment chacun code et réfléchi sur l'implémentation d'une spec.
+> - Pour finir sur le Kata rover et Kata 2 j'ai été surpris de voir que dans Pharo, on pense à une idée et on l'essaye et "ho bah ça existe, alors utilisons le" j'ai eu cette réaction en proposant la création d'un rectangle de point ou le rover pouvait évoluer. En regardant le code existant nous avons donc pu utiliser directement les méthodes fournies.
+> - Pour finir, j'ai trouvé très utile l'ajout des dictionnaires de la part de Léo et j'ai remarqué que cela s'intégrait très bien avec la logique "Tell dont ask".
 > 
 > ### Module 3: Hooks ce qui m'a paru le plus important :
 > 
-> 1. Les self send rende le code plus lisible, laisse l'essentiel visible, mais déplace les actions dans une petite méthode, ça permet aussi de mieux tester leur action, et de permettre une personnalisation des paramètres des objets et avoir moins de hardcode.
-> 2. Les hook permette de modifier pour chaque objet instanciés, ses valeurs sans influer sur ces voisins.
-> 3. Les designs patern ne doivent pas être tous utilisés en même temps ça ne va pas créer un code parfait, au contraire chacun de ces designs à des bénéfices et des désavantages.
-> 4. L'utilisation des variables globals doit être réduit le plus possible, car cela rend le testing trop complexe ainsi qu'une rigidité dans le code, ce qui est le contraire du concept de POO.
-> 5. Enfin sur les streams on apprend qu'il y a des moyens d'éviter les objets dit "superflus" en décomposant les problèmes, on remarque que ça relève juste du bon sens. Si on a déjà un objet qui peut stocker pourquoi ne pas directement utiliser une méthode appropriée pour y accéder.
+> - Les self send rende le code plus lisible, laisse l'essentiel visible, mais déplace les actions dans une petite méthode, ça permet aussi de mieux tester leur action, et de permettre une personnalisation des paramètres des objets et avoir moins de hardcode.
+> - Les hook permette de modifier pour chaque objet instanciés, ses valeurs sans influer sur ces voisins.
+> - Les designs patern ne doivent pas être tous utilisés en même temps ça ne va pas créer un code parfait, au contraire chacun de ces designs à des bénéfices et des désavantages.
+> - L'utilisation des variables globals doit être réduit le plus possible, car cela rend le testing trop complexe ainsi qu'une rigidité dans le code, ce qui est le contraire du concept de POO.
+> - Enfin sur les streams on apprend qu'il y a des moyens d'éviter les objets dit "superflus" en décomposant les problèmes, on remarque que ça relève juste du bon sens. Si on a déjà un objet qui peut stocker pourquoi ne pas directement utiliser une méthode appropriée pour y accéder.
