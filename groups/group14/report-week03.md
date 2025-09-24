@@ -6,7 +6,7 @@
 [Lien github OddEvenNumbers](https://github.com/olivia-lang/Kata-OddEven)
 
 ## Modules revus
-Iterators, Parenthesis vs brackets, Class methods, Yourself, Messages, Syntaxe
+Iterators, Parenthesis vs brackets, Class methods, Yourself, Messages, Syntaxe, Loops, Lookup, Dispatch, Inheritance
 
 # Julien
 
