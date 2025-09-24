@@ -1,6 +1,6 @@
 ## Gautam Demeulemeester 
 Cette semaine j'ai terminé le kata sur le Rover. Mon Rover est capable de recuperer une suite d'instruction et d'effectuer les mouvements demandés. 
-Voici un exemple d'utilisation de super reprenant le tp sur les 2, supposons DieHandle sous-classe de Die:
+Voici un exemple d'utilisation de super reprenant le tp sur les dés, supposons DieHandle sous-classe de Die:
 ```
 Die >> roll
     ^ faces atRandom.
