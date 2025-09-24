@@ -58,4 +58,17 @@ Revisited coding exercises using the Kata approach to reinforce my understanding
 >>Summary:
 This week, I reinforced my foundations in Pharo by combining theory (video lessons) with practice (exercises and Kata). I feel more confident with loops, iterations, inheritance, self and super, as well as writing simple unit tests.
 
+---
 
+# Jean-Alexis
+
+I completed the Kata exercise and added a few suggestions from Kata2 (Natural 1-based numbering, Rover should not get over the grid border, Rover walks back, Rover walk recording). I used polymorphism as much as possible, particularly with directions. For example, each class representing a direction has the `frontCoordinates` method, which returns the x and y constants to be added to the Rover's current coordinates. These can therefore be 0, 1, or -1.
+
+There is only one conditional statement that checks that the robot's new positions are not out of bounds.
+
+I used the TDD principle by writing the tests before the features. It's a little difficult to grasp at first because instinctively we don't like to see an error (in this case, a failed test), but you get used to it.
+
+I wasn't able to work in “pair-working” mode, but I still took some time to think about how to develop everything. This obviously let me code much faster.
+By the way, this training allowed me to review Pharo syntax and become even more comfortable with it. Now I'm starting to enjoy coding in this new language more.
+
+You can find my version of the Kata exercise by (clicking here)[https://github.com/JA-DEL2/Kata-Group2].
