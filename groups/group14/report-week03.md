@@ -26,8 +26,11 @@ Lien : https://github.com/Frontaz1/kataSequenceSum
 
 J'ai revu toutes les vidéos/PDF du M0-1 - M0-12 et M1-1 a M1-6 + ProfStef
 # Lan
-## Rover 
-https://github.com/LaCoir/Rover
+## Rover Kata
+Link: https://github.com/LaCoir/Rover
 
 ## Kata sum-of-numbers
 https://github.com/LaCoir/Kata
+
+## Reviewed Document:
+Object Model, Syntax, Class and Method, Messages, Loops, Yourself, Super, Iterators
