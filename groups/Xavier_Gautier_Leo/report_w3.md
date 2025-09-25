@@ -93,3 +93,17 @@
 > - Les designs patern ne doivent pas être tous utilisés en même temps ça ne va pas créer un code parfait, au contraire chacun de ces designs à des bénéfices et des désavantages.
 > - L'utilisation des variables globals doit être réduit le plus possible, car cela rend le testing trop complexe ainsi qu'une rigidité dans le code, ce qui est le contraire du concept de POO.
 > - Enfin sur les streams on apprend qu'il y a des moyens d'éviter les objets dit "superflus" en décomposant les problèmes, on remarque que ça relève juste du bon sens. Si on a déjà un objet qui peut stocker pourquoi ne pas directement utiliser une méthode appropriée pour y accéder.
+
+## Xavier Moyon
+
+> ### Kata
+>
+> -  L'exercice sur le Kata était vraiment très sympa a faire. C'etait très intéressant d'échanger avec les Gautier et Leo afin de réfléchir à une solutions nous paraissant optimale.
+> - Le fait de confronter nos idées permets de découvrir de nouvelles façons de penser et de voir un problème. 
+> - Par exemple, l'utilisation d'un dictionnaire pour l'interpretation des commandes ne me serait pas venu à l'idée.
+> ### Module 3: Hooks :
+>  - Les templates sont des méthodes de classe abstraites appelant des Hooks.
+>  - Les Hooks sont des méthodes déjà implémenté ou pas qui sont appelé par les Hooks 
+> Durant mon alternance j'ai eu l'ocassion de travailler avec des templates et des hooks dans le but de définir des comportements génériques en permettant d'y intégrer de la spécifité.
+>  - Il vaut mieux ne pas utiliser des variables globales afin de gagner en maintenabilité
+>  - Le design pattern Stratégie consiste en la définition d'une interface permettant avec des classe implémentant l'interface de proposer différentes façons de procéder et facilement interchangeable.
