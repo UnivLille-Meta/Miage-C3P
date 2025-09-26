@@ -6,8 +6,9 @@ For next week's lecture, you need to do the following tasks and prepare a short 
 
 Lectures are hosted in https://advanced-design-mooc.pharo.org/
 
-- Double dispatch
-- 
+- Double dispatch: https://rmod-pharo-mooc.lille.inria.fr/AdvancedDesignMooc/Slides/
+- M6-1 LectureA double dispatch starter: Stone Paper Scissors
+- M6-2 LectureDouble dispatch: Does not have to be symmetrical
 
 ## Extras about language
 
