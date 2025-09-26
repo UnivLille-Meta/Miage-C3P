@@ -20,9 +20,87 @@ Here are some suggestions
 
 ## Microdown Challenges
 
+#### Generating a plain text TOC
+
+Define a simple Visitor that will generate a text. For example
+
+```
+vis := SimpleTOCGenerator new.
+vis visit: (Microdown parse: miniDoc)
+vis contents
+>
+
+'
+Microdown
+Architecture
+  Visitors
+  A builder
+'
+
+#### Controlling the level
+
+Now we can also want to only show sections whose nested in higher than a certain level.
+
+```
+vis := SimpleTOCGenerator new.
+vis showOnlyAbove: 1.  
+vis visit: (Microdown parse: miniDoc)
+vis contents
+>
+
+'
+Microdown
+Architecture
+'
+
+#### Showing numbers
+
+Now we may want to get the TOC numbered
+
+```
+vis := SimpleTOCGenerator new.
+vis showOnlyAbove: 1.  
+vis numbered.
+vis visit: (Microdown parse: miniDoc)
+vis contents
+>
+
+'
+1 Microdown
+2 Architecture
+'
+```
+#### Producing Microdown
+
+Now we would like to be able to produce Microdown text that represents the TOC.
+This solution should use the textual builder.
+
+```
+vis := SimpleTOCGenerator new.
+vis showOnlyAbove: 1.  
+vis visit: (Microdown parse: miniDoc)
+vis contents
+>
+
+'
+# Microdown
+# Architecture
+'
+```
+
+#### Supporting Link
+
+Now we would like to be able to create a link (for example in HTML) from the TOC to the file.
+In such a case we need to have an object representing a TocEntry.
+This entity will be able to hold a link to file or an URL
 
 
-## Foliage Challenges
+
+
+### Other Microdown Challenges
+
+You can find some other challenges such as the Book Sanitizer  in 
+http://github.com/pillar-markup/BookTester
 
 ## Myg Challenges
 
