@@ -19,7 +19,31 @@ Here are some suggestions
 - what is the core? important classes?
 
 ## Microdown Challenges
+Microdown is a markup language. It integrates with the pillar compilation chain.
 
+It is the basis for
+- Slides 
+- Books in PDF
+- Books on the web
+- Documentation 
+- Web page generation
+
+We will learn about the Visitor, document model, optionally parsing.
+We want to improve the testing of the books and the support for the book writers.
+
+Microdown is a markup language compatible with a subset of markdown. 
+It is used by the Pharo community to produce slides, booklets, and documentation. 
+Microdown heavily uses Visitors. 
+The repository is at 
+
+```
+https://github.com/pillar-markup/microdown
+```
+
+### Loading
+
+Pay attention to follow the loading instructions to **develop** Microdown as defined on the readme on the project. You should execute them else you may have problems since a different version of Microdown 
+preloaded in Pharo may conflict with the version you will load. 
 #### Generating a plain text TOC
 
 Define a simple Visitor that will generate a text. For example
