@@ -31,4 +31,4 @@ Add your examples and answers to the report
 
 Next week we will study test quality.
 
-- start [super](https://github.com/UnivLille-Meta/Miage-C3P/blob/2025/TP.md)
+- start [Chess](https://github.com/UnivLille-Meta/Miage-C3P/blob/2025/TP.md)
