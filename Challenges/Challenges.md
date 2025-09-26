@@ -40,10 +40,11 @@ The repository is at
 https://github.com/pillar-markup/microdown
 ```
 
-### Loading
+#### Loading
 
 Pay attention to follow the loading instructions to **develop** Microdown as defined on the readme on the project. You should execute them else you may have problems since a different version of Microdown 
 preloaded in Pharo may conflict with the version you will load. 
+
 #### Generating a plain text TOC
 
 Define a simple Visitor that will generate a text. For example
@@ -145,11 +146,9 @@ The project https://github.com/Ducasse/2023-SameGame/ defines a same game.
 - Paired Target/Box. Introduce pairs of target/box where each box can only go on a target. A version can mix paired and unpaired boxes.
 
 
-### Miner Challenges
-
-
 
 ### SameGame Challenges
+There is an implementation of SameGame. 
 
 - MultiColor. Introduce a kind of tile that matches all the colors.
 - Cycling colors. The tile will change its color in a circle (red -> blue -> yellow -> red) after each action
