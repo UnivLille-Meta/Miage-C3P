@@ -4,7 +4,7 @@
 - 02 Week: 11-12 Sep **Module 2:** OOP refresh
 - 03 Week: 18-19 Sep **Module 3:** TDD level 1: Rover Kata
 - 04 Week: 25-26 Sep **Module 4:**  Hook and templates / Rover Kata continued
-- 05 Week: 02-03 Oct **Module 5:** Reverse engineering / Chess 1
+- 05 Week: 02-03 Oct **Module 5:** Reverse engineering / Chess 1 Check TP.md
 - 06 Week: 09-10 Oct **Module 6:** Test Quality / Chess2 
 - 16-17 Oct Pas de cours
 - 07 Week: 23-24 **Module 6:** Examen  (Seb?) / Chess 3 [ No guille ]
