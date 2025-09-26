@@ -106,8 +106,13 @@ example iterator :
 | collection |
 collection := #(1 2 3 4 5).
 
+
 collection do: [:each | Transcript show: each].
 ```
+
+I learn to create a new class/testclass, to learn the IDE 
+
+My repository of exercises : [https://github.com/Scientif-code/C3P-exo](https://github.com/Scientif-code/C3P-exo.git)
 
 
 
