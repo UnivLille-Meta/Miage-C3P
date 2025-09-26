@@ -6,9 +6,8 @@ For next week's lecture, you need to do the following tasks and prepare a short 
 
 Lectures are hosted in https://advanced-design-mooc.pharo.org/
 
-- Objects vs. Data
-- About global variables
-- Global to parameter
+- Double dispatch
+- 
 
 ## Extras about language
 
