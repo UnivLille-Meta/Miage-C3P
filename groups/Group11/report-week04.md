@@ -17,7 +17,7 @@ Object subclass: #Sandwich
     instanceVariableNames: ''.
 
 Sandwich >> make
-	"Template Methode : Définit la structure"
+	"Template Method : Définit la structure"
 	self prendrePain.
 	self ajouterGarniture. "Hook : dépend de la sous-classe"
 	self fermerPain
@@ -47,13 +47,13 @@ SandwichOmelette >> ajouterGarniture
 Testing in playground
 ```smalltalk
 (SandwichJambon new) make.
-"Result:
+"
 On prend du pain
 On met du jambon
 On ferme avec du pain
 "
 (SandwichOmelette new) make.
-"Result:
+"
 On prend du pain
 On met une omelette
 On ferme avec du pain
@@ -127,14 +127,14 @@ Nombres pairs: #(2 4 6 8 10)
 Nombres impairs: #(1 3 5 7 9)
 ```
 
-Explanation:
-	-	process: is the template
+- Explanation:
+	-	process: is the template		
 	-	filter: and display: are hooks implemented in subclasses
 	-	Each subclass defines its own behavior while keeping the template structure intact.
 
 ### Conclusion
 
-The Hook & Template pattern allows:
+- The Hook & Template pattern allows:
 	-	Reusing a common structure
 	-	Customizing specific steps (hooks)
 	-	Reducing code duplication
