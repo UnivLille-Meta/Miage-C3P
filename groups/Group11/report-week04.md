@@ -25,7 +25,7 @@ Sandwich >> make
 Sandwich >> prendrePain
     Transcript show: 'Prendre du pain'; cr.
 
-Sandwich >> FermerPain
+Sandwich >> fermerPain
     Transcript show: 'Fermer du pain'; cr.
 
 Sandwich >> ajouterGarniture
