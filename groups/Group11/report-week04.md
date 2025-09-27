@@ -1,12 +1,12 @@
 # Obede
 The Template Method with Hooks is an important object-oriented design pattern widely used in Pharo
-Definition:
-	•	Template Method: defines the overall structure of a process.
-	•	Hook: customizable points in the template, implemented in subclasses.
-Advantages:
-	•	Code reuse
-	•	Consistent structure
-	•	Flexibility to customize specific steps
+- Definition:
+	-	Template Method: defines the overall structure of a process.
+	-	Hook: customizable points in the template, implemented in subclasses.
+- Advantages:
+	-	Code reuse
+	-	Consistent structure
+	-	Flexibility to customize specific steps
   
 1. Exercise 1: Sandwich (Recette)
 Goal:
@@ -60,9 +60,9 @@ On ferme avec du pain
 "
 ```
 Explanation:
-	•	make is the template
-	•	ajouterGarniture is the hook
-	•	The overall structure remains the same; each subclass customizes the filling.
+	-	make is the template
+	-	ajouterGarniture is the hook
+	-	The overall structure remains the same; each subclass customizes the filling.
 
 2. Exercise 2 : Collection Processing with Subclasses
 
@@ -128,16 +128,16 @@ Nombres impairs: #(1 3 5 7 9)
 ```
 
 Explanation:
-	•	process: is the template
-	•	filter: and display: are hooks implemented in subclasses
-	•	Each subclass defines its own behavior while keeping the template structure intact.
+	-	process: is the template
+	-	filter: and display: are hooks implemented in subclasses
+	-	Each subclass defines its own behavior while keeping the template structure intact.
 
-## Conclusion
+### Conclusion
 
 The Hook & Template pattern allows:
-	•	Reusing a common structure
-	•	Customizing specific steps (hooks)
-	•	Reducing code duplication
+	-	Reusing a common structure
+	-	Customizing specific steps (hooks)
+	-	Reducing code duplication
 
 
 
