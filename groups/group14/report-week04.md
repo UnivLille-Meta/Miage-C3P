@@ -38,3 +38,43 @@ Nous pouvons imaginer ajouter une autre Character, par exemple Pirate, qui se d�
 Le **template method** permet d'éviter d'avoir plusieurs méthodes dont la logique et la structure sont les mêmes mais que certains comportements diffèrent.
 
 [Lien github Exemple template method](https://github.com/olivia-lang/template-method)
+
+# Julien
+## Template Method
+
+Template Method est un design pattern est catégorisés comme un Behavioral patterns c'est à dire qu'il s'occupent des algorithmes et de la responsabilités entre les objets.
+
+Le but de ce pattern est d'avoir un algorithme dans la classe mère, mais laisser les sous classes rédéfinir certaines méthodes pour changer le comportement/résultat de l'algorithme tout en ne changeant pas la structure de l'algorithme.
+
+J'ai écris un programme pour présenter simplement ce pattern
+
+Nous avons la classe Language, dans celui-ci nous avons une méthode talk qui est notre template method avec notre algorithme
+```
+Language >> talk
+	^self greeting,' ',self howAreYou.
+```
+Ces méthodes ne sont pas défini dans notre classe Language( Comme si je simulais des méthodes abstraites). Pour informations on pourrait avoir des méthodes avec des retour par défault.
+
+Nous avons deux sous classes France et Japan qui implementent toutes les deux greeting et howAreYou
+```
+France >> greeting 
+	^'Bonjour'
+
+Japan >> greeting 
+	^'Konnichiwa'
+
+France >> howAreYou
+ ^'comment tu vas ?'
+
+Japan >> howAreYou
+ ^'Genkidesuka'
+```
+
+Maintenant si nous appelons la méthode talk nous aurons des comportements différents selon l'objet (Mais la structure de l'algorithme reste le même).
+
+```
+Japan new talk -> Konnichiwa Genkidesuka
+France new talk -> Bonjour comment tu vas ?
+```
+
+[Lien github_Template_Method_Language](https://github.com/Frontaz1/Template-Method-Language).
