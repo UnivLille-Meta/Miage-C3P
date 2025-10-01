@@ -32,7 +32,11 @@ Object << #ConcreteClass
 AbstractClass >> second
     Transcript show: '2'; cr.
 ```
-Ainsi un appel à templateMethode faudra :
+Ainsi un appel à templateMethode fera :
 ```
 ConcreteClass new templateMethode.
+
+1
+2
+3
 ```
