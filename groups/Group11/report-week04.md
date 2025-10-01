@@ -358,10 +358,10 @@ So if the Rover is currently at position (3 5), then the function should return 
 "Input in playground for example"
 | coordinates |
 coordinates := #(3 5).
-Transcript show: ( North walkForward: coordinates ) ; cr.
-Transcript show: ( East walkForward: coordinates ) ; cr.
-Transcript show: ( South walkForward: coordinates ) ; cr.
-Transcript show: ( West walkForward: coordinates ) ; cr.
+Transcript show: ( ( North new ) walkForward: coordinates ) ; cr.
+Transcript show: ( ( East new ) walkForward: coordinates ) ; cr.
+Transcript show: ( ( South new ) walkForward: coordinates ) ; cr.
+Transcript show: ( ( West new ) walkForward: coordinates ) ; cr.
 ```
 ```smalltalk
 "Output in transcript (the two coordinates are stuck together)"
@@ -370,3 +370,54 @@ Transcript show: ( West walkForward: coordinates ) ; cr.
 34
 25
 ```
+
+
+- An example of implementation for a snack vending machine:
+
+The main class “VendingMachine” is used to initiate payment with the price corresponding to the selected snack plus taxes.
+
+```smalltalk
+Object subclass: #VendingMachine
+    instanceVariableNames: 'terminal'
+    classVariableNames: ''
+    package: 'VendingMachine'
+
+VendingMachine >> pay
+	"We suppose here there is a method "initPayment" in the Terminal class"
+	terminal initPayment: self currentPrice * 1.20.
+	^ self
+
+VendingMachine >> currentPrice
+	^ 0
+```
+
+And we will have a class inheriting from this last for each product, for example :
+
+```smalltalk
+VendingMachine subclass: #CocaCola
+    instanceVariableNames: ''
+    classVariableNames: ''
+    package: 'VendingMachine
+
+CocaCola >> currentPrice
+	^ 1.35
+```
+```smalltalk
+VendingMachine subclass: #Twix
+    instanceVariableNames: ''
+    classVariableNames: ''
+    package: 'VendingMachine
+
+Twix >> currentPrice
+	^ 0.65
+```
+
+Now, if the customer buys a Coke and then a Twix, like this :
+
+```smalltalk
+"Input in playground for example"
+( CocaCola new ) pay .
+( Twix new ) pay .
+```
+
+So the terminal will first have to initiate payment of €1.62 for the Coca-Cola (1.35*1.20) and then €0.78 for the Twix.
