@@ -79,6 +79,19 @@ France new talk -> Bonjour comment tu vas ?
 
 [Lien github_Template_Method_Language](https://github.com/Frontaz1/Template-Method-Language).
 
+## Kata2
+
+Sur le rover :
+- j'ai ajouté toutes les directions pour l'action moveForward, turnRight et turnLeft
+- Ajout de variable ymax et xmax pour controler les effets de bord
+- Ajout de la lecture de tous les character RLM dans la méthode moveString : aString
+- Ajout de l'action moveBack
+- Ajout de la méthode recording qui permet de sauvegarder tous les mouvement du rover dans une liste
+
+=> Pour tous ces features il y'a au moins un test associés
+
+Problème pour la méthode recording je n'arrive pas a faire valider en vert mon test malgrès que je récupère bien une liste avec tous les mouvements.
+
 # Lan
 ## Hook and Template
 
