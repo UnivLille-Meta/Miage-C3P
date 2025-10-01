@@ -98,12 +98,57 @@ Problème pour la méthode recording je n'arrive pas a faire valider en vert mon
 ## Hook and Template
 
 Template Method Design Pattern is a behavioral pattern that defines the skeleton of an algorithm in a base method while allowing subclasses to override specific steps without altering its overall structure. It’s like a recipe: the main steps remain fixed, but details can be customized for variation.
-For example, I have a programme Noodles. In Noodles, I have **Abtract class Noodles** and **2 Concrete Classes Pho and BunBo**
+For example, I have a programme Noodles. In Noodles, I have **Abtract class Noodles** (the skeleton) and **2 Concrete Classes Pho and BunBo** (subclasses of Noodles)
 
-The skeleton here is the method makingNoodles. It has 3 actions: **ingredients**, **cook** and **plate**
+In **Noodles**, I have the method **makingNoodles**. It has 3 actions: **ingredients**, **cook** and **plate**
 
 ```
+Noodles >> makeNoodles "this method returns 3 methods ingredients, cook and plate in order"
+	 ^ (self ingredients, String cr "break the line",
+       self cook , String cr,"break the line"
+       self plate)
 
+Noodles >> ingredients
+	^ 'Prepare: Noodles, brooth, meat, vegetables. '
 
+Noodles >> cook 
+	^'Cook broth'
 
+Noodles >> plate 
+	^'Ladle into bowls over noodles and pile on toppings'
+
+```
+Test in the Playground
+```
+(Noodles new) makeNoodles. "=> Prepare: Noodles, brooth, meat, vegetables. Cook broth. Ladle into bowls over noodles and pile on toppings"
+```
+Then, I made 2 subclasses **Pho** and **BunBo** of **Noodles**, which inheritant 3 methods **ingredients**, **cook** and **plate**, but change the recipes
+*** Noodles >> Pho
+```
+Pho >> ingredients
+	^ 'Prepare: Pho rice noodles, beef broth, beef, herb'
+Pho >> cook 
+	^ 'Cook beef bones as broth for 6 hours, mix with spices'
+Pho >> plate
+	^'Add cooked rice noodles, meat, vegetables in a bowl. Ladle hot broth over the top.'
+```
+Test in the Playground
+```
+(Pho new) makeNoodles. "=> Prepare: Pho rice noodles, beef broth, beef, herb. Cook beef bones as broth for 6 hours, mix with spices. Add cooked rice noodles, meat, vegetables in a bowl. Ladle hot broth over the top."
+```
+*** Noodles >>> BunBo
+```
+BunBo >> ingredients
+	^'Prepare: Pork broth, shrimp paste, pork, beef and crab meatballs, vegetables, other seasoning '
+
+BunBo >> cook
+	^'Cook pork broth for 3 hours, add shrimp paste, nuoc mam and other seasoning'
+
+BunBo >> plate
+	^'Add cooked rice noodles, meat, vegetables in a bowl. Ladle hot broth over the top. Eat with banana flowers and herbs'
+```
+Test in the Playground
+```
+(BunBo new) makeNoodles. "=> Prepare: Pork broth, shrimp paste, pork, beef and crab meatballs, vegetables, other seasoning. Cook pork broth for 3 hours, add shrimp paste, nuoc mam and other seasoning. Add cooked rice noodles, meat, vegetables in a bowl. Ladle hot broth over the top. Eat with banana flowers and herbs
+```
 [Link github Hook and Template] (https://github.com/LaCoir/HookAndTemplate)
