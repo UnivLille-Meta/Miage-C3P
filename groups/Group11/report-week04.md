@@ -421,3 +421,5 @@ Now, if the customer buys a Coke and then a Twix, like this :
 ```
 
 So the terminal will first have to initiate payment of €1.62 for the Coca-Cola (1.35*1.20) and then €0.78 for the Twix.
+
+Here I have written the example in a realistic way, but since the Terminal class does not exist, I simply tested it on my side with Transcript show: of the final price. Also, I think it should be preferable and it's certainly more common in this case to use a database associating a product with a price.
