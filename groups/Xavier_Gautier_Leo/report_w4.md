@@ -34,3 +34,10 @@
 > J'ai aussi appris une meilleure utilisation des issues de github, par l'utilisation de tag et la création d'un projet au sein du dépot github pour organiser notre travail en groupe.
 
 
+## Gautier Louvier
+
+>J'ai bien compris que le reverse engineering est quelque chose d'important surtout sur une grosse base de code ou d'appli , on a vite fait de se perdre dans les détails et de ne pas saisir les informations les plus importantes tout simplement.
+>
+>Ce week-end avec mon groupe je trouve qu'intuitivement, nous avons réalisé du reverse engineering. En-tout-cas certain de ses principes. Et c’est très efficace pour comprendre les relations rapidement entre les différentes parties de l'application en regardant l'architecture et les dépendances.
+>
+>Nous n'avons pas encore pu passer à l'étape du refactoring sur le chess, mais en tout cas on a pu déjà identifier ce qui ne se comporte pas comme on le voudrait et repérer du code qui pourrait être amélioré/ corrigé voir même supprimer directement.
