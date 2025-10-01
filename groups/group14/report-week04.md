@@ -81,4 +81,14 @@ France new talk -> Bonjour comment tu vas ?
 
 # Lan
 ## Hook and Template
+
+Template Method Design Pattern is a behavioral pattern that defines the skeleton of an algorithm in a base method while allowing subclasses to override specific steps without altering its overall structure. It’s like a recipe: the main steps remain fixed, but details can be customized for variation.
+For example, I have a programme Noodles. In Noodles, I have **Abtract class Noodles** and **2 Concrete Classes Pho and BunBo**
+
+The skeleton here is the method makingNoodles. It has 3 actions: **ingredients**, **cook** and **plate**
+
+```
+
+
+
 [Link github Hook and Template] (https://github.com/LaCoir/HookAndTemplate)
