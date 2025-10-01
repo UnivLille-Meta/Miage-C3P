@@ -279,6 +279,94 @@ The Template Method pattern offers flexibility by allowing subclasses to customi
 
 ---
 
+# Jean-Alexis
 
+Here are two examples of method patterns that I have tested:
 
+- A case that can be implemented in the [previously worked Kata](https://github.com/JA-DEL2/Kata-Group2)
 
+The goal is to determine what the Rover's new coordinates will be if it moves forward one square. We create a parent class called “Direction” that defines the “template” method, in this case “walkForward,” which will interact with the ‘hook’ method, in this case “frontCoordinates.”
+
+```smalltalk
+Object subclass: #Direction
+    instanceVariableNames: ''
+    classVariableNames: ''
+    package: 'Direction'
+
+Direction >> walkForward: currentCoordinates
+	"currentCoordinates : a list with the x and y position"
+	| constants x y |
+	constants := self frontCoordinates.
+	x := currentCoordinates + constants first.
+	y := currentCoordinates + constants at: 2.
+
+	^ { x. y }
+
+Direction >> frontCoordinates
+	^ #(0 0)
+```
+
+Then we write the child classes that only contain the hook method :
+
+```smalltalk
+Direction subclass: #North
+    instanceVariableNames: ''
+    classVariableNames: ''
+    package: 'Direction'
+
+North >> frontCoordinates
+	"We have to add 1 on y to walk one case to the North"
+	^ #(0 1)
+```
+
+```smalltalk
+Direction subclass: #East
+    instanceVariableNames: ''
+    classVariableNames: ''
+    package: 'Direction'
+
+North >> frontCoordinates
+	"We have to add 1 on x to walk one case to the East"
+	^ #(1 0)
+```
+
+```smalltalk
+Direction subclass: #South
+    instanceVariableNames: ''
+    classVariableNames: ''
+    package: 'Direction'
+
+North >> frontCoordinates
+	"We have to sub 1 (add -1) on y to walk one case to the South"
+	^ #(0 -1)
+```
+
+```smalltalk
+Direction subclass: #West
+    instanceVariableNames: ''
+    classVariableNames: ''
+    package: 'Direction'
+
+North >> frontCoordinates
+	"We have to sub 1 (add -1) on x to walk one case to the West"
+	^ #(-1 0)
+```
+
+So if the Rover is currently at position (3 5), then the function should return the following results :
+
+```smalltalk
+"Input in playground for example"
+| coordinates |
+coordinates := #(3 5).
+Transcript show: ( North walkForward: coordinates ) ; cr.
+Transcript show: ( East walkForward: coordinates ) ; cr.
+Transcript show: ( South walkForward: coordinates ) ; cr.
+Transcript show: ( West walkForward: coordinates ) ; cr.
+```
+```smalltalk
+"Output in transcript (the two coordinates are stuck together)"
+36
+45
+34
+25
+```
