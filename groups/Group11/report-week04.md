@@ -141,4 +141,144 @@ Nombres impairs: #(1 3 5 7 9)
 
 
 
+# Adil
+
+## Definition and Work Done
+I watched the videos on reverse engineering and read the provided PDFs.
+
+- Template Method: A behavioral design pattern that defines the skeleton of an algorithm in a method, deferring some steps to subclasses
+- Hook: A method declared in the base class, meant to be overridden by subclasses to customize behavior
+
+---
+
+## Example 1: Ice Cream Preparation
+
+### Base Class: IceCream
+```smalltalk
+Object subclass: #IceCream
+    instanceVariableNames: ''
+    classVariableNames: ''
+    package: 'TemplateMethod-IceCream'
+
+IceCream >> prepare
+    "Template Method"
+    self prepareBase.
+    self addTopping.  "Hook"
+    self finalize.
+
+IceCream >> prepareBase
+    Transcript show: 'Prepare vanilla or chocolate base'; cr.
+
+IceCream >> finalize
+    Transcript show: 'Add cherry and serve!'; cr.
+
+IceCream >> addTopping
+    self subclassResponsibility.
+```
+
+### Subclasses: FruitIceCream & NutIceCream
+```smalltalk
+IceCream subclass: #FruitIceCream
+    instanceVariableNames: ''
+
+FruitIceCream >> addTopping
+    Transcript show: 'Add strawberry and raspberry pieces'; cr.
+
+---
+
+IceCream subclass: #NutIceCream
+    instanceVariableNames: ''
+
+NutIceCream >> addTopping
+    Transcript show: 'Add hazelnut and almond pieces'; cr.
+```
+
+### Playground Test
+```smalltalk
+(FruitIceCream new) prepare.
+(NutIceCream new) prepare.
+```
+
+**Output:**
+```
+Prepare vanilla or chocolate base
+Add strawberry and raspberry pieces
+Add cherry and serve!
+
+Prepare vanilla or chocolate base
+Add hazelnut and almond pieces
+Add cherry and serve!
+```
+
+---
+
+## Example 2: Document Processing
+
+### Base Class: DocumentProcessor
+```smalltalk
+Object subclass: #DocumentProcessor
+    instanceVariableNames: ''
+    classVariableNames: ''
+    package: 'TemplateMethod-Document'
+
+DocumentProcessor >> process: aDocument
+    "Template Method"
+    self validate: aDocument.
+    self transform: aDocument.  "Hook"
+    self save: aDocument.
+
+DocumentProcessor >> validate: aDocument
+    Transcript show: 'Validating document structure...'; cr.
+
+DocumentProcessor >> save: aDocument
+    Transcript show: 'Saving processed document.'; cr.
+
+DocumentProcessor >> transform: aDocument
+    self subclassResponsibility.
+```
+
+### Subclasses: PDFProcessor & TXTProcessor
+```smalltalk
+DocumentProcessor subclass: #PDFProcessor
+    instanceVariableNames: ''
+
+PDFProcessor >> transform: aDocument
+    Transcript show: 'Converting document to PDF format'; cr.
+
+---
+
+DocumentProcessor subclass: #TXTProcessor
+    instanceVariableNames: ''
+
+TXTProcessor >> transform: aDocument
+    Transcript show: 'Extracting plain text from document'; cr.
+```
+
+### Playground Test
+```smalltalk
+(PDFProcessor new) process: 'sample'.
+(TXTProcessor new) process: 'sample'.
+```
+
+**Output:**
+```
+Validating document structure...
+Converting document to PDF format
+Saving processed document.
+
+Validating document structure...
+Extracting plain text from document
+Saving processed document.
+```
+
+---
+
+## Benefits 
+
+The Template Method pattern offers flexibility by allowing subclasses to customize only specific steps through hooks This approach reduces code duplication and makes the system easier to maintain and extend 
+
+---
+
+
+
 
