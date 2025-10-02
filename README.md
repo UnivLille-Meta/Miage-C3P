@@ -1,3 +1,3 @@
-# Lien vers le repértoire de Cylia Ouarab : 
+# Lien vers le repértoire pour Chess : 
 
-https://github.com/cyliaouarab/Chess-Ouarab-Cylia-G2#
+https://github.com/Nafissa-lhm/Chess-Groupe12
