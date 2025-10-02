@@ -1,4 +1,16 @@
-# Weekly Report4 Sofia Demchuk – Reverse Engineering
+# Weekly Report4 
+
+Yuliia LOS:
+
+From the presentations, I learned the basics of reverse engineering in software. Reverse engineering means analyzing an existing system to understand its components, design decisions, and how everything works together. It is important because developers often work with old, undocumented systems. The key is not to get lost in the details, but to first look at the big picture: main classes, architecture, dependencies, and tests. Useful techniques include checking senders and implementors of methods, class hierarchies, and running or stepping through code with a debugger. Patterns like Speculate about Design and Refactor to Understand help to gradually make sense of the system.
+
+I also learned about Pharo’s LRUCache. An LRU (Least Recently Used) cache works like a dictionary storing (key, value) pairs, but with a maximum size. When it is full, it removes the least recently used item. The main method is at:ifAbsentPut:, which either finds a value or computes and stores it. The cache also has a concept of weight (capacity). Studying the code showed how insertions, hits, and misses are handled, and how eviction works when the cache reaches its maximum capacity.
+
+I also continued this week to work on the Kata.
+
+
+
+Sofia Demchuk – Reverse Engineering
 1. Basics of Reverse Engineering
    The first presentation made me realize that reverse engineering is not some “bonus skill,” but a core activity of professional developers.
 According to the slides, there’s a 20/80 law: you are four times more likely to work on old, undocumented, complex systems than on new projects.
@@ -55,3 +67,4 @@ addWeight: value
 - You don’t need to read every line. You focus on what answers your current question and keep a backlog of “interesting but later” things (like semaphores, statistics, extensions).
 - Documentation + tests + senders are often more valuable than raw code at first glance.
 - Reverse engineering is iterative: each answer raises new questions.
+
