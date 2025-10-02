@@ -156,9 +156,9 @@ BunBo >> plate
 Test in the Playground
 ```
 (BunBo new) makeNoodles.
-"=> Prepare: Pork broth, shrimp paste, pork, beef and crab meatballs, vegetables, other seasoning. Cook pork broth for 3 hours, add shrimp paste, nuoc mam and other seasoning.
-Add cooked rice noodles, meat, vegetables in a bowl.
-Ladle hot broth over the top. Eat with banana flowers and herbs
+"=> Prepare: Pork broth, shrimp paste, pork, beef and crab meatballs, vegetables, other seasoning.
+Cook pork broth for 3 hours, add shrimp paste, nuoc mam and other seasoning.
+Add cooked rice noodles, meat, vegetables in a bowl. Ladle hot broth over the top. Eat with banana flowers and herbs
 ```
 The **Pho** and **BunBo** have customized the super methods to make their own recipes!
 
