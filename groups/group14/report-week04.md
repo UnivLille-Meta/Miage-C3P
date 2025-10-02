@@ -39,6 +39,8 @@ Le **template method** permet d'éviter d'avoir plusieurs méthodes dont la logi
 
 [Lien github Exemple template method](https://github.com/olivia-lang/template-method)
 
+Je n'ai pas pu avancer sur le Kata Rover car j'étais malade cette semaine.
+
 # Julien
 ## Template Method
 
