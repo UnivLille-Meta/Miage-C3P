@@ -120,7 +120,10 @@ Noodles >> plate
 ```
 Test in the Playground
 ```
-(Noodles new) makeNoodles. "=> Prepare: Noodles, brooth, meat, vegetables. Cook broth. Ladle into bowls over noodles and pile on toppings"
+(Noodles new) makeNoodles.
+"=> Prepare: Noodles, brooth, meat, vegetables.
+Cook broth.
+Ladle into bowls over noodles and pile on toppings"
 ```
 Then, I made 2 subclasses **Pho** and **BunBo** of **Noodles**, which inheritant 3 methods **ingredients**, **cook** and **plate**, but change the recipes
 *** Noodles >> Pho
@@ -134,7 +137,10 @@ Pho >> plate
 ```
 Test in the Playground
 ```
-(Pho new) makeNoodles. "=> Prepare: Pho rice noodles, beef broth, beef, herb. Cook beef bones as broth for 6 hours, mix with spices. Add cooked rice noodles, meat, vegetables in a bowl. Ladle hot broth over the top."
+(Pho new) makeNoodles.
+"=> Prepare: Pho rice noodles, beef broth, beef, herb.
+Cook beef bones as broth for 6 hours, mix with spices.
+Add cooked rice noodles, meat, vegetables in a bowl. Ladle hot broth over the top."
 ```
 *** Noodles >>> BunBo
 ```
@@ -149,6 +155,10 @@ BunBo >> plate
 ```
 Test in the Playground
 ```
-(BunBo new) makeNoodles. "=> Prepare: Pork broth, shrimp paste, pork, beef and crab meatballs, vegetables, other seasoning. Cook pork broth for 3 hours, add shrimp paste, nuoc mam and other seasoning. Add cooked rice noodles, meat, vegetables in a bowl. Ladle hot broth over the top. Eat with banana flowers and herbs
+(BunBo new) makeNoodles.
+"=> Prepare: Pork broth, shrimp paste, pork, beef and crab meatballs, vegetables, other seasoning. Cook pork broth for 3 hours, add shrimp paste, nuoc mam and other seasoning.
+Add cooked rice noodles, meat, vegetables in a bowl.
+Ladle hot broth over the top. Eat with banana flowers and herbs
 ```
+The **Pho** and **BunBo** have customized the super methods to make their own recipes!
 [Link github Hook and Template] (https://github.com/LaCoir/HookAndTemplate)
