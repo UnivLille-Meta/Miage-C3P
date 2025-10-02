@@ -41,3 +41,17 @@
 >Ce week-end avec mon groupe je trouve qu'intuitivement, nous avons réalisé du reverse engineering. En-tout-cas certain de ses principes. Et c’est très efficace pour comprendre les relations rapidement entre les différentes parties de l'application en regardant l'architecture et les dépendances.
 >
 >Nous n'avons pas encore pu passer à l'étape du refactoring sur le chess, mais en tout cas on a pu déjà identifier ce qui ne se comporte pas comme on le voudrait et repérer du code qui pourrait être amélioré/ corrigé voir même supprimer directement.
+
+## Xavier Moyon 
+
+>Le reverse ingineering est très important pour comprendre et travailler sur un projet. Cependant c'est quelque chose que je trouve assez compliqué.
+>
+>De ce que j'ai compris, pour pouvoir réussir un refactoring, on peut : 
+>  
+> - On peut en se basant sur les éléments principaux (classes) du projet, on peut essayer d'imaginer la hierarchie du projet puis la comparer avec le réel et adapter notre modélisation au réel. Cela devrait permettre de mieux comprendre le projet.
+> - On ensuite faire du refactoring (et lancer les tests ensuite évidement).Cele permet de comprendre plus facilement le fonctionnement du projet.
+> - Et on peut aussi utiliser les tests (s'il y en a).
+>
+> Il faut faire attention durant ces étapes à ne pas trop perdre de temps sur les détails.
+>
+> Le week-end dernier, nous avons commencé à regarder le projet Chess, j'ai trouvé assez compliqué de comprendre le fonctionnement du projet, je ne savais pas vraiment ou trouver les informations que je cherchais.
