@@ -101,7 +101,7 @@ Template Method Design Pattern is a behavioral pattern that defines the skeleton
 For example, I have a programme Noodles. In Noodles, I have **Abtract class Noodles** (the skeleton) and **2 Concrete Classes Pho and BunBo** (subclasses of Noodles)
 
 In **Noodles**, I have the method **makingNoodles**. It has 3 actions: **ingredients**, **cook** and **plate** (the hooks)
-
+### Object >> Noodles
 ```
 Noodles >> makeNoodles "this method returns 3 methods ingredients, cook and plate in order"
 	 ^ (self ingredients, String cr "break the line",
@@ -126,7 +126,7 @@ Cook broth.
 Ladle into bowls over noodles and pile on toppings"
 ```
 Then, I made 2 subclasses **Pho** and **BunBo** of **Noodles**, which inheritant 3 methods **ingredients**, **cook** and **plate**, but change the recipes
-*** Noodles >> Pho
+### Noodles >> Pho
 ```
 Pho >> ingredients
 	^ 'Prepare: Pho rice noodles, beef broth, beef, herb'
@@ -142,7 +142,7 @@ Test in the Playground
 Cook beef bones as broth for 6 hours, mix with spices.
 Add cooked rice noodles, meat, vegetables in a bowl. Ladle hot broth over the top."
 ```
-*** Noodles >>> BunBo
+### Noodles >>> BunBo
 ```
 BunBo >> ingredients
 	^'Prepare: Pork broth, shrimp paste, pork, beef and crab meatballs, vegetables, other seasoning '
