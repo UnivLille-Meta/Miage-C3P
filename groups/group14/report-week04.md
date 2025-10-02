@@ -142,7 +142,7 @@ Test in the Playground
 Cook beef bones as broth for 6 hours, mix with spices.
 Add cooked rice noodles, meat, vegetables in a bowl. Ladle hot broth over the top."
 ```
-### Noodles >>> BunBo
+### Noodles >> BunBo
 ```
 BunBo >> ingredients
 	^'Prepare: Pork broth, shrimp paste, pork, beef and crab meatballs, vegetables, other seasoning '
@@ -161,4 +161,5 @@ Add cooked rice noodles, meat, vegetables in a bowl.
 Ladle hot broth over the top. Eat with banana flowers and herbs
 ```
 The **Pho** and **BunBo** have customized the super methods to make their own recipes!
-[Link github Hook and Template] (https://github.com/LaCoir/HookAndTemplate)
+
+### [Link github Hook and Template] (https://github.com/LaCoir/HookAndTemplate)
