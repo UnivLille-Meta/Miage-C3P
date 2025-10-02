@@ -100,7 +100,7 @@ Problème pour la méthode recording je n'arrive pas a faire valider en vert mon
 Template Method Design Pattern is a behavioral pattern that defines the skeleton of an algorithm in a base method while allowing subclasses to override specific steps without altering its overall structure. It’s like a recipe: the main steps remain fixed, but details can be customized for variation.
 For example, I have a programme Noodles. In Noodles, I have **Abtract class Noodles** (the skeleton) and **2 Concrete Classes Pho and BunBo** (subclasses of Noodles)
 
-In **Noodles**, I have the method **makingNoodles**. It has 3 actions: **ingredients**, **cook** and **plate**
+In **Noodles**, I have the method **makingNoodles**. It has 3 actions: **ingredients**, **cook** and **plate** (the hooks)
 
 ```
 Noodles >> makeNoodles "this method returns 3 methods ingredients, cook and plate in order"
