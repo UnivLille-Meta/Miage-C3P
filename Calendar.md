@@ -9,8 +9,8 @@
 - 16-17 Oct Pas de cours
 - 07 Week: 23-24 ** Examen :** Examen / Chess 3 [ No guille -> Seb ]  
 - 30-31 Oct Pas de cours
-- 08 Week 06-07 Nov  **Module 7:** TDD level 2: Refactoring process Exo: Bloc/Microdown 1 [ No guille ]
+- 08 Week 06-07 Nov  **Module 7:** TDD level 2: Refactoring process Exo: Bloc/Microdown 1 [ No guille Stef les deux ]
 - 09 Week 13-14 Nov **Modules 8 and 9:** Composite + Visitor Exo: Bloc/Microdown 2 [no Stef -> Seb jeudi et vendredi ]
-- 10 Week 20-21 Nov **Module 10:** Test Quality / Exo: Bloc/Microdown 3
+- 10 Week 20-21 Nov **Module 10:** Test Quality / Exo: Bloc/Microdown 3 [ no Stef -> Guille les 2 ]
 - 11 Week 27-28 Nov **Module 11** Explain your design
 - 12 Week 04-05 Dec **EXAMEN AMPHI:**
