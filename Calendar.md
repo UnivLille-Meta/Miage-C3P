@@ -7,7 +7,7 @@
 - 05 Week: 02-03 Oct **Module 5:** Reverse engineering / Chess 1 Check [TP.md](https://github.com/UnivLille-Meta/Miage-C3P/blob/2025/TP.md)
 - 06 Week: 09-10 Oct **Module 6:** Double dispatch / Chess2 
 - 16-17 Oct Pas de cours
-- 07 Week: 23-24 ** Examen :** Examen / Chess 3 [ No guille ]
+- 07 Week: 23-24 ** Examen :** Examen / Chess 3 [ No guille -> Seb ]  
 - 30-31 Oct Pas de cours
 - 08 Week 06-07 Nov  **Module 7:** TDD level 2: Refactoring process Exo: Bloc/Microdown 1 [ No guille ]
 - 09 Week 13-14 Nov **Modules 8 and 9:** Composite + Visitor Exo: Bloc/Microdown 2
