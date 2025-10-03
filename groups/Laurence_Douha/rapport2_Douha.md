@@ -1,4 +1,5 @@
 # Homework 2
+## Douha Agouni 
 ## Practice message dispatch
 - In the package Dice, we have two classes Die and DieHandle, both of them contain a method roll : 
 - Die >> roll

@@ -1,4 +1,5 @@
-#### Tout d'abord je tiens à m'excuser pour le retard, je n'avais pas bien compris ce qu'il fallait rendre lors de la première séance, et aussi car j'ai du mal à faire les commits sur Github à chaque étape comme indiqué sur le TP, c'est pour cela j'ai fini tout le TP pour ne pas perdre du temps et ensuite vous demander pendant la séance.
+#### Tout d'abord je tiens à m'excuser, je faisais les commits dans le mauvais endroit. 
+## Douha Agouni 
 # Homework 1 
 ## Learn about collections in Pharo and their iterators
 - A collection is a structure that contains objects. It used to facilate the manipulation of many objects such as adding an object, deleting...
