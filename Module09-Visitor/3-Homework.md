@@ -4,7 +4,7 @@ For next week's lecture, you need to do the following tasks and prepare a short 
 
 ### Prepare for next week
 
-Next week we will study the visitor pattern.
+Next week we will study test quality
 
 - Read the slides
 - Prepare your questions
