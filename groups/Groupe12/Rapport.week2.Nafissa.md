@@ -166,13 +166,17 @@ Lorsque l’on envoie un message à <code>self</code> :
 
 <pre><code>Object subclass: #A [
     A >> foo
-        ^ 50
+        ^ 10
 
     A >> bar
         ^ self foo
 ]
 
-A subclass: #B []
+A subclass: 
+    A>>B
+
+    B >> foo
+        ^50
 
 "Exemple d'utilisation"
 aB := B new.
