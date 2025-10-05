@@ -166,5 +166,8 @@ aB := B new.
 aB bar.  "Résultat : 50, car bar envoie le message foo à self (l'objet aB), et la méthode foo est recherchée dynamiquement dans B puis A"
 </code></pre>
 
+
+
+<p>Dans ce module, J’ai regardé toutes les vidéos du module et étudié le fonctionnement de self et super dans Pharo. J’ai compris que l’envoi d’un message dépend du receveur et appris à distinguer l’héritage statique du dynamique. Le cas d’étude sur Pillar m’a aidée à voir comment rendre un code plus modulair.</p>
 </body>
 </html>
