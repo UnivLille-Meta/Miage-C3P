@@ -98,6 +98,51 @@ GreenLight >> turnOn
 </ol>
 <p>L’objet décide lui-même quelle méthode exécuter : c’est le principe du <strong>“Do not ask, tell”</strong>.</p>
 
+<h3>Exemple pratique avec Light</h3>
+
+<pre>
+// Classe de base
+Object subclass: #Light
+    instanceVariableNames: ''
+    classVariableNames: ''
+    poolDictionaries: ''
+    category: 'Demo'
+
+Light >> turnOn
+    ^ 'The light is on'
+
+// Sous-classes
+Light subclass: #RedLight
+    instanceVariableNames: ''
+    classVariableNames: ''
+    poolDictionaries: ''
+    category: 'Demo'
+
+RedLight >> turnOn
+    ^ 'The red light is on'
+
+Light subclass: #GreenLight
+    instanceVariableNames: ''
+    classVariableNames: ''
+    poolDictionaries: ''
+    category: 'Demo'
+
+GreenLight >> turnOn
+    ^ 'The green light is on'
+</pre>
+
+<p>Lorsque l’on exécute :</p>
+
+<pre>
+| red green generic |
+red := RedLight new.
+green := GreenLight new.
+generic := Light new.
+
+red turnOn.      "→ 'The red light is on'"
+green turnOn.    "→ 'The green light is on'"
+generic turnOn.  "→ 'The light is on'"
+</pre>
 
 </body>
 </html>
