@@ -2,29 +2,6 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Module 1 – Booleans et Héritage</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-        }
-        pre {
-            background-color: #f4f4f4;
-            padding: 10px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
-        h1, h2, h3 {
-            color: #2c3e50;
-        }
-        ul {
-            margin-top: 0;
-        }
-        strong {
-            color: #2980b9;
-        }
-    </style>
 </head>
 <body>
 
