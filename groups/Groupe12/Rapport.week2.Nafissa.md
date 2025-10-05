@@ -84,5 +84,20 @@ GreenLight >> turnOn
     </li>
 </ul>
 
+
+<h2>3. Inheritance and Lookup: Self - Understand lookup once for all</h2>
+
+<p>Le message sending en Pharo se fait en 2 etapes:</p>
+<ol>
+  <li><strong>Lookup</strong> : Pharo cherche la méthode correspondant au message dans la classe de l’objet.
+    <ul>
+      <li>Si la méthode n’existe pas dans la classe, la recherche remonte dans les <strong>superclasses</strong>.</li>
+    </ul>
+  </li>
+  <li><strong>Execution</strong> : La méthode trouvée est exécutée sur <strong>l’objet récepteur</strong>.</li>
+</ol>
+<p>L’objet décide lui-même quelle méthode exécuter : c’est le principe du <strong>“Do not ask, tell”</strong>.</p>
+
+
 </body>
 </html>
