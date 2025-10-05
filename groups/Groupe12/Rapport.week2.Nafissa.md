@@ -146,13 +146,13 @@ generic turnOn.  "→ 'The light is on'"
 
 <h2>Comprendre <code>self</code> en Pharo</h2>
 
-<h3>1️Que représente <code>self</code> ?</h3>
+<h3>1️. Que représente <code>self</code> ?</h3>
 <p>
 <code>self</code> est une référence à l’objet courant qui reçoit le message. 
 En Java, <code>self</code> correspond à <code>this</code>.
 </p>
 
-<h3>2️Comment une méthode est recherchée lorsqu’un message est envoyé à <code>self</code> ?</h3>
+<h3>2. Comment une méthode est recherchée lorsqu’un message est envoyé à <code>self</code> ?</h3>
 <p>
 Lorsque l’on envoie un message à <code>self</code> : 
 <ul>
