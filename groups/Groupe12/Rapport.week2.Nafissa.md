@@ -2,50 +2,6 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <style>
-        body {
-            font-family: "Segoe UI", Arial, sans-serif;
-            line-height: 1.6;
-            margin: 40px;
-            background-color: #fafafa;
-            color: #333;
-        }
-        h1, h2, h3 {
-            color: #2a4d69;
-        }
-        pre {
-            background-color: #f4f6f8;
-            border-left: 4px solid #2a4d69;
-            padding: 12px 16px;
-            border-radius: 8px;
-            overflow-x: auto;
-            font-family: "Fira Code", monospace;
-            font-size: 14px;
-            color: #222;
-        }
-        code {
-            background-color: #eef;
-            padding: 2px 6px;
-            border-radius: 4px;
-            color: #2a4d69;
-            font-family: "Fira Code", monospace;
-        }
-        ul, ol {
-            margin-left: 20px;
-        }
-        hr {
-            margin: 30px 0;
-            border: 0;
-            height: 1px;
-            background: #ddd;
-        }
-        strong {
-            color: #1b4965;
-        }
-        em {
-            color: #555;
-        }
-    </style>
 </head>
 <body>
 
