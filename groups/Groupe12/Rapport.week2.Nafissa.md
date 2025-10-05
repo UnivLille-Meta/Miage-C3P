@@ -2,6 +2,50 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            background-color: #fafafa;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #2a4d69;
+        }
+        pre {
+            background-color: #f4f6f8;
+            border-left: 4px solid #2a4d69;
+            padding: 12px 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: "Fira Code", monospace;
+            font-size: 14px;
+            color: #222;
+        }
+        code {
+            background-color: #eef;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #2a4d69;
+            font-family: "Fira Code", monospace;
+        }
+        ul, ol {
+            margin-left: 20px;
+        }
+        hr {
+            margin: 30px 0;
+            border: 0;
+            height: 1px;
+            background: #ddd;
+        }
+        strong {
+            color: #1b4965;
+        }
+        em {
+            color: #555;
+        }
+    </style>
 </head>
 <body>
 
@@ -12,31 +56,24 @@
 <p>Pour ce module, j’ai commencé avec les Booléens. J’ai réalisé le premier exercice et appris à implémenter la méthode <strong>not</strong> dans les classes <strong>True</strong> et <strong>False</strong>. J’ai aussi compris que <strong>true</strong> et <strong>false</strong> sont des instances des classes correspondantes.</p>
 
 <h3>Implémentation de <code>not</code> :</h3>
-<pre>
-True >> not
+<pre><code>True >> not
     ^ false
 
 False >> not
     ^ true
-</pre>
+</code></pre>
 
 <h3>Méthode Or (<code>|</code>) :</h3>
 
 <ul>
     <li><strong>Dans la classe False :</strong> on retourne toujours l’argument.</li>
 </ul>
-<pre>
-false | anything    "→ anything"
-</pre>
+<pre><code>false | anything    "→ anything"</code></pre>
 
 <ul>
     <li><strong>Dans la classe True :</strong> on retourne toujours le receveur (<code>^self</code>).</li>
 </ul>
-<pre>
-true | anything     "→ true"
-</pre>
-
-<p>Exemple pratique dans le Playground : (photo)</p>
+<pre><code>true | anything     "→ true"</code></pre>
 
 <p>J’ai appris que l’envoi de message dépend de la méthode à exécuter dans la classe concernée, ce qui permet d’éviter les <strong>if</strong> explicites.  
 La hiérarchie de classes permet le <strong>dispatch automatique</strong> : si l’objet ne possède pas la méthode, elle est cherchée dans la superclasse.  
@@ -53,20 +90,15 @@ Pour changer le comportement de <strong>Dog</strong>, on ne touche pas à <stron
 
 <h3>Exemple pratique dans Pharo :</h3>
 
-<p>J’ai défini une classe <strong>Light</strong>, avec une méthode <code>turnOn</code> :</p>
-<pre>
-Light >> turnOn
+<pre><code>Light >> turnOn
     ^ 'The light is on'
-</pre>
 
-<p>J’ai ensuite créé deux sous-classes : <strong>RedLight</strong> et <strong>GreenLight</strong>, chacune avec sa propre implémentation :</p>
-<pre>
 RedLight >> turnOn
     ^ 'The red light is on'
 
 GreenLight >> turnOn
     ^ 'The green light is on'
-</pre>
+</code></pre>
 
 <p>Lorsque l’on envoie le message <code>turnOn</code> à une instance, l’objet décide lui-même quelle méthode exécuter, sans avoir besoin de vérifier le type avec des <strong>if</strong>.</p>
 
@@ -84,10 +116,11 @@ GreenLight >> turnOn
     </li>
 </ul>
 
+<hr>
 
 <h2>3. Inheritance and Lookup: Self - Understand lookup once for all</h2>
 
-<p>Le message sending en Pharo se fait en 2 etapes:</p>
+<p>Le message sending en Pharo se fait en 2 étapes :</p>
 <ol>
   <li><strong>Lookup</strong> : Pharo cherche la méthode correspondant au message dans la classe de l’objet.
     <ul>
@@ -100,8 +133,7 @@ GreenLight >> turnOn
 
 <h3>Exemple pratique avec Light</h3>
 
-<pre>
-// Classe de base
+<pre><code>// Classe de base
 Object subclass: #Light
     instanceVariableNames: ''
     classVariableNames: ''
@@ -129,12 +161,11 @@ Light subclass: #GreenLight
 
 GreenLight >> turnOn
     ^ 'The green light is on'
-</pre>
+</code></pre>
 
 <p>Lorsque l’on exécute :</p>
 
-<pre>
-| red green generic |
+<pre><code>| red green generic |
 red := RedLight new.
 green := GreenLight new.
 generic := Light new.
@@ -142,7 +173,7 @@ generic := Light new.
 red turnOn.      "→ 'The red light is on'"
 green turnOn.    "→ 'The green light is on'"
 generic turnOn.  "→ 'The light is on'"
-</pre>
+</code></pre>
 
 <h2>Comprendre <code>self</code> en Pharo</h2>
 
@@ -153,14 +184,11 @@ En Java, <code>self</code> correspond à <code>this</code>.
 </p>
 
 <h3>2. Comment une méthode est recherchée lorsqu’un message est envoyé à <code>self</code> ?</h3>
-<p>
-Lorsque l’on envoie un message à <code>self</code> : 
 <ul>
 <li>La méthode est recherchée d’abord dans la classe de l’objet courant.</li>
 <li>Si elle n’est pas trouvée, la recherche remonte la hiérarchie d’héritage jusqu’à ce qu’elle soit trouvée ou jusqu’à la classe racine <code>Object</code>.</li>
 <li>Une fois trouvée, la méthode s’exécute avec <code>self</code> toujours référant à l’objet initial.</li>
 </ul>
-</p>
 
 <p><strong>Pratique :</strong> J’ai pratiqué en classe avec les méthodes <code>bar</code> et <code>foo</code> sur les classes <code>A</code> et <code>B</code>.</p>
 
@@ -172,11 +200,10 @@ Lorsque l’on envoie un message à <code>self</code> :
         ^ self foo
 ]
 
-A subclass: 
-    A>>B
-
+A subclass: #B [
     B >> foo
-        ^50
+        ^ 50
+]
 
 "Exemple d'utilisation"
 aB := B new.
