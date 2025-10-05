@@ -5,7 +5,7 @@
 </head>
 <body>
 
-<h1>Module 1 – Booleans et Héritage</h1>
+<h1>Module 1 – Understanding messages</h1>
 
 <h2>1. Booleans</h2>
 
@@ -143,6 +143,41 @@ red turnOn.      "→ 'The red light is on'"
 green turnOn.    "→ 'The green light is on'"
 generic turnOn.  "→ 'The light is on'"
 </pre>
+
+<h2>Comprendre <code>self</code> en Pharo</h2>
+
+<h3>1️Que représente <code>self</code> ?</h3>
+<p>
+<code>self</code> est une référence à l’objet courant qui reçoit le message. 
+En Java, <code>self</code> correspond à <code>this</code>.
+</p>
+
+<h3>2️Comment une méthode est recherchée lorsqu’un message est envoyé à <code>self</code> ?</h3>
+<p>
+Lorsque l’on envoie un message à <code>self</code> : 
+<ul>
+<li>La méthode est recherchée d’abord dans la classe de l’objet courant.</li>
+<li>Si elle n’est pas trouvée, la recherche remonte la hiérarchie d’héritage jusqu’à ce qu’elle soit trouvée ou jusqu’à la classe racine <code>Object</code>.</li>
+<li>Une fois trouvée, la méthode s’exécute avec <code>self</code> toujours référant à l’objet initial.</li>
+</ul>
+</p>
+
+<p><strong>Pratique :</strong> J’ai pratiqué en classe avec les méthodes <code>bar</code> et <code>foo</code> sur les classes <code>A</code> et <code>B</code>.</p>
+
+<pre><code>Object subclass: #A [
+    A >> foo
+        ^ 50
+
+    A >> bar
+        ^ self foo
+]
+
+A subclass: #B []
+
+"Exemple d'utilisation"
+aB := B new.
+aB bar.  "Résultat : 50, car bar envoie le message foo à self (l'objet aB), et la méthode foo est recherchée dynamiquement dans B puis A"
+</code></pre>
 
 </body>
 </html>
