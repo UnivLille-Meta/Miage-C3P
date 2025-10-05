@@ -5,7 +5,7 @@
 </head>
 <body>
 
-<h1>Module 1 – Understanding messages</h1>
+<h1>Module 1 – Booleans et Héritage</h1>
 
 <h2>1. Booleans</h2>
 
@@ -68,7 +68,7 @@ GreenLight >> turnOn
     ^ 'The green light is on'
 </pre>
 
-<p>Lorsque l’on envoie le message <code>turnOn</code> à une instance, l’objet décide lui-même quelle méthode exécuter, sans avoir besoin de vérifier le type avec des <s
+<p>Lorsque l’on envoie le message <code>turnOn</code> à une instance, l’objet décide lui-même quelle méthode exécuter, sans avoir besoin de vérifier le type avec des <strong>if</strong>.</p>
 
 <h3>Héritage des variables et du comportement</h3>
 
