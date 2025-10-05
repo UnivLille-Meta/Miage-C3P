@@ -5,7 +5,7 @@
 </head>
 <body>
 
-<h1>Module 1 – Booleans et Héritage</h1>
+<h1>Module 1 – Understanding messages</h1>
 
 <h2>1. Booleans</h2>
 
@@ -69,3 +69,20 @@ GreenLight >> turnOn
 </pre>
 
 <p>Lorsque l’on envoie le message <code>turnOn</code> à une instance, l’objet décide lui-même quelle méthode exécuter, sans avoir besoin de vérifier le type avec des <s
+
+<h3>Héritage des variables et du comportement</h3>
+
+<ul>
+    <li><strong>Variables d’instance :</strong> héritées au moment de la définition de la classe.  
+        Exemple : <br>
+        <em>Rectangle</em> → variables <code>width</code>, <code>height</code><br>
+        <em>RedRectangle</em> → hérite de Rectangle et ajoute <code>color</code>.  
+        Résultat : RedRectangle possède <code>width</code>, <code>height</code> et <code>color</code>.
+    </li>
+    <li><strong>Comportement (méthodes) :</strong> hérité au moment de l’exécution.  
+        Si une méthode n’existe pas dans la sous-classe, elle est cherchée dans la superclasse.
+    </li>
+</ul>
+
+</body>
+</html>
