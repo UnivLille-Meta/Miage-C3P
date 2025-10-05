@@ -1,95 +1,75 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-</head>
-<body>
+Module 1 – Comprendre l’envoi de messages
+1. Booléens
 
-<h1>Module 1 – Understanding messages</h1>
-
-<h2>1. Booleans</h2>
-
-<p>Pour ce module, j’ai commencé avec les Booléens. J’ai réalisé le premier exercice et appris à implémenter la méthode <strong>not</strong> dans les classes <strong>True</strong> et <strong>False</strong>. J’ai aussi compris que <strong>true</strong> et <strong>false</strong> sont des instances des classes correspondantes.</p>
-
-<h3>Implémentation de <code>not</code> :</h3>
-<pre><code>True >> not
+J’ai commencé avec les Booléens et appris à implémenter la méthode not dans les classes True et False.
+J’ai également compris que true et false sont des instances de leurs classes respectives.
+```smalltalk
+True >> not
     ^ false
 
 False >> not
     ^ true
-</code></pre>
+```
+Méthode OU (|)
 
-<h3>Méthode Or (<code>|</code>) :</h3>
+Dans False, la méthode retourne toujours l’argument :
+```smalltalk
+false | anything   "→ anything"
+```
 
-<ul>
-    <li><strong>Dans la classe False :</strong> on retourne toujours l’argument.</li>
-</ul>
-<pre><code>false | anything    "→ anything"</code></pre>
+Dans True, la méthode retourne toujours le receveur :
+```smalltalk
+true | anything    "→ true"
+```
 
-<ul>
-    <li><strong>Dans la classe True :</strong> on retourne toujours le receveur (<code>^self</code>).</li>
-</ul>
-<pre><code>true | anything     "→ true"</code></pre>
+L’envoi de message dépend de la classe qui définit la méthode, ce qui évite les conditions if explicites.
+La hiérarchie des classes permet le dispatch automatique : si un objet ne possède pas la méthode, elle est cherchée dans la superclasse.
+L’envoi de message est extensible : on peut créer de nouvelles classes avec leurs propres réponses au même message sans modifier l’ancien code.
 
-<p>J’ai appris que l’envoi de message dépend de la méthode à exécuter dans la classe concernée, ce qui permet d’éviter les <strong>if</strong> explicites.  
-La hiérarchie de classes permet le <strong>dispatch automatique</strong> : si l’objet ne possède pas la méthode, elle est cherchée dans la superclasse.  
-L’envoi de message est extensible : on peut ajouter de nouvelles classes avec leurs propres méthodes pour le même message sans modifier l’ancien code.</p>
+2. Héritage
 
-<hr>
+J’ai appris que l’héritage permet de réutiliser le code des superclasses sans le réécrire et de ne modifier que ce qui change (le “delta”).
 
-<h2>2. Héritage (Inheritance)</h2>
+Exemple : Dog hérite de Animal.
+Pour changer le comportement de Dog, on ne redéfinit que les méthodes spécifiques, sans toucher à Animal.
 
-<p>Dans ce module, j’ai appris que l’héritage permet de réutiliser le code des superclasses sans le réécrire, et de spécialiser ou modifier seulement ce qui change (le “delta”).</p>
-
-<p>Exemple : la classe <strong>Dog</strong> hérite de la classe <strong>Animal</strong>.  
-Pour changer le comportement de <strong>Dog</strong>, on ne touche pas à <strong>Animal</strong>, on redéfinit uniquement le comportement dans <strong>Dog</strong>.</p>
-
-<h3>Exemple pratique dans Pharo :</h3>
-
-<pre><code>Light >> turnOn
-    ^ 'The light is on'
+Light >> turnOn
+    ^ 'La lumière est allumée'
 
 RedLight >> turnOn
-    ^ 'The red light is on'
+    ^ 'La lumière rouge est allumée'
 
 GreenLight >> turnOn
-    ^ 'The green light is on'
-</code></pre>
+    ^ 'La lumière verte est allumée'
 
-<p>Lorsque l’on envoie le message <code>turnOn</code> à une instance, l’objet décide lui-même quelle méthode exécuter, sans avoir besoin de vérifier le type avec des <strong>if</strong>.</p>
 
-<h3>Héritage des variables et du comportement</h3>
+Quand on envoie le message turnOn à une instance, l’objet décide lui-même quelle méthode exécuter, sans avoir besoin de vérifier le type avec if.
 
-<ul>
-    <li><strong>Variables d’instance :</strong> héritées au moment de la définition de la classe.  
-        Exemple : <br>
-        <em>Rectangle</em> → variables <code>width</code>, <code>height</code><br>
-        <em>RedRectangle</em> → hérite de Rectangle et ajoute <code>color</code>.  
-        Résultat : RedRectangle possède <code>width</code>, <code>height</code> et <code>color</code>.
-    </li>
-    <li><strong>Comportement (méthodes) :</strong> hérité au moment de l’exécution.  
-        Si une méthode n’existe pas dans la sous-classe, elle est cherchée dans la superclasse.
-    </li>
-</ul>
+Héritage des variables et du comportement
 
-<hr>
+Variables d’instance : héritées lors de la définition de la sous-classe.
+Exemple :
 
-<h2>3. Inheritance and Lookup: Self - Understand lookup once for all</h2>
+Rectangle → variables width, height
 
-<p>Le message sending en Pharo se fait en 2 étapes :</p>
-<ol>
-  <li><strong>Lookup</strong> : Pharo cherche la méthode correspondant au message dans la classe de l’objet.
-    <ul>
-      <li>Si la méthode n’existe pas dans la classe, la recherche remonte dans les <strong>superclasses</strong>.</li>
-    </ul>
-  </li>
-  <li><strong>Execution</strong> : La méthode trouvée est exécutée sur <strong>l’objet récepteur</strong>.</li>
-</ol>
-<p>L’objet décide lui-même quelle méthode exécuter : c’est le principe du <strong>“Do not ask, tell”</strong>.</p>
+RedRectangle → hérite de Rectangle et ajoute color
+→ RedRectangle possède donc width, height et color.
 
-<h3>Exemple pratique avec Light</h3>
+Comportement (méthodes) : hérité à l’exécution.
+Si une méthode n’existe pas dans la sous-classe, Pharo la cherche dans la superclasse.
 
-<pre><code>// Classe de base
+3. Héritage et Lookup : self
+
+En Pharo, l’envoi de messages se fait en deux étapes :
+
+Lookup : Pharo cherche la méthode correspondant au message dans la classe de l’objet.
+Si elle n’existe pas, la recherche remonte dans les superclasses.
+
+Execution : La méthode trouvée est exécutée sur l’objet récepteur.
+
+L’objet décide lui-même quelle méthode exécuter — principe du “Do not ask, tell”.
+
+Exemple avec Light
 Object subclass: #Light
     instanceVariableNames: ''
     classVariableNames: ''
@@ -97,9 +77,8 @@ Object subclass: #Light
     category: 'Demo'
 
 Light >> turnOn
-    ^ 'The light is on'
+    ^ 'La lumière est allumée'
 
-// Sous-classes
 Light subclass: #RedLight
     instanceVariableNames: ''
     classVariableNames: ''
@@ -107,7 +86,7 @@ Light subclass: #RedLight
     category: 'Demo'
 
 RedLight >> turnOn
-    ^ 'The red light is on'
+    ^ 'La lumière rouge est allumée'
 
 Light subclass: #GreenLight
     instanceVariableNames: ''
@@ -116,39 +95,37 @@ Light subclass: #GreenLight
     category: 'Demo'
 
 GreenLight >> turnOn
-    ^ 'The green light is on'
-</code></pre>
+    ^ 'La lumière verte est allumée'
 
-<p>Lorsque l’on exécute :</p>
 
-<pre><code>| red green generic |
+Test dans Playground :
+
+| red green generic |
+
 red := RedLight new.
 green := GreenLight new.
 generic := Light new.
 
-red turnOn.      "→ 'The red light is on'"
-green turnOn.    "→ 'The green light is on'"
-generic turnOn.  "→ 'The light is on'"
-</code></pre>
+red turnOn.      "→ 'La lumière rouge est allumée'"
+green turnOn.    "→ 'La lumière verte est allumée'"
+generic turnOn.  "→ 'La lumière est allumée'"
 
-<h2>Comprendre <code>self</code> en Pharo</h2>
+Comprendre self en Pharo
+1. Que représente self ?
 
-<h3>1️. Que représente <code>self</code> ?</h3>
-<p>
-<code>self</code> est une référence à l’objet courant qui reçoit le message. 
-En Java, <code>self</code> correspond à <code>this</code>.
-</p>
+self est une référence à l’objet courant qui reçoit le message.
+En Java, self correspond à this.
 
-<h3>2. Comment une méthode est recherchée lorsqu’un message est envoyé à <code>self</code> ?</h3>
-<ul>
-<li>La méthode est recherchée d’abord dans la classe de l’objet courant.</li>
-<li>Si elle n’est pas trouvée, la recherche remonte la hiérarchie d’héritage jusqu’à ce qu’elle soit trouvée ou jusqu’à la classe racine <code>Object</code>.</li>
-<li>Une fois trouvée, la méthode s’exécute avec <code>self</code> toujours référant à l’objet initial.</li>
-</ul>
+2. Comment une méthode est-elle recherchée lorsqu’un message est envoyé à self ?
 
-<p><strong>Pratique :</strong> J’ai pratiqué en classe avec les méthodes <code>bar</code> et <code>foo</code> sur les classes <code>A</code> et <code>B</code>.</p>
+Pharo cherche d’abord dans la classe de l’objet courant.
 
-<pre><code>Object subclass: #A [
+Si elle n’est pas trouvée, la recherche remonte la hiérarchie jusqu’à Object.
+
+Une fois trouvée, la méthode s’exécute avec self qui fait toujours référence à l’objet initial.
+
+Exemple pratique
+Object subclass: #A [
     A >> foo
         ^ 10
 
@@ -161,13 +138,13 @@ A subclass: #B [
         ^ 50
 ]
 
-"Exemple d'utilisation"
+
+Test dans Playground :
+
 aB := B new.
-aB bar.  "Résultat : 50, car bar envoie le message foo à self (l'objet aB), et la méthode foo est recherchée dynamiquement dans B puis A"
-</code></pre>
+aB bar.   "→ 50, car bar envoie le message foo à self (instance B)."
 
 
-
-<p>Dans ce module, J’ai regardé toutes les vidéos du module et étudié le fonctionnement de self et super dans Pharo. J’ai compris que l’envoi d’un message dépend du receveur et appris à distinguer l’héritage statique du dynamique. Le cas d’étude sur Pillar m’a aidée à voir comment rendre un code plus modulair.</p>
-</body>
-</html>
+Dans ce module, j’ai regardé toutes les vidéos et étudié le fonctionnement de self et super en Pharo.
+J’ai compris que l’envoi de message dépend entièrement du receveur et j’ai distingué l’héritage statique et dynamique.
+Le cas d’étude sur Pillar m’a aidée à voir comment rendre un code plus modulaire et extensible.
