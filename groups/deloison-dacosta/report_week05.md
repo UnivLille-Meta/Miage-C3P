@@ -62,7 +62,7 @@
 
 ## Homework
 
-This week, I watched videos on Double Dispatch and Visitor. I completed the first version of Paper Stone Scissors and Die.
+This week, I watched videos on Double Dispatch and Visitor. I realise the first version of Paper Stone Scissors and Die.
 
 In the kata, we chose ‘Implement more gaming strategies’. We created a strategy design pattern with AbstractGamingStrategy in the strategy subclass and exported the base strategy from MyPlayer: RandomGamingStrategy.
 
