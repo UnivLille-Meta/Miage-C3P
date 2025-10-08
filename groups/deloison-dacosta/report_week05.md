@@ -112,8 +112,8 @@ direction LR
     class OffensiveGamingStrategy {
         #play()
         #legalMoves(aPlayer)
-        #kingIsInCheck(aPlayer): 
-        executeRandomMoveFrom(aCollection)for(aPlayer):
+        #kingIsInCheck(aPlayer)
+        executeRandomMoveFrom(aCollection)for(aPlayer)
     }
 
     class MyPlayer {
