@@ -58,49 +58,81 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # Antonin DELOISON
+
+## Homework
+
+This week, I watched videos on Double Dispatch and Visitor. I completed the first version of Paper Stone Scissors and Die.
+
+In the kata, we chose ‘Implement more gaming strategies’. We created a strategy design pattern with AbstractGamingStrategy in the strategy subclass and exported the base strategy from MyPlayer: RandomGamingStrategy.
+
+```mermaid
+%% LR = Left to Right
+classDiagram
+direction LR
+
+%% --- Hiérarchie à gauche ---
+    class AbstractGamingStrategy{
+        #play(aPlayer) // abstract
+    }
+
+    class RandomGamingStrategy {
+        #play()
+    }
+
+    class MyPlayer {
+        ...
+        ...
+        // Unchanged
+        ...
+        ...
+    }
+
+    MyPlayer --> AbstractGamingStrategy : possess
+    AbstractGamingStrategy <|-- RandomGamingStrategy
+````
+
+My first task is to create an offensive strategy, the objective of which is to capture as quickly as possible. It is called: OffensiveGamingStrategy.
+
+
+```mermaid
+%% LR = Left to Right
+classDiagram
+direction LR
+
+%% --- Hiérarchie à gauche ---
+    class AbstractGamingStrategy{
+        #play(): aPlayer // abstract
+    }
+
+    class RandomGamingStrategy {
+        #play()
+    }
+
+    class OffensiveGamingStrategy {
+        #play()
+        #legalMoves(aPlayer)
+        #kingIsInCheck(aPlayer): 
+        executeRandomMoveFrom(aCollection)for(aPlayer):
+    }
+
+    class MyPlayer {
+        ...
+        ...
+        // Unchanged
+        ...
+        ...
+    }
+
+    MyPlayer --> AbstractGamingStrategy : possess
+    AbstractGamingStrategy <|-- RandomGamingStrategy
+    AbstractGamingStrategy <|-- OffensiveGamingStrategy
+````
+
+Now we have a second strategy, which is to capture as soon as possible.
+I have a lot of questions about testing, because we can't create a Game, and without that, we can't retrieve the player's pieces.
+
+I'm testing by copying the MyPlayer class to another environment and modifying the pieces method.
 
 
 ## Difference Between LRU and LFU
@@ -145,3 +177,4 @@ We focus on :
 
 
 The evict method is call in addWeight.
+
