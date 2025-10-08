@@ -77,7 +77,7 @@ direction LR
     }
 
     class RandomGamingStrategy {
-        #play()
+        #play(aPlayer)
     }
 
     class MyPlayer {
@@ -102,7 +102,7 @@ direction LR
 
 %% --- Hiérarchie à gauche ---
     class AbstractGamingStrategy{
-        #play(): aPlayer // abstract
+        #play(aPlayer)  // abstract
     }
 
     class RandomGamingStrategy {
@@ -113,7 +113,7 @@ direction LR
         #play()
         #legalMoves(aPlayer)
         #kingIsInCheck(aPlayer)
-        executeRandomMoveFrom(aCollection)for(aPlayer)
+        #executeRandomMoveFrom(aCollection)for(aPlayer)
     }
 
     class MyPlayer {
