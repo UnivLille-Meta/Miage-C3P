@@ -18,7 +18,7 @@ J'ai lu cet article qui expliquer les avantages de faire un NullObject : https:/
 
 Pour résumer les étapes que j'ai fait actuellement 
   - Création d'une classe MyNilPiece
-    - Méthode isPiece(Héritage) qui renvoie false
+    - Méthode isPiece(Héritage)
     - Méthode renderPieceOn:
   -  Refactoring des méthode dont on retrouve "contents: nil" par "contents: MyNilPiece new"
   -  Refacto de la méthode hasPiece de la classe MyChessSquare
