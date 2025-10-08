@@ -29,3 +29,12 @@ Pour la suite je sais que je dois vérifier un cas similaire notamment lorsque l
 
 ## Relecture
 J'ai relu Reverse Engineering
+
+# Lan
+## Chess project
+- Kata: "Add pawn promotion"
+- My first work is to read the architecture, and determine which part needs to fix. There are two behaviors for the promotion, the 1st is that users have to choose the piece itself, the 2nd is that the bot will choose automatically for the users. My idea is to user Strategy Pattern for the promotion and 2 behaviors will be subclasses. 
+- I have created 1 class **MyPrmotionPawn** with the method **promotePawn:** and 2 subclasses inherit that: **MyBotPromotion** (automatically return Queen) and **MyUIPromtion**. I still work on the second subclass and the test class so I haven't pushed my code yet.
+# Study 
+- Hook and Template, Pharo 9 by Example, The Spec UI framework
+
