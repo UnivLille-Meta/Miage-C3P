@@ -1,4 +1,5 @@
 Weekly Report5
+
 Yuliia LOS:
 
 This week I studied several presentations about Double Dispatch and the Visitor Design Pattern. These topics helped me understand how to design clean, extensible, and object-oriented systems without using many if statements.
@@ -39,3 +40,4 @@ From these lessons, I understood that sending messages is a key idea in Pharo â€
 All the information was taken from the course materials on the website: https://advanced-design-mooc.pharo.org/
 
 I also continued working on my Chess project this week.
+
