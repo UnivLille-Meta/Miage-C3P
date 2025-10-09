@@ -137,7 +137,7 @@ crushedBy: aStone
 
 	^ #paper
 ```
-After watching the explanation video, I realized that the argument was unnecessary — instead, I needed to return the **Paper** instance itself.  
+After watching the explanation video, I realized that the argument was unnecessary instead, I needed to return the **Paper** instance itself.  
 Here’s my corrected version:
 
 ```smalltalk
@@ -151,42 +151,42 @@ crushed
 	^ #paper
 ```
 
-This implementation is a **symmetrical double dispatch**, but it’s important to note that it can also be **asymmetrical** depending on how interactions are defined between objects.
+This implementation is a symmetrical **double dispatch**, but it’s important to note that it can also be asymmetrical depending on how interactions are defined between objects.
 
 ## Ding Dong, here comes the Visitor
 
-In the MOOC, I watched the explanation of the **Visitor design pattern** for the implementation of arithmetic expressions in **Pharo**.  
-This design pattern relies **on double dispatch** and is used when you have the **same object** that can be visited by **different kinds of other objects**, and this object doesn’t behave the same way depending on which **object visits it**.
+In the MOOC, I watched the explanation of the **Visitor design pattern** for the implementation of arithmetic expressions in Pharo.  
+This design pattern relies on double dispatch and is used when you have the same object that can be visited by different kinds of other objects, and this object doesn’t behave the same way depending on which object visits it*.
 
-In other words, when you need to perform **many different actions** on the same structure while respecting the **Open Closed Principle** so the Visitor design pattern is the right solution.
+In other words, when you need to perform many different actions on the same structure while respecting the Open Closed Principle so the **Visitor** design pattern is the right solution.
 
 Here’s how I understood how it works:
 
-- **First dispatch:** the element being visited (e.g., Plus, Number, Times) sends its own specific message.  
-- **Second dispatch:** the visitor (e.g., Evaluator, Printer) executes the correct logic depending on the class of the element being visited.
+- First dispatch: the element being visited (e.g., Plus, Number, Times) sends its own specific message.  
+- Second dispatch: the visitor (e.g., Evaluator, Printer) executes the correct logic depending on the class of the element being visited.
 
 *Source:* [Pharo Advanced Design MOOC — Visitor Pattern](https://rmod-pharo-mooc.lille.inria.fr/AdvancedDesignMooc/Videos/M06_S4.mp4)
 
 ## Exercise: Common Cache Algorithms
 
-### **LRU (Least Recently Used)**
+### LRU (Least Recently Used)
 
-This algorithm replaces the **least recently used** cache line.  
-The idea is to keep **recently accessed data**, following the *principle of locality*.  
-Every access to the cache lines is recorded, which makes this algorithm **costly** in terms of list processing operations.  
-This cost grows **exponentially** with the number of cache ways — a critical aspect in **embedded systems**.
+This algorithm replaces the least recently used cache line.  
+The idea is to keep recently accessed data, following the *principle of locality*.  
+Every access to the cache lines is recorded, which makes this algorithm costly in terms of list processing operations.  
+This cost grows exponentially with the number of cache ways a critical aspect in embedded systems.
 
 Several implementations exist.  
-One simple approach uses an **N×N triangular matrix** to represent access order.
+One simple approach uses an N×N triangular matrix to represent access order.
 
 📚 *Source:* [Wikipedia — LRU (Least Recently Used)](https://fr.wikipedia.org/wiki/Algorithme_de_mise_en_cache#LRU_(Least_Recently_Used))
 
 ### **LFU (Least Frequently Used)**
 
-While LRU tracks **recency of access**, LFU tracks **frequency**.  
-It replaces the **least frequently used** cache line.  
+While LRU tracks recency of access, LFU tracks frequency.  
+It replaces the least frequently used cache line.  
 
-However, LFU can suffer from **cache pollution**: lines that were frequently used in the past but are no longer accessed may still remain in the cache.  
-A common improvement is to add an **aging policy**, so that after a certain time, an old line becomes eligible for replacement.
+However, LFU can suffer from cache pollution: lines that were frequently used in the past but are no longer accessed may still remain in the cache.  
+A common improvement is to add an aging policy, so that after a certain time, an old line becomes eligible for replacement.
 
 *Source:* [Wikipedia — LFU (Least Frequently Used)](https://fr.wikipedia.org/wiki/Algorithme_de_mise_en_cache#LFU_(Least_Frequently_Used))
