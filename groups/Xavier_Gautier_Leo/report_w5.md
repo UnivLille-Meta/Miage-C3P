@@ -52,3 +52,24 @@
 >Le design pattern visiteur se base sur le double dispatch, le visiteur demande au domaine quel méthode il doit utiliser et c'est le domaine qui lui répond. Par exemple pour les calculs, le visiteur doit avoir une méthode `visitElementName` par éléments du domaine (Number,Plus,Time,Divide,... ) qui s'occupera d'effectuer les calculs. Et côté domaine les méthodes canVisit indiquerons quelle méthode du visiteur appeller (visit sur Divide appellera visitDivide sur le visiteur).
 >
 > Le visiteur ne doit cependant pas être utilisé si le domaine n'est pas très stable
+
+## Gautier Louvier
+
+### Module 6 :
+
+> Pour le module de cette semaine (Mod.6), j'ai vu à quel point doubleDispatch peut être puissant en termes de modularité. De plus ça suit dans la continuité le principe du "Tell dont ask".
+> 
+> Avec ma petite réalisation de mon côté du jeu rock paper scissors. J'en suis arrivé à la conclusion que : un simple dispatch fonctionne quand deux classes ont besoin de connaître le résultat attendu avec une interaction entre elles.
+> 
+> Par contre dès qu'on a une troisième classe qui intervient sur la même méthode, on se retrouve coincé, car le Dispatch n'est pas assez modulaire pour renvoyer le bon résultat. Donc nous avons besoin à ce moment du DoubleDispatch pour repousser la responsabilité.
+> 
+> Vu qu'on ne peut pas définir à l'avance l'objet en paramètre on lui dit de répondre le résultat de son comportement quand il est appelé dans cette classe même avec une méthode associée. 
+> Vous pouvez retrouver mon petit travail dans mon package "MyRockPaperScissors". Sur ce repository : [GitHub - fgogow/ExercicePharoM1Miage](https://github.com/fgogow/ExercicePharoM1Miage).
+> 
+> Pour finir avec l'exemple du cours sur les dices on voit bien que quelle que soit la méthode le double dispatch fait en sorte de prendre la **bonne methode** en se basant sur le **receveur** et sur **l'argument**.
+> 
+> Pour le visiteur j'ai compris que ce partern repose sur le double dispatch car on évite les conditionnels, on ne modifie pas l'essence même du code on donne des points d'entrées pour les méthodes et le code où l'on veut recevoir une "extension" de celui-ci. Il est donc très modulaire sur une structure forte et qui ne bouge pas.
+> 
+> ### Chess :
+> 
+> Pour ce qui est du chess, je suis content, j'arrive à comprendre l'essentielle des méthodes sur lesquelles nous tombons. Par contre j'ai dû mal en ce moment à trouver des points d'entrer pour le nilPatern donc nous y réfléchissons à plusieur et j'essaye de comprendre la logique de mes camarades. Mais maintenant je pense être capable de me lancer dans le Kata du fix the pawn. Seul ou peut être avec un de mes 2 camarades. Je pense que nous serons plus efficaces de cette manière. En-tout-cas, j'ai essayé le plus possible de me tenir au principe du Reverse Engineering. Car on a vite fait de se faire ralentir par du refactor qui n'est pas la tache principale ou de vouloir réparer quelque chose qui n'est pas la priorité.
