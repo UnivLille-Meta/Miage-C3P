@@ -11,6 +11,8 @@
 > En premier lieu, nous avons ajouté l'API des nils checks (ifNil:, isNil, notNil etc...) sur MyNilChessSquare, celle-ci agissant comme nil le ferait.
 > Ceci dans le but de pouvoir conserver une application fonctionnelle entre chacune des itérations.
 > Nous serons capable de dire que nous avons fini ce kata à partir du moment où le programme sera fonctionnel à la suppression de ces méthodes.
+> 
+> Nous avons déjà réduit le nombre de nil checks de cette façon, mais il en reste encore beaucoup, de plus ces modifications sont longues car il faut à chaque fois ajouter des test pour verifier que le code ne change pas de comportement
 
 ## Léo Defossez
 > ### Travail sur LRUCache
@@ -26,12 +28,25 @@
 > 
 > J'ai ajouté un result handler sur mon travail de rock paper scissors, pour permettre plus de modularité sur les résultats en cas de besoin (Video M6-6 advanced-design-mooc). 
 > 
+>
+> Un résumé que je peux faire sur le simple et double dispatch, que j'ai pu faire à plusieurs reprise en parlant avec des personnes de mon groupe:  
+> Simple dispatch: Un objet sait ce qu'il a à faire, il le fait par lui même  
+> Double dispatch: Deux objets travaillent ensembles pour définir un comportement. Il est utilisé pour éviter les conditionnelles et les switch.
+> 
 > ### Kata Chess
 > Durant cette semaine, je découvre l'application du nil pattern.
 > J'ai pu réfléchir et trouver des moyens permettant de garder le programme fonctionnel entre chaque itération du refactoring malgré le breaking change qu'implique la suppression de la dépendance à nil.
 > J'ai aussi pu réfléchir à quels sont les différents points d'entrées sur lesquels nous pouvons commencer un reverse engeneering.
 > 
 > L'utilisation du nil check pattern en est un très simple, car par cette application, nous pouvons comprendre une grande partie du code en itérant les refactoring.
+> 
+> Après avoir commencer à réduire le nombre de nil checks, je me suis rendu compte que j'ai fortement sous estimé la difficulté que cela représente, car il il n'y existe pas de méthode "magique", qui marchera pour chaque condition, et que dans certains cas, il faut refactor le code pour en changer la structure, et ensuite réussir à supprimer les nil checks.
+> 
+> De plus, j'ai pris le temps de corriger des conditions dans les mouvement du roi, il peut maintenant manger, mais il se met en danger en mangeant, j'ai voulu regler le problème en verifiant s'il se met en danger, mais cela créer une boucle car:  
+> Le roi blanc demande à tout les ennemies les squares attaquantes  
+> Le roi noir demande alors à tout les ennemies les squares attaquantes  
+> Le roi blanc ....  
+> Comme cela peut prendre du temps à regler, et que ce n'est pas l'objectif actuel, j'ai décider de conserver le comportement où le roi peut se mettre en danger.
 
 ## Xavier Moyon 
 
@@ -52,7 +67,8 @@
 >Le design pattern visiteur se base sur le double dispatch, le visiteur demande au domaine quel méthode il doit utiliser et c'est le domaine qui lui répond. Par exemple pour les calculs, le visiteur doit avoir une méthode `visitElementName` par éléments du domaine (Number,Plus,Time,Divide,... ) qui s'occupera d'effectuer les calculs. Et côté domaine les méthodes canVisit indiquerons quelle méthode du visiteur appeller (visit sur Divide appellera visitDivide sur le visiteur).
 >
 > Le visiteur ne doit cependant pas être utilisé si le domaine n'est pas très stable
-
+> 
+> 
 ## Gautier Louvier
 
 ### Module 6 :
