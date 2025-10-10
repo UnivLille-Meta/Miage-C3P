@@ -1,0 +1,45 @@
+In Pharo, conditionals (if, else, while) are messages sent to boolean or block objects true or false. 
+In most programming languages conditionals use keywords like if, else, elif.
+Pharo makes conditionals simple because everything is just a message sent. For me, a drawback is that it’s new, so it may take me some time to understand it properly.
+I found this by checking these documents : https://rmod-pharo-mooc.lille.inria.fr/OOPMooc/01-Welcome/W1S07-BasicBooleansAndCondition.pdf
+https://rmod-pharo-mooc.lille.inria.fr/MOOC/PharoMOOC/Week1/C019-W1S05-PharoSyntaxInANutshell.pdf
+
+Exemple:
+
+| peterIsSick action |
+
+peterIsSick := true.  
+
+action := peterIsSick
+    ifTrue: [ 'Give Aspirine' ]
+    ifFalse: [ 'Ask To Take A Bath' ].
+
+Transcript show: action; cr.
+
+
+Coding Style
+
+In Pharo, writing tests follows a set of conventions that make the codebase easier to understand and maintain.
+
+Package names
+It is best practice to keep test code separate from production code. Tests should be placed in their own package, named after the original package with the suffix -Tests.
+
+Class names
+All test classes in Pharo are subclasses of TestCase. Their names should end with the suffix Test (not Tests, since each class represents a single test case).
+ For unit tests, the convention is MyClassTest.
+
+Method names
+Test methods must start with the prefix test. This is how the testing framework identifies them as tests.
+ When writing a unit test for a specific method, the test name should combine the prefix test with the name of the method under test.
+https://github.com/pharo-open-documentation/pharo-wiki/blob/master/General/CodingConventions.md
+
+Are there tools that show you violations too ? 
+Playground⁠ : helps you spot mistakes immediately because you can run code snippets line by line. https://github.com/pharo-open-documentation/pharo-wiki/blob/master/General/Playground.md
+
+
+Inspector : helps you see whether your code is behaving as expected or if something is wrong. https://github.com/pharo-open-documentation/pharo-wiki/blob/master/General/Inspector.md
+
+⁠Quality Assistant : It analyzes your methods and warns you about style or design rule violations. (The idea behind Quality Assistant is to have a bot that assists you with the quality of your code.) https://github.com/Uko/QualityAssistant?tab=readme-ov-file#in-inspector
+
+
+Rules :  is a small model of rules that a model should not violate. It is able to compute the technical debt for a set of violations. https://github.com/jecisc/Rules
