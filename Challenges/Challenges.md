@@ -20,6 +20,51 @@ Here are some suggestions
 
 ## Microdown Challenges
 
+You should work on one Warm up exercises
+
+### Warm up
+  - https://github.com/pillar-markup/Microdown/issues/963
+  - https://github.com/pillar-markup/Microdown/issues/966  
+
+### Challenge: Support for hiding corrections
+
+Imagine the file Chapter1/File1.md 
+
+```
+		```exercice&anchor=exfoobar
+               Foo >> bar
+				some code
+				more code
+				even more code
+                  ```
+```
+
+We want that the document is transformed into 
+
+```
+## Chapt
+@Chap1
+
+		```exercice
+               Foo>> bar
+			… Your code …
+              ```
+```
+
+and that another file `Chapter1/File1Solutions.md` is generated with the 	
+
+```
+  	 	Here is the solution of the code *@exfoobar@* in Chapter *@Chap1@*
+  		```
+        Foo>> bar
+			some code
+			more code
+			even more code
+        ```
+
+```
+
+- TocBuilder.
 
 
 ## Foliage Challenges
@@ -43,14 +88,12 @@ The project https://github.com/Ducasse/2023-SameGame/ defines a same game.
 - Paired Target/Box. Introduce pairs of target/box where each box can only go on a target. A version can mix paired and unpaired boxes.
 
 
-### Miner Challenges
-
-
-
 ### SameGame Challenges
 
+https://sokoban.dk/sokoban-variants/
+
 - MultiColor. Introduce a kind of tile that matches all the colors.
-- Cycling colors. The tile will change its color in a circle (red -> blue -> yellow -> red) after each action
+- Cycling colors. The tile will change its color in a circle (red -> blue -> yellow -> red) after each action.
 - Kill the line. When clicked, it should eliminate the line.
 - Kill the column. When clicked, it should eliminate the column. 
 
