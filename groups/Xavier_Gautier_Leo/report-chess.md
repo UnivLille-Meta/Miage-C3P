@@ -24,7 +24,9 @@ https://github.com/LeoDefossez/Chess/tree/feat/remove-nil-check
 > Les méthodes importantes que j'ai ajoutées sur MyPiece et MyNilPiece sont les méthodes isAllyOf:, canBeCapturedBy: et blocksMovementFor:, qui ont permis d'appeler les comparaisons entre couleur les couleurs des pièces en utilisant un simple dispatch.  
 > Les principaux problèmes que j'ai pu rencontrer était surtout sur la partie "graphique", j'ai changé l'initialisation des squares, ce qui par ma modification n'affichais plus de différence entre les squares blanc et noir, contenant un MyNilPiece, pour finir un simple changement d'ordre d'initialisation des variables à corriger le problème.  
 > De plus à chaque itération, je corrigeais des interactions, mais en cassai d'autre, j'ai malgré tout push ces changements itératifs, pour pouvoir montrer le procéssus de modification que j'ai finalement suivi.
-> 
+
+> Une remarque sur ma façon d'agir à posteriori a été que j'aurai du ajouter l'API isNil et notNil sur MyNilPiece, ce qui aurai réduit le nombre de tests échouant.  
+> Et j'ai corrigé certaines erreurs sans ajouter directement un test de non regression, ce qui m'a mené à les recréer par la suite.
 
 ## kata fix pawn move
 ### Organisation
