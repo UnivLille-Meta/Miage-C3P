@@ -11,14 +11,19 @@ https://github.com/LeoDefossez/Chess/tree/feat/remove-nil-check
 ### Ce qu'on a fait
 > NB : tous les refactor ne sont pas sur les nils checks, certains permettait simplement de comprendre comment agissait le code, et à le nettoyer.
 
-> Par inattention, nous avons refactor les nil checks sur les squares et non les pièces, ce qui était en fait réellement demandé.  
-> Cependant, le nil checks sur les squares était nettement plus difficile à réaliser  
-> J'ai quand même continuer sur la suppression des nils checks sur les pièces par la suite.
+> Pour les squares, on a décidé d'ajouter un object MyNilChessSquare, qui sera rendu à la place des nils, ayant une API neutre/identité.  
+> En premier lieu, on a ajouté à celui-ci la même API et comportement que nil (ifNil:, isNil, notNil etc...) pour conserver le bon fonctionnement du jeu.  
+> Ce qui a été fait est donc une itération sur chacun des points/méthodes où sont utilisé des nil checks, pour refactor et utiliser du dispatch.  
+> Les méthodes clées que j'ai ajoutés dans l'API des squares sont les suivantes :
+> - collectSquares:while:forPieceColor:  
+> Initialement dans MyPiece, mais je l'ai remonté pour pouvoir profiter de la récursivité plutôt qu'une simple boucle. La récursivité me permet de faire un arrêt lorsque la méthode est appelée sur MyNilChessSquare.
+> - addTo:  
+> Le principe est simple, un square s'ajoute à une collection, mais un nil square ne s'ajoute pas.
 
-> On a décidé d'ajouter un object MyNilChessSquare, qui sera rendu à la place des nils, ayant une API neutre/identité.  
-> En premier lieu, on a ajouté à celui-ci la même API et comportement que nil (ifNil:, isNil, notNil etc...) pour conserver le bon fonctionnement du jeu.
-> Ce qui a été fait est donc une itération sur chacun des points/méthodes où sont utilisé des nil checks, pour refactor et utiliser du dispatch.
-
+> Pour les pièces, je n'ai pas pu utiliser l'API des nils checks, car la plupart des problèmes qui étaient créés était dû à la méthode hasPiece de square, de plus plusieurs problèmes ont pu arriver.  
+> Les méthodes importantes que j'ai ajoutées sur MyPiece et MyNilPiece sont les méthodes isAllyOf:, canBeCapturedBy: et blocksMovementFor:, qui ont permis d'appeler les comparaisons entre couleur les couleurs des pièces en utilisant un simple dispatch.  
+> Les principaux problèmes que j'ai pu rencontrer était surtout sur la partie "graphique", j'ai changé l'initialisation des squares, ce qui par ma modification n'affichais plus de différence entre les squares blanc et noir, contenant un MyNilPiece, pour finir un simple changement d'ordre d'initialisation des variables à corriger le problème.  
+> De plus à chaque itération, je corrigeais des interactions, mais en cassai d'autre, j'ai malgré tout push ces changements itératifs, pour pouvoir montrer le procéssus de modification que j'ai finalement suivi.
 > 
 
 ## kata fix pawn move
