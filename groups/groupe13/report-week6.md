@@ -1,4 +1,7 @@
 ## Gautam Demeulemeester
+Cette semaine j'ai commencé à coder sur mon kata "remove nil checks".
+- https://github.com/K-Boo/Chess/tree/remove-nil-check
+J'ai également commencé mes revisions en vue du ds intermediaire de la semaine prochaine.
 
 ## HEDDI Abdelkader
 
@@ -6,5 +9,4 @@ Cette semaine, j’ai poursuivi le kata “Fix pawn moves” en travaillant d’
 
 Vous pouvez retrouvez tout ça sur le lien suivant :
 
-- https://github.com/K-Boo/Chess
-  dans la branche **fix-pawn-moves**
+- https://github.com/K-Boo/Chess/tree/fix-pawn-moves
