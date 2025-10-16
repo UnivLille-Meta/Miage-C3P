@@ -1,6 +1,7 @@
 ## Gautam Demeulemeester
 Cette semaine j'ai commencé à coder sur mon kata "remove nil checks".
 - https://github.com/K-Boo/Chess/tree/remove-nil-check
+
 J'ai également commencé mes revisions en vue du ds intermediaire de la semaine prochaine.
 
 ## HEDDI Abdelkader
