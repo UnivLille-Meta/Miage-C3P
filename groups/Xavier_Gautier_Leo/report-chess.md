@@ -31,4 +31,16 @@ https://github.com/LeoDefossez/Chess/tree/feat/remove-nil-check
 
 ## kata fix pawn move
 ### Organisation
->Fait par Xavier et Gautier.
+>Fait par Xavier et Gautier à partir du 10 Octobre
+
+### Lien 
+[Lien vers la branche du kata](https://github.com/LeoDefossez/Chess/tree/FixPawnMoves)
+
+### Observations : 
+
+- Le mouvements des pions lors d'un tour automatique est géré par `nextMove` qui récupère les prochains emplacement possible avec la méthode `targetLegalSquares` qui est aussi appelé par .
+
+
+
+### Corrections : 
+
