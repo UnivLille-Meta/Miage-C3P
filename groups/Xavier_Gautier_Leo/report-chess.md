@@ -27,6 +27,7 @@ https://github.com/LeoDefossez/Chess/tree/feat/remove-nil-check
 
 > Une remarque sur ma façon d'agir à posteriori a été que j'aurai du ajouter l'API isNil et notNil sur MyNilPiece, ce qui aurai réduit le nombre de tests échouant.  
 > Et j'ai corrigé certaines erreurs sans ajouter directement un test de non regression, ce qui m'a mené à les recréer par la suite.
+> Bien, que j'ai pu oublier des tests d'intégration, j'ai tout de même cherché à ajouter des tests au cours du processus pour m'aider au refactor des méthodes clés.
 
 ## kata fix pawn move
 ### Organisation
