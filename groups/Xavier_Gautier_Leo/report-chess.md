@@ -36,11 +36,46 @@ https://github.com/LeoDefossez/Chess/tree/feat/remove-nil-check
 ### Lien 
 [Lien vers la branche du kata](https://github.com/LeoDefossez/Chess/tree/FixPawnMoves)
 
+### Problématique : 
+
+Les mouvements des pions ne fonctionne pas correctement. Les pions peuvent manger des ennemies devant eux et pas en diagonales. De plus, les pion s 
+
 ### Observations : 
 
-- Le mouvements des pions lors d'un tour automatique est géré par `nextMove` qui récupère les prochains emplacement possible avec la méthode `targetLegalSquares` qui est aussi appelé par .
+- Le mouvements des pions lors d'un tour automatique est géré par `play` de MyPlayer  qui récupère les prochains emplacement possible avec la méthode `targetLegalSquares` qui est aussi appelé par `moveTo:` de MyPiece afin de vérifier que la case vers laquelle le joueur va est accessible et autorisée.
 
+- La méthode `targetLegalSquares` vérifie d'abord la couleur du pion (ce qui ne respecte pas la règle "Don't ask TELL IT") puis en fonction de la couleur va récupérer la case suivante suivante (Case vers le haut en cas de pion blanc et vers le bas sinon). Ensuite, on tri le résultat obtenu pour ne récupérer que les cases existantes et sur lesquelles il n'y a aucunes pièces.
+Ainsi la méthode ne retourne que les cases accessibles pour le pion courant.
 
 
 ### Corrections : 
 
+- Pour commencer nous avons décidé d'utiliser du Hook'nd Template pour remplacer la vérification de la couleur du pion. 
+Au lieu de demander au pion sa couleur pour ensuite déterminer qu'elle est la case devant lui, on va plutôt lui demander de nous retourner directement cette information.
+ Pour cela nous avons décidé d'étendre la classe MyPawn avec deux nouvelles classes : 
+    - MyPawnBlack
+    - MyPawnWhite
+
+    Ces deux dernières contiennent une méthode `nextMoveAhead` qui retourne la case devant le pion. Cette méthode est ensuite utilisée par la méthode `targetSquaresLegal:` de `MyPawn`. 
+    ```smalltalk
+    "Ancienne version"
+    (self isWhite ifTrue: [ { square up } ] ifFalse: [ { square down } ]).
+    "Nouvelle solution"
+    self nextMoveAhead.
+    ```
+    Cela n'est à priori pas une grosse modification, mais nous permettra de limiter la duplication de code lors de l'évolution des règles de mouvements du pion.
+    
+
+- Après avoir appliquer un Hook and Template nous avons décidé d'ajouter un blocage sur le pion en cas de pion en face de lui. Ainsi, un pion ne pourra pas avancer si un autre pion est devant lui. Pour cela, nous avons modifié la méthode `targetLegalSquares` pour y ajouter une vérification sur la présence d'un pion. 
+    ```smalltalk
+    targetSquaresLegal: aBoolean
+        
+        | col nextSquare |
+        col := OrderedCollection new.
+        nextSquare := self nextMoveAhead.
+        nextSquare notNil ifTrue: [
+            nextSquare hasPiece ifFalse: [ col add: nextSquare ] ].
+        ^col
+    ```
+
+- Ensuite, nous avons commencer a intégrer les cibles en diagonales pour le square.
