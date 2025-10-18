@@ -1,5 +1,11 @@
 # Week 6 report
 
+
+# Sommaire
+- [Léo Defossez](#léo-defossez)
+- [Gautier Louvier](#Gautier-Louvier)
+- [Xavier Moyon](#Xavier-Moyon)
+
 ## Travail commun
 > Celui-ci est maintenant décrit dans [report-chess.md](./report-chess.md)
 
@@ -19,4 +25,15 @@
 > C'est pourquoi, j'ai voulu refaire un kata en étant plus rigoureux sur ma façon d'agir.
 > 
 > Comme il est inutile de dupliquer les informations, celles-ci sont disponible dans la catégorie "Kata Refactor Piece Rendering" de [report-chess.md](./report-chess.md)
+> 
+
+
+## Gautier Louvier
+> TODO
+>
+>
+
+## Xavier Moyon
+> TODO
+>
 > 

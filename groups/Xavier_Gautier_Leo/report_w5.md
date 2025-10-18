@@ -1,5 +1,11 @@
 # Week 5 report
 
+# Sommaire
+- [Léo Defossez](#léo-defossez)
+- [Gautier Louvier](#Gautier-Louvier)
+- [Xavier Moyon](#Xavier-Moyon)
+
+
 ## Travail commun
 > Nous avons commencé ensemble le kata "Remove nil check" sur le jeu d'échec
 > Dû à beaucoup d'erreur d'incompréhension de notre part, nous n'avons pas réussi à faire beaucoup de choses.
