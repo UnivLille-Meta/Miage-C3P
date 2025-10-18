@@ -11,7 +11,7 @@
 En cours refactor des méthodes dans le dossier MyPiece pour supprimer les nil en utilisant MyNilSquare
 
 # Olivia
-- Relecture Double Dispatch et entrainement avec Rock-Paper-Scissors
+- Relecture Double Dispatch et entrainement avec Rock-Paper-Scissors [Lien github](https://github.com/olivia-lang/rock-paper-scissors)
 - Lecture Visitor
 
 ## Chess
