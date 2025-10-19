@@ -1,4 +1,6 @@
-Week 1 –
+Week 1 report -- Einstein
+
+### What has been done ?
 
 1- Pharo Installation and Setup
 
@@ -24,3 +26,5 @@ Pharo Launcher creates images from templates, which are zip files that include t
 Templates are grouped by categories, and the default one is Official Distributions.
 
 I selected the current stable 64-bit Pharo image, which is the recommended version for most users. After creating it, I named the image and launched it to start working in the Pharo environment.
+
+### What’s next : Exploring Pharo's concept
