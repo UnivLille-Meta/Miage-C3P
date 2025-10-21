@@ -97,7 +97,7 @@ In this scenario, double dispatch is better because it keeps the design object-o
   We used the **double dispatch pattern** to handle piece–square interactions cleanly. We avoided table dispatch because it would centralize all combinations, break encapsulation, and make the code harder to extend.
 
 
-#Obed 
+# Obed 
 
 # Alexis 
 
