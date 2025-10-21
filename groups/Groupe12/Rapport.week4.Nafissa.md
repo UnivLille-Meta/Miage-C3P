@@ -27,14 +27,14 @@ Date today printOn: stream.
 stream contents.          "→ '20 October 2025'"
 ```
 ---
-##Global to Parameter – Éviter les variables globales
+### Global to Parameter – Éviter les variables globales
 Transcript est une variable globale utilisée pour afficher des messages.
 Exemple :
 ```smalltalk
 Transcript show: 'Starting process'; cr.
 ```
 ---
-##Problèmes rencontrés :
+### Problèmes rencontrés :
 
 Le code devient dépendant de Transcript.
 
@@ -58,7 +58,7 @@ myObject logStream: Transcript.
 Le code devient plus flexible, testable et indépendant.
 ---
 
-## De “monolithique” à “paramétrable”
+### De “monolithique” à “paramétrable”
 
 Éviter de coder des valeurs en dur (comme des couleurs ou chemins de fichiers).
 
@@ -83,7 +83,7 @@ Comprendre pourquoi l’usage des variables globales pose problème.
 
 Trouver des cas pratiques concrets pour appliquer la paramétrisatio
 ---
-##Références
+### Références
 
 Cours : Advanced Object-Oriented Design – S. Ducasse, L. Fabresse, G. Polito, P. Tesone
 
