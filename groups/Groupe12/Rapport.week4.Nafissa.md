@@ -75,7 +75,7 @@ setBackgroundColor: aColor
 
 Chaque instance peut avoir sa propre configuration.
 ---
-##Difficultés rencontrées
+## Difficultés rencontrées
 
 Distinguer clairement printString et printOn: au début.
 
