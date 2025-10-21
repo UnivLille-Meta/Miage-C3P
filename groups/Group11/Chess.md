@@ -1,4 +1,5 @@
-## Link to Chess repo : https://github.com/JA-DEL2/Chess-Group11-Obede-JeanAlexis-Adil
+## Link to Chess repo Licensed under MIT : https://github.com/JA-DEL2/Chess-Group11-Obede-JeanAlexis-Adil
+
 
 # Adil Kata refactoring rendering pieces 
 
@@ -35,6 +36,12 @@ MyBishop >> renderOnDarkSquare
  
  **Bad:** Less object-oriented; harder to extend with new classes without changing the table; can become unwieldy as cases grow. 
 
+
+ 
+
 In this scenario, double dispatch is better because it keeps the design object-oriented — each class is responsible for its own behavior, and adding new pieces or colors doesn’t require changing existing code. Table dispatch would centralize all cases but break encapsulation and make extensions harder. Double dispatch is cleaner and more maintainable here.
+
+# See on the Chess repo for Prepare your repository instructions
+
 
 
