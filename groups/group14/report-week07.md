@@ -6,5 +6,5 @@ Révisions pour examen :
 - Dispatch (M1-1, M1-2)
 - Inheritance and Lookup (M1-3, M1-4, M1-5, M1-6)
 - Tests (M2-1, M2-2, M2-3)
-- Template method (M3-3)
-- Double dispatch (M6-1, M6-2)
+- Template method (M3-2, M3-3)
+- Double dispatch (M6-1, M6-2, M6-3)
