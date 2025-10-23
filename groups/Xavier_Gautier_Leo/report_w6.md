@@ -29,9 +29,15 @@
 
 
 ## Gautier Louvier
-> TODO
->
->
+ ### Semaine cours (9-10 oct) 
+> Cette semaine, on a réalisé le kata du nil checks ensemble. 
+> J'ai plus particulièrement appuyer sur le fait qu'on ne devait pas prendre tout le code autour des choses qu'on pouvait améliorer, mais qui n'était pas nécessaire à la réalisation du KATA.
+> Et aussi nous avons fait un roulement chacun à notre tour de prendre le clavier et essayer en réfléchissant à "comment faire". J'ai eu un peu de mal à trouver quoi modifier, mais mes camarades ont trouvé plus rapidement des idées de design et des solutions. J'ai donc essayé de poser les bonnes questions pour comprendre et validées à trois nos théories.
+ ### Semaine sans cours (16-17 oct) 
+> Nous avons jugé que Léo avait vite de bonnes idées de design et beaucoup d'expérience avec Pharo donc nous nous sommes séparer sur 2 kata différents pour apprendre mieux et pratiquer plus. J'ai donc travaillé avec Xavier en itération le plus possible pour que nous puissions réaliser le kata FixPawnMove que l'on peut retrouver dans [report-chess.md](./report-chess.md)
+> Il est à présent fonctionnel, mais nous allons voir si nous pouvons améliorer du code et si tout nous semble bon, nous irons peut-être en réaliser un autre par la suite.
+> Par ailleurs nous n'avons pas encore totalement fini d'écrire la partie du report dans le report chess, mais nous le ferons bientôt après toutes les vérifications.
+
 
 ## Xavier Moyon
 > TODO
