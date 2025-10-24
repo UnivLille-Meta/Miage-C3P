@@ -8,3 +8,11 @@ Révisions pour examen :
 - Tests (M2-1, M2-2, M2-3)
 - Template method (M3-2, M3-3)
 - Double dispatch (M6-1, M6-2, M6-3)
+
+# Julien
+Révisions pour examen : 
+- Module 0: Little Warm up with Pharo : M0-1 à M0-12
+- Module 1: Understanding messages (M1-1 a M1-5)
+- Module 2: Tests : (M2-1 a M-2-3)
+- Module 3: Hooks : (M3-1 a M3-3)
+- Module 6: About double dispatch : (M6-1, M6-2,M6-3,M6-6,M6-7)
