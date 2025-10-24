@@ -40,6 +40,15 @@
 
 
 ## Xavier Moyon
-> TODO
->
-> 
+> ### Semaine cours (9-10 oct) 
+> La semaine dernière nous avons travaillé sur le Kata  `Fix Pawn Moves` dans ce contexte nous avons d'abord essayé d'identifier les méthodes avec lesquelles nous allions surement devoir intéragir. C'était assez intéressant de voir que nos première modification n'impactait finalement qu'une seule méthode. 
+> Un point sur lequel je suis cependant encore perplex et sur la gestion des faux mouvements. Pour détaillé un peu plus, nous nous sommes rendu compte que lorsqu'un mouvement n'est pas réalisé (car non légal) cela déclenchait quand même un appel à move:to: incrémentant donc notre compteur de mouvements et par la même occasion empêche un pion lors de son premier vrai mouvement d'avancer de deux cases. Après quelques échanges nous avons décidé que cela était hors du contexte du Kata mais j'ai cependant quelques doutes maintenant. 
+> ### Semaine sans cours (16-17 oct) 
+> Cette semaine nous avons surtout travaillé sur le Kata chess dans l'objectif de corriger le mouvement des pions en y intégrant les mouvements en diagonal.
+Pour cela nous avons décidé de faire une nouvelle méthode template pour récupérer les colonnes en diagonale en fonction de la couleur des pions. Ainsi la méthode vérifie la appelle une méthode 'nextMoveAhead' qui est défini dans ces classes enfant(Blackpawn, White Pawn) et retourne les deux cases à droite et gauche de la prochaine case devant eux. 
+
+> Pour voir l'application du double dispatch j'ai corrigé mon projet DieHandle, c'était assez intérressant de voir comment il était assez simple de rajouter des l'addition de dés et de dieHandle.
+
+> En parallèle, sur un projet en entreprise j'ai tenté d'appliquer un dispatch pour faciliter la gestion des erreurs. Actuellement chaque cas d'erreur est traitée de manière unique, ce qui entraîne de la duplication de code et dons moins de maintenabilite. Je souhaitais donc trouver une façons d'utiliser le "template method design" pour définir une logique commune pour toutes les erreurs (ajout d' un log et retoir d'un message d'erreur). Il me fallait donc que chaque erreur puisse me me retourner l'interface avec laquelle je voulais interagir (ErrorType avec des sous classes pour chaque grand type d'erreur (400,404,500,...))ainsi j'aurais voulu ajouter une méthode Dispacth dans Exception permettant de faire cela. (Exception > errorType 
+      SubClassResponsability
+) Malheureusement cela ne semble pas possible en Java. 
