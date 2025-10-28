@@ -113,15 +113,28 @@ In this scenario, double dispatch is better because it keeps the design object-o
 
 # Obede 
 
-# Chess - Kata "Add Pawn Promotion"
+## Chess - Kata "Add Pawn Promotion"
 
 ## Kata Objective
 
-Implement pawn promotion with:
+### Implement pawn promotion with:
 - **UI players**: Dialog to choose piece (Queen/Rook/Bishop/Knight)
 - **Bots**: Automatic promotion to Queen
 
 ---
+## Testing Pawn Promotion
+
+### 1. Manual testing with UI:
+
+- Move a pawn to the last rank (row 8 for white, row 1 for black)
+- A dialog window will appear asking you to choose a piece
+- Click on your preferred piece (Queen, Rook, Bishop, or Knight)
+
+
+### 2. Testing with Bot:
+
+- Click the "Play!" button
+- Bots automatically promote pawns to queens
 
 ## Reverse Engineering Process (Following Course Methodology)
 
