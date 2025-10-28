@@ -38,3 +38,42 @@ MyChessSquare >> renderQueen: aPiece
 Ainsi le double dispatch permet d'éviter d'avoir trop de conditionnels dans une méthode. Mais il est possible encore de réfactorer afin de supprimer tous les conditions, car il y en a encore, notamment dans les renderPiceOnColorSquare.
 
 En cours : refactoring avec table dispatch
+
+# Lan
+
+### Chess
+- ***Strategy Pattern***
+
+To handle two different behaviors, I implemented the Strategy Pattern:
+
+	- MyUIPromotion: Shows UI dialog for user selection
+	- MyBotPromotion: Automatically selects Queen
+
+This separates UI logic from game logic and allows runtime behavior switching.
+- ***Template Method Pattern***
+  
+In `MyPiece`, I defined `checkForPromotion` with a default empty implementation. `MyPawn` overrides this to add promotion logic. This avoids conditional type checking (`if self class = MyPawn`).
+
+- ***Implementation***
+  
+**Detection**
+
+	- hasReachedPromotionRank: Checks if pawn is at rank 8 (white) or rank 1 (black)
+	- shouldBePromoted: Business rule wrapper for promotion decision
+
+**Triggering**
+
+Modified `moveTo:` in `MyPiece` to call `checkForPromotion` after each move. Only `MyPawn` has actual promotion logic.
+
+**Promotion Process**
+
+`promotePawn:at:` in `MyChessGame:`
+
+1. Asks strategy for piece class
+2. Creates instance with correct color using `perform:` (dynamic dispatch)
+3. Replaces pawn with new piece
+4. Records promotion in move history
+
+**Recording**
+
+`recordPromotion:to:at:` formats promotion in standard chess notation (e.g., "15. e8=Q") and updates the moves display.
