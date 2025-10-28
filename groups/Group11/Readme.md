@@ -290,5 +290,6 @@ src/Myg-Chess-Tests/
 └── MyPawnTest.class.st
 ```
 
+# JeanAlexis
 
 
