@@ -1,22 +1,35 @@
 ## Link to TP-Chess Repository: https://github.com/JA-DEL2/Chess-Group11-Obede-JeanAlexis-Adil
 
-## Getting started
+## Installation Instructions
 
-### Getting the code
+### Prerequisites
+- Pharo 12 installed on your system
 
-This code has been tested in Pharo 12. You can get it by installing the following baseline code:
+### Installation Steps
 
-```smalltalk
-Metacello new
-	repository: 'github.com/JA-DEL2/Chess-Group11-Obede-JeanAlexis-Adil:main'; 
-	baseline: 'MygChess';
-	onConflictUseLoaded;
-	load.
+1. **Clone the repository**
+```bash
+git clone https://github.com/JA-DEL2/Chess-Group11-Obede-JeanAlexis-Adil
+cd Chess
 ```
 
-### Using it
+2. **Load the baseline in Pharo 12**
+```smalltalk
+Metacello new
+    repository: 'github://UnivLille-Meta/Chess:main';
+    baseline: 'MygChess';
+    onConflictUseLoaded;
+    load.
+```
 
-You can open the chess game using the following expression:
+3. **Wait for dependencies to load**
+   - Bloc (graphics framework)
+   - Toplo (UI components)
+   - Chess font assets
+
+## Usage Instructions
+
+### Running the Game
 
 ```smalltalk
 board := MyChessGame freshGame.
@@ -29,7 +42,9 @@ space show.
 ```
 
 
-# Adil Kata refactoring rendering pieces done
+# Adil
+
+# Chess - Kata "Refactoring rendering pieces done"
 
 ## Code and tests location
 
@@ -96,9 +111,9 @@ In this scenario, double dispatch is better because it keeps the design object-o
   We used the **double dispatch pattern** to handle piece–square interactions cleanly. We avoided table dispatch because it would centralize all combinations, break encapsulation, and make the code harder to extend.
 
 
-# Obed 
+# Obede 
 
-## Chess - Kata "Add Pawn Promotion"
+# Chess - Kata "Add Pawn Promotion"
 
 ### Testing Pawn Promotion
 
@@ -147,62 +162,87 @@ Implement pawn promotion when pawns reach the last rank of the board:
 - **For UI players**: Display a dialog to choose the promotion piece
 - **For bots**: Automatic promotion to Queen
 
+### Kata Guiding Questions
+1. What tools help you find the right place to put this new code?
+2. How can you find documentation and help to understand the graphical part that will implement, for example, a pop-up?
+3. The bot will not need a UI, how would you make it work without breaking the other existing code?
+
 ---
 
 ## Reverse Engineering Process
 
+Following the methodology from "Reverse Engineering Pharo's LRUCache", I applied a structured approach to understand and extend the codebase.
+
 ### 1. Problem Understanding (FOCUS)
 
-**Initial questions from the kata:**
-1. Where to place the new code?
-2. How to implement the graphical part?
-3. How to manage bots without breaking existing code?
+**FOCUS: What needs to be done?**
+- Detect when a pawn reaches the last rank
+- Provide two different behaviors: UI dialog vs automatic promotion
+- Integrate seamlessly into existing game flow
 
 **Initial code mapping:**
-- `MyChessGame` → game controller
-- `MyPawn` → pawn piece
-- `MyPlayer` → player representation
-- `MyPiece` → parent class for pieces
-- `MyChessSquare` → board square
+- `MyChessGame` → game controller, coordinates moves
+- `MyPawn` → pawn piece implementation
+- `MyPlayer` → represents a player (human or bot)
+- `MyPiece` → abstract parent class for all pieces
+- `MyChessSquare` → board square representation
 
 **BACKLOG (temporarily ignored):**
-- Other piece movements
-- FEN/PGN parsers
+- Other piece movement rules (castling, en passant)
+- FEN/PGN parsers implementation details
 - Bloc/Toplo framework internals
+- Rendering optimization
+- Move validation complexity
 
-### 2. Existing Flow Analysis
+### 2. High-Level View: Finding the Entry Point
 
-**Entry point discovery:**
-Examining `MyChessGame`, I found the `move:to:` method:
+**Tool used: Senders and References**
 
+I searched for where pieces move in the game:
+
+**Found in `MyChessGame >> move:to:`:**
 ```smalltalk
 MyChessGame >> move: piece to: square
     piece moveTo: square.
     self recordMovementOf: piece to: square.
 ```
 
-**Finding:** No promotion handling. This is where intervention is needed.
+**Key observation:** 
+- This is the central point where ALL moves are executed
+- No promotion handling exists
+- This is where I need to intervene
 
-**MyPawn analysis:**
-The `MyPawn` class had movement methods but nothing for promotion detection.
+**Reading `MyPawn` class:**
+- Has `targetSquaresLegal:` for movement
+- Has `moveTo:` inherited from `MyPiece`
+- **Missing:** Detection of when promotion should happen
+
+**Decision:** Add promotion detection in `MyPawn`, hook into `MyChessGame >> move:to:`
 
 ### 3. Progressive Implementation
 
 #### Step 1: Promotion Detection
-**Added to MyPawn:**
+
+**Implementation in MyPawn:**
 ```smalltalk
 MyPawn >> isPromotable
+    "A pawn is promotable when it reaches the opponent's back rank"
     ^(self isWhite and: [ self square file = $8 ])
         or: [ self color isBlack and: [ self square file = $1 ]].
 
 MyPawn >> shouldBePromoted
+    "Hook method to check if this piece needs promotion"
     ^ self isPromotable.
 ```
 
-**Logic:** White pawn on rank 8 or black pawn on rank 1 must be promoted.
+**Design decision:** 
+- `shouldBePromoted` is a polymorphic hook that returns `false` by default in `MyPiece`
+- Only `MyPawn` overrides it to return `true` when on last rank
+- This avoids type checking (`piece isKindOf: MyPawn`)
 
 #### Step 2: Game Flow Integration
-**Modified MyChessGame >> move:to::**
+
+**Modified `MyChessGame >> move:to:`:**
 ```smalltalk
 MyChessGame >> move: piece to: square
     piece moveTo: square.
@@ -213,32 +253,54 @@ MyChessGame >> move: piece to: square
     ]
 ```
 
-**Observation:** Need different promotion strategies for Bot vs UI.
+**Observation:** 
+- Need `currentPlayer promotion` to return something
+- Need different behaviors for Bot vs UI
+- This is a **double dispatch** opportunity!
 
-#### Step 3: Strategy Pattern Application
+#### Step 3: Double Dispatch with Polymorphism
+
+**Problem:** Bot and UI have completely different promotion behaviors.
+
+**Solution:** Double dispatch pattern 
+
 **Created hierarchy:**
 ```
-MyPromotion (abstract class)
-    ├── BotPromotion (automatic promotion)
-    └── UIPromotion (user dialog)
+MyPromotion (abstract class - defines interface)
+    ├── BotPromotion (automatic promotion to queen)
+    └── UIPromotion (displays dialog for user choice)
+```
+
+**Why double dispatch?**
+```smalltalk
+"First dispatch: Get the promotion strategy from player"
+currentPlayer promotion  
+    ↓
+"Second dispatch: Execute the appropriate promotion behavior"
+promotion promoteAsync: piece inGame: self
 ```
 
 **Added to MyPlayer:**
 ```smalltalk
 MyPlayer >> initialize
     super initialize. 
-    promotion := BotPromotion new.
+    promotion := BotPromotion new.  "Safe default"
 
 MyPlayer >> useUIPromotion
     self promotion: UIPromotion new.
 
 MyPlayer >> useBotPromotion
     self promotion: BotPromotion new.
+
+MyPlayer >> promotion
+    ^ promotion
 ```
 
-#### Step 4: Bot Promotion (Simple)
+#### Step 4: BotPromotion Implementation (Simple)
+
 ```smalltalk
 BotPromotion >> promoteAsync: aPawn inGame: aGame
+    "Automatic promotion: always promote to Queen"
     | newPiece square |
     square := aPawn square.
     newPiece := MyQueen new.
@@ -247,192 +309,265 @@ BotPromotion >> promoteAsync: aPawn inGame: aGame
     square contents: newPiece
 ```
 
-**Principle:** Directly replace pawn with queen.
+**Design principle:** 
+- Simple and deterministic behavior
+- No user interaction needed
+- Fast execution for automated play
 
-#### Step 5: UI Promotion (Complex)
-**Documentation research:**
-- Explored existing Bloc classes in the project
-- Analyzed `MyChessGame` and `MyChessSquare` to understand Bloc
-- Identified `ToButton` and `BlElement` as UI components
+#### Step 5: UIPromotion Implementation (Complex)
+
+**Challenge:** How to create a dialog in Bloc/Toplo?
+
+**Tools used for research:**
+- **References of `BlElement`:** Found how UI elements are created
+- **Senders of `BlSpace`:** Found how windows are shown
+- **Reading `MyChessGame`:** Found examples of `ToButton` usage
+- **Reading `MyChessSquare`:** Found layout patterns
 
 **Implementation structure:**
 ```smalltalk
 UIPromotion >> promoteAsync: aPawn inGame: aGame
+    "Show dialog for user to choose promotion piece"
     | space container |
     
-    "1. Main container"
+    "1. Create main container with vertical layout"
     container := BlElement new
         layout: (BlLinearLayout vertical cellSpacing: 15);
         background: Color white;
         padding: (BlInsets all: 25);
-        ...
+        geometry: (BlRoundedRectangleGeometry cornerRadius: 10);
+        constraintsDo: [ :c |
+            c horizontal fitContent.
+            c vertical fitContent ];
+        yourself.
     
-    "2. Create button for each piece"
+    "2. Add title"
+    container addChild: (BlTextElement new
+        text: ('Choose your piece' asRopedText 
+            fontSize: 17;
+            yourself);
+        yourself).
+    
+    "3. Create a button for each possible piece"
     { ('Q Queen' -> MyQueen).
       ('R Rook'  -> MyRook).
       ('B Bishop' -> MyBishop).
       ('N Knight' -> MyKnight)
     } do: [ :pair |
+        | button label |
+        
+        "Create label with icon + text"
+        label := BlElement new
+            layout: (BlLinearLayout horizontal cellSpacing: 10);
+            constraintsDo: [ :c | 
+                c horizontal fitContent.
+                c vertical fitContent ];
+            yourself.
+        
+        "Add chess piece icon"
+        label addChild: (BlTextElement new
+            text: (pair key first asString asRopedText
+                fontSize: 24;
+                fontName: MyOpenChessDownloadedFont new familyName;
+                yourself);
+            yourself).
+        
+        "Add piece name"
+        label addChild: (BlTextElement new
+            text: (pair key allButFirst asRopedText
+                fontSize: 16;
+                yourself);
+            yourself).
+        
+        "Create the button"
+        button := ToButton new.
+        button removeChildren.
+        button addChild: label.
+        button geometry: (BlRoundedRectangleGeometry cornerRadius: 8).
+        button padding: (BlInsets all: 15).
+        button constraintsDo: [ :c | c horizontal matchParent ].
+        
+        "APPLY promotion on click"
         button whenClickedDo: [ 
             | newPiece square |
             square := aPawn square.
-            newPiece := pair value new.
+            newPiece := pair value new.  "pair value contains the CLASS"
             newPiece color: aPawn color.
             newPiece square: square.
             square contents: newPiece.
             space close ].
+        
         container addChild: button ].
     
-    "3. Display window"
+    "4. Display the window"
     space := BlSpace new.
     space root addChild: container.
+    space title: 'Pawn Promotion'.
+    space extent: 250@250.
     space show
 ```
 
+**Key discoveries:**
+- `BlElement` is the base for all UI components
+- `BlLinearLayout` for vertical/horizontal arrangements
+- `ToButton` for buttons (from Toplo)
+- `BlSpace` creates a new window
+- Chess font already available via `MyOpenChessDownloadedFont`
+
 #### Step 6: Initial Configuration
-**In MyChessGame >> initializeFromFENGame::**
+
+**In `MyChessGame >> initializeFromFENGame:`:**
 ```smalltalk
 whitePlayer useUIPromotion. 
 blackPlayer useUIPromotion.
 ```
 
-### 4. Reverse Engineering Tools Used
+**Design decision:** Default to UI promotion for interactive play. Tests can override with `useBotPromotion` for automated testing.
 
-**Flow followed:**
+### 4. Reverse Engineering Methodology Applied
+
+**Flow followed (from course):**
 ```
-High-Level View → Find Entry Point → Progressive Implementation
+High-Level View → API Usage → Implementation Details
 ```
 
-**Tools:**
-- **Code reading**: `MyChessGame`, `MyPawn`
-- **Senders of move:to:**: to understand the flow
-- **References of BlElement**: to understand Bloc
-- **Manual testing**: to validate each step
+**Specific flow for this kata:**
+```
+1. Understand WHAT: Pawn promotion feature
+2. Find WHERE: MyChessGame >> move:to: entry point
+3. Implement: Detection → Bot → UI
+```
 
-**"Ignore to Focus" strategy:**
+**Tools used:**
+- **Senders:** Found where `move:to:` is called
+- **References:** Found usage patterns of `BlElement`, `MyPlayer`
+- **Implementors:** Saw how other pieces implement movement
+- **Code reading:** Analyzed existing rendering double dispatch
+- **Comments:** Found intent in `MyChessGame` class comment
 
-**IGNORED:**
-- Bloc/Toplo internal complexity
-- Font loading details
-- Advanced rendering
-- Other chess rules
-
-**FOCUSED:**
-- Promotion detection
-- Flow integration
-- Strategy Pattern
-- Minimal functional UI
-
----
 
 ## Design Decisions
 
-### 1. Why Strategy Pattern?
+### 1. Why Double Dispatch?
 
 **Problem:** Two completely different behaviors (Bot vs UI) for the same action (promotion).
 
-**Solution:** Strategy Pattern allows:
-- Clean separation of concerns
-- Easy addition of new promotion strategies
-- No conditional logic in game flow
-- Testability of each strategy independently
+**Solution:** Double dispatch with polymorphism
 
-### 2. Why Asynchronous Promotion?
+**How it works:**
+```smalltalk
+"Step 1: First dispatch - get strategy from player"
+currentPlayer promotion
+    ↓ returns BotPromotion or UIPromotion
+    
+"Step 2: Second dispatch - execute the strategy"
+promotion promoteAsync: piece inGame: self
+    ↓ calls either BotPromotion>>promoteAsync:inGame:
+              or UIPromotion>>promoteAsync:inGame:
+```
 
-The method `promoteAsync:inGame:` was chosen because:
-- UI promotion requires user interaction (non-blocking)
-- Maintains consistency between Bot and UI strategies
+**Why double dispatch specifically?**
+1. **Decouples game logic from promotion strategy**
+   - `MyChessGame` doesn't know about Bot vs UI
+   - Just calls `currentPlayer promotion promoteAsync:...`
+
+2. **Follows existing codebase pattern**
+   - Rendering already uses double dispatch: `square renderPiece: aPiece` → `aPiece renderOnLightSquare`
+   - Promotion uses the same pattern: `currentPlayer promotion` → `promotion promoteAsync:...`
+
+3. **Easy to extend**
+   - Add `NetworkPromotion` for multiplayer
+   - Add `AIPromotion` with evaluation logic
+   - No changes needed in `MyChessGame`
+
+4. **No type checking needed**
+   - No `if player isBot then ... else ...`
+   - Polymorphism handles the dispatch
+
+**Course principle applied:** Same double dispatch pattern as piece rendering.
+
+### 2. Why `shouldBePromoted` Hook Method?
+
+**Instead of:**
+```smalltalk
+(piece isKindOf: MyPawn) and: [ piece isPromotable ]
+```
+
+**We use:**
+```smalltalk
+piece shouldBePromoted
+```
+
+**Advantages:**
+- Polymorphic (all pieces respond to it)
+- Default returns `false` in `MyPiece`
+- Only `MyPawn` overrides to check rank
+- Avoids type checking with `isKindOf:`
+- Open for extension (other pieces could be promotable in variants)
+
+### 3. Why Asynchronous `promoteAsync:inGame:`?
+
+**Why "Async" in the name?**
+- UI promotion requires user interaction (not immediate)
+- Keeps interface consistent between Bot and UI
 - Future-proof for network play or AI thinking time
+- Even though it's not truly asynchronous in Pharo, the name signals the non-immediate nature
 
-### 3. Why Default to BotPromotion?
+### 4. Why Default to BotPromotion?
 
-In `MyPlayer >> initialize`, the default is `BotPromotion` because:
-- Safe fallback behavior
-- Prevents null pointer errors
-- Ensures automated testing works without UI
-
-### 4. Code Organization Priorities
-
-**High priority:**
-1. Promotion detection correctness (ranks 1 and 8)
-2. Strategy pattern implementation
-3. UI functionality
-
-**Lower priority (acceptable technical debt):**
-4. UI aesthetics and animations
-5. Promotion undo functionality
-6. Advanced promotion rules (e.g., underpromotion tracking)
-
-### 5. Testing Strategy
-
-**More tested:**
-- Promotion conditions (`isPromotable`)
-- Bot promotion logic
-- Game flow integration
-
-**Less tested:**
-- UI rendering (requires visual inspection)
-- Font loading
-- Bloc framework integration
-
-**Rationale:** Core logic is critical and easily testable. UI is validated manually.
-
----
-
-## Difficulties Encountered and Solutions
-
-### Difficulty 1: Constructor Error
-**Problem:** `MyChessGame new` throws error "Please use one of the other constructors"
-
-**Solution:** Use proper constructors:
+**In `MyPlayer >> initialize`:**
 ```smalltalk
-MyChessGame freshGame
-MyChessGame fromFENString: 'fen...'
+promotion := BotPromotion new.
 ```
-
-### Difficulty 2: Understanding Bloc Framework
-**Problem:** No prior knowledge of Bloc/Toplo UI framework
-
-**Solution:**
-- Analyzed existing UI code in `MyChessGame` and `MyChessSquare`
-- Identified patterns: `BlElement`, `ToButton`, `BlLinearLayout`
-- Built minimal working UI through experimentation
-- Ignored advanced features (animations, styling)
-
-### Difficulty 3: Piece Replacement
-**Problem:** How to properly replace pawn with new piece?
-
-**Solution:** Discovered the pattern:
-```smalltalk
-newPiece square: square.
-square contents: newPiece.
-```
-This maintains bidirectional association between piece and square.
-
----
 
 ## What I Learned
 
-### Technical Skills
-Finding the right insertion point in existing flow  
-Applying Strategy Pattern for behavior separation  
-Creating dialogs with Bloc/Toplo  
-Integrating code without breaking existing functionality  
-Using proper Pharo constructors and class methods
+### Technical Skills Acquired
 
-### Methodological Skills
-Reverse engineering methodology (High-Level → Entry Point → Implementation)  
-"Ignore to Focus" strategy for managing complexity  
-Progressive implementation (detection → bot → UI)  
-Testing at each step  
+**Finding the right insertion point** in an existing codebase
+- Used Senders/References tools effectively
+- Identified `MyChessGame >> move:to:` as the entry point
 
----
+**Implementing double dispatch** pattern
+- First time applying it myself (only saw it in rendering before)
+- Understood how it decouples sender from receiver behavior
 
+**Using polymorphism** to eliminate conditionals
+- Created class hierarchy with common interface
+- Each subclass implements behavior its own way
 
+**Delegation** for separation of concerns
+- `MyPlayer` delegates to `promotion` strategy
+- Reduces coupling between player and promotion logic
 
-# Alexis 
+**Working with Bloc/Toplo** UI framework
+- Created windows, buttons, layouts
+- Used text elements with custom fonts
+- Handled button click events
 
+**Understanding Pharo conventions**
+- Class-side constructors (`freshGame`, `fromFENString:`)
+- Instance-side initialization (`initialize`)
+- Hook methods (`shouldBePromoted`)
 
+### Methodological Skills Acquired
+
+**Reverse engineering methodology** (from course)
+- High-Level View → Find Entry Point → Progressive Implementation
+- Used tools systematically (Senders, References, Implementors)
+
+**"Ignore to Focus" strategy**
+- Identified what to ignore (Bloc internals, animations)
+- Focused on essential functionality (detection, bot, UI)
+- Kept technical debt list (BACKLOG)
+
+**Progressive implementation**
+- Step 1: Detection only
+- Step 2: Game integration
+- Step 3: Double dispatch structure
+- Step 4: Bot implementation
+- Step 5: UI implementation
+- Step 6: Configuration
 
 
 
