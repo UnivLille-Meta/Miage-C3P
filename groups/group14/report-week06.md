@@ -42,15 +42,14 @@ En cours : refactoring avec table dispatch
 # Lan
 
 ### Chess
-- ***Strategy Pattern***
+- ***Template Method Pattern***
 
-To handle two different behaviors, I implemented the Strategy Pattern:
+To handle two different behaviors, I implemented the Template Method Pattern:
 
 	- MyUIPromotion: Shows UI dialog for user selection
 	- MyBotPromotion: Automatically selects Queen
 
 This separates UI logic from game logic and allows runtime behavior switching.
-- ***Template Method Pattern***
   
 In `MyPiece`, I defined `checkForPromotion` with a default empty implementation. `MyPawn` overrides this to add promotion logic. This avoids conditional type checking (`if self class = MyPawn`).
 
