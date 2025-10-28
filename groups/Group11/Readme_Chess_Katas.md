@@ -187,11 +187,6 @@ currentPlayer promotion              "1st dispatch → get strategy"
 promotion promoteAsync: piece inGame: "2nd dispatch → execute behavior"
 ```
 
-**Same pattern as existing rendering:**
-```smalltalk
-square renderPiece: aPiece    "1st dispatch"
-aPiece renderOnLightSquare    "2nd dispatch"
-```
 
 #### Step 4-5: Implementation
 
