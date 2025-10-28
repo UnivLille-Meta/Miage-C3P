@@ -1,4 +1,4 @@
-## Link to TP-Chess Repository: https://github.com/JA-DEL2/Chess-Group11-Obede-JeanAlexis-Adil
+## Link to the project: https://github.com/JA-DEL2/Chess-Group11-Obede-JeanAlexis-Adil
 
 ## Installation Instructions
 
@@ -221,7 +221,6 @@ BotPromotion >> promoteAsync: aPawn inGame: aGame
 <p align="center">
   <img src="https://github.com/JA-DEL2/Chess-Group11-Obede-JeanAlexis-Adil/blob/main/add_pawn_promotion.png">
 </p>
----
 
 ## Key Design Decisions
 
