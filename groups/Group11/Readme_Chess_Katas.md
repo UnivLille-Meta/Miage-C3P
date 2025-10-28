@@ -219,7 +219,7 @@ BotPromotion >> promoteAsync: aPawn inGame: aGame
 - Created dialog with 4 buttons (Q/R/B/N)
 - Each button replaces pawn and closes window
 <p align="center">
-  <img src="https://github.com/JA-DEL2/Chess-Group11-Obede-JeanAlexis-Adil/blob/main/add_pawn_promotion.png" width="300" alt="Produit phare">
+  <img src="https://github.com/JA-DEL2/Chess-Group11-Obede-JeanAlexis-Adil/blob/main/add_pawn_promotion.png">
 </p>
 ---
 
