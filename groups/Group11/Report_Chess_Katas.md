@@ -1,6 +1,5 @@
-## Link to Chess repo Licensed under MIT : https://github.com/JA-DEL2/Chess-Group11-Obede-JeanAlexis-Adil
+## Link to TP-Chess Repository: https://github.com/JA-DEL2/Chess-Group11-Obede-JeanAlexis-Adil
 
-# Prepare your repository instructions
 ## Getting started
 
 ### Getting the code
