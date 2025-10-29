@@ -347,6 +347,16 @@ src/Myg-Chess-Tests/
 └── MyPawnTest.class.st       # Detection tests
 ```
 
-# JeanAlexis
+---
 
+# Jean-Alexis
 
+# Chess - Kata "Remove nil checks"
+
+## Code location
+
+* Code is under the `Myg-Chess-Core` package and use the classes MyChesssquare for `contents:`, `emptyContents` and `hasPiece`, MyPlayer class for `pieces`, MyChessBoard for `initializeSquares`, my new class MyEmptyPiece and MySelectedState and MyUnselectedState for `clickOn:`.
+
+## Difficulties encountered
+
+- The main difficulty was to link each feature to the corresponding code and figuring out how to adapt it to remove the nil checks.
