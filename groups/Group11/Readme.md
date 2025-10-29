@@ -248,15 +248,17 @@ Safe fallback in `MyPlayer >> initialize` for tests and error prevention.
 ## Testing
 
 ```smalltalk
-MyPromotionTest >> testBotPromotionCreatesQueen
-    game := MyChessGame freshGame.
-    board := game board.
-    board at: 'e8' put: (pawn := MyPawn white).
+MyPromotionTest >> testBotPromotionCreatesQueenWithCorrectColor
+    | board pawn square promotion |
+    board := MyChessBoard empty.
+    board at: 'd8' put: (pawn := MyPawn white).
+    square := board at: 'd8'.
     
     promotion := BotPromotion new.
-    promotion promoteAsync: pawn inGame: game.
+    promotion promoteAsync: pawn inGame: nil.
     
-    self assert: (board at: 'e8') contents class equals: MyQueen.
+    self assert: square contents class equals: MyQueen.
+    self assert: square contents color equals: Color white.
 ```
 
 **Coverage:** Automated tests for logic, manual tests for UI.
