@@ -122,6 +122,7 @@ In this scenario, double dispatch is better because it keeps the design object-o
 - **Bots**: Automatic promotion to Queen
 
 ---
+
 ## Testing Pawn Promotion
 
 ### 1. Manual testing with UI:
@@ -130,11 +131,12 @@ In this scenario, double dispatch is better because it keeps the design object-o
 - A dialog window will appear asking you to choose a piece
 - Click on your preferred piece (Queen, Rook, Bishop, or Knight)
 
-
 ### 2. Testing with Bot:
 
 - Click the "Play!" button
 - Bots automatically promote pawns to queens
+
+---
 
 ## Reverse Engineering Process (Following Course Methodology)
 
@@ -161,19 +163,23 @@ MyChessGame >> move: piece to: square
 
 **Decision:** Hook into this method after move execution.
 
-### 3. Progressive Implementation
+---
 
-#### Step 1: Detection
+## Progressive Implementation Steps
+
+### Step 1: Detection Logic
 ```smalltalk
-MyPawn >> isPromotable
-    ^(self isWhite and: [ self square file = $8 ])
-        or: [ self color isBlack and: [ self square file = $1 ]].
-
 MyPawn >> shouldBePromoted
     ^ self isPromotable.
+
+MyPawn >> isPromotable
+    ^ (self isWhite and: [ self square file = $8 ])
+        or: [ self isBlack and: [ self square file = $1 ]].
 ```
 
-#### Step 2: Integration
+**Hook Method Pattern:** All pieces respond to `shouldBePromoted` (default: `false`).
+
+### Step 2: Integration Point
 ```smalltalk
 MyChessGame >> move: piece to: square
     piece moveTo: square.
@@ -184,28 +190,20 @@ MyChessGame >> move: piece to: square
     ]
 ```
 
-#### Step 3: Double Dispatch (Course Concept!)
-
-**Hierarchy created:**
+### Step 3: Strategy Hierarchy Creation
 ```
-MyPromotion
-    ├── BotPromotion (auto Queen)
-    └── UIPromotion (dialog)
+MyPromotion (abstract)
+    ├── BotPromotion (concrete strategy #1)
+    └── UIPromotion (concrete strategy #2)
 ```
 
-**Double dispatch flow:**
+### Step 4: BotPromotion Implementation
+
 ```smalltalk
-currentPlayer promotion              "1st dispatch → get strategy"
-    ↓
-promotion promoteAsync: piece inGame: "2nd dispatch → execute behavior"
-```
+MyPromotion subclass: #BotPromotion
 
-
-#### Step 4-5: Implementation
-
-**BotPromotion (simple):**
-```smalltalk
 BotPromotion >> promoteAsync: aPawn inGame: aGame
+    "Strategy: Always promote to Queen (optimal choice)"
     | newPiece square |
     square := aPawn square.
     newPiece := MyQueen new.
@@ -214,37 +212,72 @@ BotPromotion >> promoteAsync: aPawn inGame: aGame
     square contents: newPiece
 ```
 
-**UIPromotion (complex):**
-- Used `BlElement`, `ToButton`, `BlSpace` (found via References tool)
-- Created dialog with 4 buttons (Q/R/B/K)
-- Each button replaces pawn and closes window
+### Step 5: UIPromotion Implementation
+Complex, asynchronous, requires Bloc framework exploration.
+
 <p align="center">
   <img src="https://github.com/JA-DEL2/Chess-Group11-Obede-JeanAlexis-Adil/blob/main/add_pawn_promotion.png">
 </p>
 
-## Key Design Decisions
-
-### 1. Double Dispatch Pattern
-
-**Why?** Same pattern as piece rendering already in codebase.
-
-**Benefits:**
-- No `if bot then... else...` conditionals
-- Easy to extend (add NetworkPromotion later)
-- Decouples game logic from promotion behavior
-
-### 2. Hook Method `shouldBePromoted`
-
-**Instead of:** `(piece isKindOf: MyPawn) and: [...]`
-
-**Use:** `piece shouldBePromoted` (polymorphic, all pieces respond)
-
-### 3. Default BotPromotion
-
-Safe fallback in `MyPlayer >> initialize` for tests and error prevention.
-
 ---
+## Design Pattern: Strategy Pattern Application
 
+### What is the Strategy Pattern?
+
+The **Strategy Pattern** defines a family of algorithms, encapsulates each one, and makes them interchangeable. The strategy lets the algorithm vary independently from clients that use it.
+
+**Key components:**
+- **Context**: The object that uses a strategy (`MyPlayer`)
+- **Strategy Interface**: Common protocol (`MyPromotion`)
+- **Concrete Strategies**: Different implementations (`BotPromotion`, `UIPromotion`)
+
+### Why Strategy Pattern for Promotion?
+
+**Problem:** Different players need different promotion behaviors:
+- Human players → need UI dialog to choose
+- Bot players → automatic Queen promotion
+
+**Without Strategy Pattern (Bad approach):**
+```smalltalk
+MyChessGame >> handlePromotion: aPawn
+    currentPlayer isBot
+        ifTrue: [ "create Queen automatically" ]
+        ifFalse: [ "show dialog, wait for choice..." ]
+```
+
+**Problems with this approach:**
+- Violates Open/Closed Principle (can't add new player types)
+- Game logic mixed with player-specific behavior
+- Hard to test each behavior independently
+- No polymorphism
+
+**With Strategy Pattern (Good approach):**
+```smalltalk
+MyChessGame >> move: piece to: square
+    piece moveTo: square.
+    self recordMovementOf: piece to: square.
+    
+    (piece shouldBePromoted) ifTrue: [
+        currentPlayer promotion promoteAsync: piece inGame: self
+    ]
+```
+
+### 4. **Polymorphism**
+No conditionals (`if/else`), just polymorphic message sends:
+```smalltalk
+currentPlayer promotion promoteAsync: piece inGame: self
+```
+
+The same message, different behaviors based on the strategy object.
+
+### 5. **Reusability**
+Strategies are reusable objects:
+```smalltalk
+sharedBotStrategy := BotPromotion new.
+bot1 promotion: sharedBotStrategy.
+bot2 promotion: sharedBotStrategy.
+```
+----
 ## Testing
 
 ```smalltalk
@@ -267,29 +300,51 @@ MyPromotionTest >> testBotPromotionCreatesQueenWithCorrectColor
 
 ## What I Learned
 
-**Technical:**
-- Applied double dispatch (first time implementing myself)
-- Used Senders/References tools to navigate codebase
-- Worked with Bloc/Toplo framework through exploration
+### Technical Skills
 
-**Methodological:**
-- High-Level View → Entry Point → Progressive Implementation
-- "Ignore to Focus" strategy (BACKLOG management)
-- Recognized and reused existing patterns (rendering → promotion)
+**Pattern Recognition:**
+- Identified where Strategy Pattern fits naturally
+- Understood when to use Strategy vs Double Dispatch
 
----
+**Implementation:**
+- Created abstract class with `subclassResponsibility`
+- Implemented two concrete strategies with different complexities
+- Used Bloc/Toplo framework through exploration (References tool)
+
+**Testing:**
+- Wrote unit tests for isolated strategies
+- Used manual testing for UI validation
+
+### Methodological Skills
+
+**Reverse Engineering:**
+1. High-Level View → identified key classes
+2. Entry Point → found `move:to:` using Senders
+3. Progressive Implementation → detection → integration → strategies
+
+
+**Course Concepts Applied:**
+- Strategy Pattern (main pattern)
+- Hook Method Pattern (`shouldBePromoted`)
+- Template Method (abstract `MyPromotion`)
+- Polymorphism over conditionals
+- "Ignore to Focus" (BACKLOG management)
+
 
 ## Code Location
 
 ```
 src/Myg-Chess-Core/
-├── MyPromotion.class.st      # Abstract
-├── BotPromotion.class.st     # Auto Queen
-└── UIPromotion.class.st      # Dialog
+├── MyPromotion.class.st      # Abstract strategy
+├── BotPromotion.class.st     # Concrete strategy #1
+├── UIPromotion.class.st      # Concrete strategy #2
+├── MyPlayer.class.st         # Context (holds strategy)
+├── MyPawn.class.st           # Detection logic
+└── MyChessGame.class.st      # Integration point
 
 src/Myg-Chess-Tests/
-├── MyPromotionTest.class.st
-└── MyPawnTest.class.st
+├── MyPromotionTest.class.st  # Strategy tests
+└── MyPawnTest.class.st       # Detection tests
 ```
 
 # JeanAlexis
