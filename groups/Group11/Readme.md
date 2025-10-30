@@ -190,14 +190,7 @@ MyChessGame >> move: piece to: square
     ]
 ```
 
-### Step 3: Strategy Hierarchy Creation
-```
-MyPromotion (abstract)
-    ├── BotPromotion (concrete strategy #1)
-    └── UIPromotion (concrete strategy #2)
-```
-
-### Step 4: BotPromotion Implementation
+### Step 3: BotPromotion Implementation
 
 ```smalltalk
 MyPromotion subclass: #BotPromotion
@@ -212,7 +205,7 @@ BotPromotion >> promoteAsync: aPawn inGame: aGame
     square contents: newPiece
 ```
 
-### Step 5: UIPromotion Implementation
+### Step 4: UIPromotion Implementation
 Complex, asynchronous, requires Bloc framework exploration.
 
 <p align="center">
@@ -231,36 +224,6 @@ The **Strategy Pattern** defines a family of algorithms, encapsulates each one, 
 - **Strategy Interface**: Common protocol (`MyPromotion`)
 - **Concrete Strategies**: Different implementations (`BotPromotion`, `UIPromotion`)
 
-### Why Strategy Pattern for Promotion?
-
-**Problem:** Different players need different promotion behaviors:
-- Human players → need UI dialog to choose
-- Bot players → automatic Queen promotion
-
-**Without Strategy Pattern (Bad approach):**
-```smalltalk
-MyChessGame >> handlePromotion: aPawn
-    currentPlayer isBot
-        ifTrue: [ "create Queen automatically" ]
-        ifFalse: [ "show dialog, wait for choice..." ]
-```
-
-**Problems with this approach:**
-- Violates Open/Closed Principle (can't add new player types)
-- Game logic mixed with player-specific behavior
-- Hard to test each behavior independently
-- No polymorphism
-
-**With Strategy Pattern (Good approach):**
-```smalltalk
-MyChessGame >> move: piece to: square
-    piece moveTo: square.
-    self recordMovementOf: piece to: square.
-    
-    (piece shouldBePromoted) ifTrue: [
-        currentPlayer promotion promoteAsync: piece inGame: self
-    ]
-```
 
 ### 4. **Polymorphism**
 No conditionals (`if/else`), just polymorphic message sends:
@@ -311,9 +274,6 @@ MyPromotionTest >> testBotPromotionCreatesQueenWithCorrectColor
 - Implemented two concrete strategies with different complexities
 - Used Bloc/Toplo framework through exploration (References tool)
 
-**Testing:**
-- Wrote unit tests for isolated strategies
-- Used manual testing for UI validation
 
 ### Methodological Skills
 
@@ -321,14 +281,6 @@ MyPromotionTest >> testBotPromotionCreatesQueenWithCorrectColor
 1. High-Level View → identified key classes
 2. Entry Point → found `move:to:` using Senders
 3. Progressive Implementation → detection → integration → strategies
-
-
-**Course Concepts Applied:**
-- Strategy Pattern (main pattern)
-- Hook Method Pattern (`shouldBePromoted`)
-- Template Method (abstract `MyPromotion`)
-- Polymorphism over conditionals
-- "Ignore to Focus" (BACKLOG management)
 
 
 ## Code Location
