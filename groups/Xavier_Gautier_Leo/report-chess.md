@@ -71,7 +71,7 @@ Les mouvements des pions ne fonctionne pas correctement. Les pions peuvent mange
 
 ### Corrections du comportement simple du pion:
 
-- Pour commencer nous avons décidé d'utiliser du Hook'nd Template pour remplacer la vérification de la couleur du pion. 
+- Pour commencer nous avons décidé d'utiliser le design pattern "template method" pour remplacer la vérification de la couleur du pion. 
   Au lieu de demander au pion sa couleur pour ensuite déterminer qu'elle est la case devant lui, on va plutôt lui demander de nous retourner directement cette information.
   Pour cela nous avons décidé d'étendre la classe MyPawn avec deux nouvelles classes : 
   
@@ -119,7 +119,16 @@ Pour commencer ils faut que notre pions puisse manger en diagonale :
   Pour cela nous avons fait une méthode spécifique pour la récupération des cases d'attaques en diagonal , nous avons aussi fait attention à ce que les cases ne soit pas vides. Car sinon nous aurions eu des possibilités de mouvement illégaux.
   
   ```smalltalk
-  getDiagonalTarget	|nextMove col|	nextMove := self nextMoveAhead.	col:= OrderedCollection new.	nextMove notNil ifTrue: [ 				col add: nextMove right.				col add: nextMove left.	].	^ col select: [ :s |		  s notNil and:[			  s hasPiece and:[ s contents color ~= self color ]]]
+  getDiagonalTarget
+	|nextMove col|
+	nextMove := self nextMoveAhead.
+	col:= OrderedCollection new.
+	nextMove notNil ifTrue: [ 
+				col add: nextMove right.
+				col add: nextMove left.	].
+	^ col select: [ :s |
+		  s notNil and:[
+			  s hasPiece and:[ s contents color ~= self color ]]]
   ```
 
 - Comment ne pas manger ses alliés ? :
@@ -127,7 +136,9 @@ Pour commencer ils faut que notre pions puisse manger en diagonale :
   Dans la méthode ci dessus on peut remarquer le filtre mis en place sur la collection qui ne prendra en compte que les contenus du square de couleur différente, ce qui empêche toutes actions avec les alliés. 
   
   ```smalltalk
-  col select: [ :s |		  s notNil and:[			  s hasPiece and:[ s contents color ~= self color ]]]
+  col select: [ :s |
+		  s notNil and:[
+			  s hasPiece and:[ s contents color ~= self color ]]]
   ```
 
 Réalisation du "En passant" :
@@ -146,7 +157,16 @@ Notre pion sait manger en diagonal mais on nous demande d'implémenter la célé
 Ensuite pendant le `moveTo` si le pion a bien fait 2 cases directement il sera donc éligible à la prise, par pragmatisme nous réutilisons une méthode nous retournants les cases devant le pion on compare cette case théorique à la case cible `aSquare` , puis on s'assure que c'est pendant son `firstMove` pour ne pas changer son statut si le mouvement réaliser est un coup illégal : 
 
 ```smalltalk
-moveTo: aSquare	|enemieSquareEnPassant changePos|	changePos := (aSquare == self square )not.	(self getEnPassantTarget select: [ :s| s == aSquare ] )ifNotEmpty: [ enemieSquareEnPassant:= aSquare ].	canBeEatEnPassant := (self nextMoveAheadFromASquare: self nextMoveAhead) == aSquare and: isFirstMove.	super moveTo: aSquare.	enemieSquareEnPassant ifNotNil: [ 		(self nextMoveBackWardFromASquare: enemieSquareEnPassant) contents: nil.		 ].	(self square == aSquare and:[changePos]) ifTrue: [  isFirstMove :=false]
+moveTo: aSquare
+	|enemieSquareEnPassant changePos|
+	changePos := (aSquare == self square )not.
+	(self getEnPassantTarget select: [ :s| s == aSquare ] )ifNotEmpty: [ enemieSquareEnPassant:= aSquare ].
+	canBeEatEnPassant := (self nextMoveAheadFromASquare: self nextMoveAhead) == aSquare and: isFirstMove.
+	super moveTo: aSquare.
+	enemieSquareEnPassant ifNotNil: [ 
+		(self nextMoveBackWardFromASquare: enemieSquareEnPassant) contents: nil.
+		 ].
+	(self square == aSquare and:[changePos]) ifTrue: [  isFirstMove :=false]
 ```
 
 - Donner la possibilité au pion adverse de réaliser le mouvement en passant :
@@ -174,12 +194,44 @@ moveTo: aSquare	|enemieSquareEnPassant changePos|	changePos := (aSquare == sel
 
 - Faire en sorte que le pion mange "vraiment" le pion adverse en effectuant le "en passant" : 
 
+Dans la méthode `moveTo` nous avons réutilisé la méthode `getEnPassantTarget`,  afin de vérifier que la case ciblé est une case devant une cible "enPassant" et nous stockons cette information.
+Une fois le mouvement effectué, si la case cible était bien unen case "en passant" alors on récupère la case derièrre la cible avec une nouvelle méthode `nextMoveBackWardFromASquare:` et on retire le pion qui est dessus.
+
+```smalltalk
+moveTo: aSquare
+	|enemieSquareEnPassant|
+	...
+  (self getEnPassantTarget select: [ :s| s == aSquare ] )ifNotEmpty: [ enemieSquareEnPassant:= aSquare ].
+	canBeEatEnPassant := (self nextMoveAheadFromASquare: self nextMoveAhead) == aSquare and: isFirstMove.
+	super moveTo: aSquare.
+	enemieSquareEnPassant ifNotNil: [ 
+		(self nextMoveBackWardFromASquare: enemieSquareEnPassant) contents: nil.
+		 ].
+    ...
+```
 
 
 #### Fusion de toutes les possibilités de mouvement d'un pion :
 
+Afin de récupérer l'ensemble des coups possible pour un pion, nous avons intégré, les deux méthodes `getDiagonalTarget` et `getEnPassantTarget` dans notre méthode `targetSquaresLegal:` ainsi, notre pion peut se déplacer sur les cases en diagonales si elles ont un enemies ou si elle sont "enPassant".
 
+```smalltalk
+targetSquaresLegal: aBoolean
 
+	| col nextSquare |
+	col := OrderedCollection new.
+	nextSquare := self nextMoveAhead.
+
+	nextSquare notNil ifTrue: [
+		nextSquare hasPiece ifFalse: [ col add: nextSquare ] ].
+	col addAll: self getDiagonalTarget;
+		addAll:self getEnPassantTarget.
+	self isFirstMove ifTrue: [
+			nextSquare hasPiece ifFalse: [
+				col add: (self nextMoveAheadFromASquare: nextSquare) ] ].
+	^ col
+```
+Ainsi, notre méthode `targetSquaresLegal` récupère la case devant lui si elle n'a pas de pion, puis la case encore (Mouvement en avant simple). Puis ajoute à ses coups possibles, les cases en diagonales sur lesquelles il y a des ennemies avec la méthode `getDiagonalTarget` (Mouvements en diagonales). Ensuite, la méthode ajoute les mouvement avec l'attaque "enPassant" via la méthode `getEnPassantTarget` (Fameux mouvement en passant). Et pour terminer  si c'est son premier coup et qu'il n'y avait pas de pion sur la case devant lui, la méthode ajoute la case à deux cases devant le pion courrant si il n'y a pas d'ennemie dessus (Mouvements double).
 
 
 ## Kata Refactor Piece Rendering
