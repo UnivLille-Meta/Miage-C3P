@@ -2,4 +2,4 @@
 
 You will have to be assigned a project from the Bloc or Microdown projects.
 
-See the list
+The list is available at https://github.com/UnivLille-Meta/Miage-C3P/tree/2025/Challenges
