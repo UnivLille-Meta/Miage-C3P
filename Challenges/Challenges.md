@@ -182,8 +182,7 @@ You can find resources on Bloc at:
 - https://www.github.com/SquareBracketAssociates/booklet-graphics
 - https://books.pharo.org/booklet-ASimpleMemoryGameInBloc/2024-06-05-ASimpleBlocTutorial.pdf
 
-The project https://github.com/Ducasse/Myg defines several games: Sokoban, Miner, Takuzu.
-The project https://github.com/Ducasse/2023-SameGame/ defines a same game. 
+The project https://github.com/Ducasse/Myg defines several games: Sokoban, Miner, Takuzu, Memory and SameGame. 
 
 ### Myg: Sokoban Challenges
 
