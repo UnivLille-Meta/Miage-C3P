@@ -13,4 +13,6 @@ Cette semaine a également marqué le début des révisions pour la première é
 
 # Delisle Baptiste
 
-Cette semaine, nous avons continué d'analyser le projet Chess afin de savoir par ou commencer afin d'éliminer les nilcheck
+Cette semaine, nous avons continué d'analyser le projet Chess afin de savoir par ou commencer afin d'éliminer les nilcheck. 
+
+De plus j'ai commencé à réviser pour l'évaluation de mi-semestre
