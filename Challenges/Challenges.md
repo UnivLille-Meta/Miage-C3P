@@ -11,12 +11,14 @@ For each challenge you will have to
 - present the existing design and situation
 - propose a solution to the challenge
 
-## Existing design
-
-Here are some suggestions
+### Understanding fast existing design
+For each of the projects you will have to understand the state of the system. 
+Here are some suggestions:
 - what are the packages?
 - what are the classes / hierarchies?
 - what is the core? important classes?
+- Tests?
+- Examples? Class comments?
 
 ## Microdown Challenges
 Microdown is a markup language. It integrates with the pillar compilation chain.
@@ -45,7 +47,12 @@ https://github.com/pillar-markup/microdown
 Pay attention to follow the loading instructions to **develop** Microdown as defined on the readme on the project. You should execute them else you may have problems since a different version of Microdown 
 preloaded in Pharo may conflict with the version you will load. 
 
-#### Generating a plain text TOC
+#### Warm up
+  - https://github.com/pillar-markup/Microdown/issues/963
+  - https://github.com/pillar-markup/Microdown/issues/966  
+
+
+### Microdown: Generating a plain text TOC
 
 Define a simple Visitor that will generate a text. For example
 
@@ -62,7 +69,7 @@ Architecture
   A builder
 '
 
-#### Controlling the level
+### TOC:  Controlling the level
 
 Now we can also want to only show sections whose nested in higher than a certain level.
 
@@ -78,7 +85,7 @@ Microdown
 Architecture
 '
 
-#### Showing numbers
+### TOC: Showing numbers
 
 Now we may want to get the TOC numbered
 
@@ -95,7 +102,7 @@ vis contents
 2 Architecture
 '
 ```
-#### Producing Microdown
+### TOC: Producing Microdown for the TOC
 
 Now we would like to be able to produce Microdown text that represents the TOC.
 This solution should use the textual builder.
@@ -113,7 +120,7 @@ vis contents
 '
 ```
 
-#### Supporting Link
+#### TOC: Supporting Links in TOC
 
 Now we would like to be able to create a link (for example in HTML) from the TOC to the file.
 In such a case we need to have an object representing a TocEntry.
@@ -121,23 +128,20 @@ This entity will be able to hold a link to file or an URL
 
 You should work on one Warm up exercises
 
-### Warm up
-  - https://github.com/pillar-markup/Microdown/issues/963
-  - https://github.com/pillar-markup/Microdown/issues/966  
 
-### Challenge: Support for hiding corrections
+###  Challenge: Microdown support for hiding corrections
 
 Imagine the file Chapter1/File1.md 
 
 ```
-		```exercice&anchor=exfoobar
+		```exercise&anchor=exfoobar
                Foo >> bar
 				some code
 				more code
 				even more code
                   ```
 ```
-
+Note the exercise tag for the code block.
 We want that the document is transformed into 
 
 ```
@@ -145,7 +149,7 @@ We want that the document is transformed into
 @Chap1
 
 		```exercice
-               Foo>> bar
+               Foo >> bar
 			… Your code …
               ```
 ```
@@ -155,7 +159,7 @@ and that another file `Chapter1/File1Solutions.md` is generated with the
 ```
   	 	Here is the solution of the code *@exfoobar@* in Chapter *@Chap1@*
   		```
-        Foo>> bar
+        Foo >> bar
 			some code
 			more code
 			even more code
@@ -163,14 +167,12 @@ and that another file `Chapter1/File1Solutions.md` is generated with the
 
 ```
 
-- TocBuilder.
-
-
 
 ### Other Microdown Challenges
 
 You can find some other challenges such as the Book Sanitizer  in 
 http://github.com/pillar-markup/BookTester
+
 
 ## Myg Challenges
 
@@ -183,7 +185,7 @@ You can find resources on Bloc at:
 The project https://github.com/Ducasse/Myg defines several games: Sokoban, Miner, Takuzu.
 The project https://github.com/Ducasse/2023-SameGame/ defines a same game. 
 
-### Sokoban Challenges
+### Myg: Sokoban Challenges
 
 https://sokoban.dk/sokoban-variants/
 
@@ -191,14 +193,28 @@ https://sokoban.dk/sokoban-variants/
 - Counting moves and push. Introduce the display of moves.
 - Numbered Target. Introduce number on the target and make sure that the box should be moved in order on the target.
 - Paired Target/Box. Introduce pairs of target/box where each box can only go on a target. A version can mix paired and unpaired boxes.
+- You can decide for another features. 
 
 
-### SameGame Challenges
+### Myg: SameGame Challenges
+
 There is an implementation of SameGame. 
 
-- MultiColor. Introduce a kind of tile that matches all the colors.
+- Count the number of selection / display the number of killed tiles. 
+- MultiColor. Introduce a kind of tile that matches all the colors around itself.
 - Cycling colors. The tile will change its color in a circle (red -> blue -> yellow -> red) after each action.
-- Kill the line. When clicked, it should eliminate the line.
-- Kill the column. When clicked, it should eliminate the column. 
+- Kill the line. Introduce a kind of tile that when clicked, it should eliminate the line.
+- Kill the column. Introduce a kind of tile that when clicked, it should eliminate the column.
+
+### Myg: Miner Challenges
+
+There is an implementation of Miner. 
+
+- Count the number of selection. 
+- Introduce the possibility to change the size of the land mine.
+- Introduce different algorithm for placing mines.
+- Introduce the possibility to replay exactly the same bomb setup.
+- Introduce the possibility to have a radar (with a radar we can see for sure if the tile does not have a bomb). If it has a bomb we just see it and do not die.
+- 
 
 
