@@ -80,9 +80,8 @@
 > MyDog new food. `'I eat everything my owner gives'`
   
 ## Gautier Louvier
-> TODO
->
-> 
+> Aucune activité à rapporter pour cette semaine en raison d'une absence pour motif médical couvrant l'intégralité de la période.
+> Les justificatifs nécessaires ont été transmis au secrétariat pédagogique.
 
 ## Xavier Moyon
 > Lors d'un Refactoring, pour lorsque qu'un  bout de code est dupliqué, on va pour faire nos modifications sans casser les tests, extraire sans une sous méthode la partie dupliquée afin de la changer partout.
