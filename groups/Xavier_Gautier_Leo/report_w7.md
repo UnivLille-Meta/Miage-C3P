@@ -85,6 +85,9 @@
 > 
 
 ## Xavier Moyon
-> TODO
-> 
-> 
+> Lors d'un Refactoring, pour lorsque qu'un  bout de code est dupliqué, on va pour faire nos modifications sans casser les tests, extraire sans une sous méthode la partie dupliquée afin de la changer partout.
+Ensuite lorsque l'on doit traiter le cas d'une suite de conditions ou d'un switch il ne faut pas tout retirer, mais retirer les conditions les unes après les autres.
+> Le design pattern composite permet de représenter des architecture / arborescence, avec on peut faire effectuer une même action à toutes l'arborescence sans aucunes verification de types.
+> Le state design pattern consiste à créer des objet pour chaque état d'un élément, chaque statut, contient la/les méthodes accessibles dans cet état, ainsi pas besoin de faire de vérifications sur l'état.
+> Le command pattern consiste au lieu de faire un switch case sur un champ pour déterminer quelle commande doit être exécutée, consiste a créer un objet pour chaque commandes avec une méthode d'exécution ayant un nom commun. Ainsi dans notre méthode on peut récupérer l'objet de commande via un équivalent de "fabrique" et puis appeller la méthode d'exécution commune à toutes les commandes. Un des problèmes se ce design est qu'il peut entraîner la création de beaucoup de classes
+ 
