@@ -11,6 +11,14 @@
 > Seulement, j'ai déjà réalisé cet homework la semaine dernière (par erreur de ma part).  
 > Ce que j'ai donc fait cette semaine est de regarder toutes les vidéos du module 5 et 9 de l'advanced mooc.
 > 
+> ### Travail sur SameGame
+> Cette semaine, nous avons commencé à réaliser des challenges sur SameGame.  
+> https://github.com/LeoDefossez/Myg/tree/Add-score-to-UI.  
+> J'ai ajouté durant la partie un compteur avec le score total, et le score du dernier coup.  
+> Actuellement un compteur est prévu pour le nombre de blocs cassé, mais il est difficile à ajouter sans casser l'architecture.  
+> C'est pourquoi pour ne pas produire de conflit avec le travail de Xavier et Gautier, j'ai laissé cette modification à plus tard et j'ai ouvert une issue à ce sujet.
+> https://github.com/LeoDefossez/Myg/issues/4
+> 
 > ### Module 5
 > #### Composite
 > Le composite est un design pattern simple, qui représente des structures récursives d'objets.  
