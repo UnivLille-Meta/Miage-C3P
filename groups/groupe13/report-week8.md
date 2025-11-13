@@ -16,3 +16,9 @@ Le projet chess est désormais fonctionnel et conforme au cahier des charges ini
 
 Lien du projet :
 🔗 https://github.com/K-Boo/Chess/tree/fix-pawn-moves
+
+## Khalil BOUCHAMA
+
+Cette semaine, j'ai réaliser mon Kata "Change Render Pieces". J'ai changé la mnière dont les pièces sont affiché en refactorisant le code. J'ai appliqué un double dispatch afin de limiter le nombre de
+condition dans la méthode Render[Piece] dans la classe MyChessSquare. La méthode reposer sur une double condition if. Avec le double dispatch, on simplifie le code et on ne garde plus qu'une seul condition
+grâce à l'envoi de messages. 
