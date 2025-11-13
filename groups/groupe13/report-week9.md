@@ -18,3 +18,16 @@ J'ai identifié pour mon groupe plusieurs fonctionnalités intéressantes à imp
 J'ai également commencé à réfléchir à l'architecture du code et à la manière dont ces fonctionnalités pourraient s'intégrer dans la structure existante. Cette phase de recherche va nous permettre de mieux planifier l'implémentation et d'identifier les défis techniques potentiels avant de commencer le développement.
 
 Je n'ai pas de questions pour cette semaine.
+
+## Khalil BOUCHAMA
+
+Cette semaine, j'ai essayé de comprendre la structure du jeu **SOKOBAN**. J'ai essayé de reverse le code pour mieux le comprendre pour, par la suite, implémenter les fonctionnalités demandées. 
+La classe **Sokoban** semble être le point d'entrée et gère l'interface (menus, navigation). 
+**MygSkGameManager** orchestre la logique : gestion des niveaux stockés en chaînes ASCII, comptage des mouvements, lancement des parties. 
+**MygSkBoard** représente le plateau comme une grille 2D.
+
+La code est structuré de la manière suivante : **MygSkObject** (base) → **MygSkMovable** → **MygSkPlayer** et **MygSkBox**. Les éléments statiques incluent **MygSkWall**, **MygSkGround** et **MygSkTarget**. Chaque objet mobile possède un `background` représentant le sol sous-jacent, permettant la superposition visuelle.
+
+Le déplacement utilise un double dispatch via `moveIn:` et `bringIn:`. Le joueur demande à sa destination d'accepter le mouvement. Si c'est une boîte, elle tente de se déplacer dans la direction suivante. **MygSkBoard** met à jour les positions en gérant les swaps entre éléments mobiles et leurs backgrounds.
+
+L'affichage utilise Bloc (BlElement) avec **MygSkBoardElement** gérant deux couches (background/foreground). Les niveaux sont organisés en packs accessibles via un menu déroulant.
