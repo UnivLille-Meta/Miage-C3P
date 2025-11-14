@@ -58,11 +58,15 @@ This avoids putting all logic inside the domain classes.
 What I Understood:
 
 Composite
+
 I understood that the Composite pattern helps build tree-like structures, where a single item (like a Circle) and a group of items (like a Diagram) can be used with the same API. This means I don’t need to write checks like “is this a leaf or a group?” — everything responds to the same messages. It makes the code cleaner and easier to extend when we add new elements.
 
 State
+
 I learned that the State pattern is useful when an object changes its behavior depending on its internal state. Instead of using many if or case statements, we create separate classes for each state. Each state knows what it can or cannot do. This makes the behavior easier to understand and modify, especially when the number of states grows.
 
 Visitor
+
 I also understood that the Visitor pattern allows us to keep the data classes simple and move different operations into separate Visitor classes. When we need to evaluate, print, export, or transform something, we just create a new Visitor without touching the original classes. This is very helpful when we have many operations on the same structure. The mechanism of double dispatch ensures the correct method is chosen for each element type.
+
 
