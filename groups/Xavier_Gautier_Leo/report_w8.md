@@ -1,4 +1,4 @@
-# Week XXXX report
+# Week 8 report
 
 # Sommaire
 - [Léo Defossez](#léo-defossez)
