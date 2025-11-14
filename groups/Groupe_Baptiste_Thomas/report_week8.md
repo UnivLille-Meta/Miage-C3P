@@ -25,3 +25,4 @@ Pour le visiteur, j'ai compris que c'est un moyen de faire différentes opérati
 
 # DELISLE Baptiste
 
+Cette semaine, j'ai regardé les vidéos concernant les design pattern composite et visiteur afin de préparer le cours de ce vendredi
