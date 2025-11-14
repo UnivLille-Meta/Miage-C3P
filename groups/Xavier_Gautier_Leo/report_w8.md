@@ -79,6 +79,19 @@
 > 
 
 ## Xavier Moyon
-> TODO
 > 
+> ### SAME GAME 
+>  Cette semaine sur le SameGame j'ai travaillé sur l'ajout d'un nouvel item multicolor. Afin d'intégrer au mieux cet item j'ai notament rajouter un nouveau state et rajouter un double dispatch afin d'appeller la bonne méthode de propagation en fonction de l'état d'une case. 
+> 
+> ### Avoid Null Check 
+> Concernant les null check, on peut les éviter en fournissant des valeurs par défaut ou des éléments vide (par exemple une liste vide ou en entier de valeur 0 ou 1, a voir en fonction des cas). Cela permet d'alleger le code. Ensuite, pour les cas plus compliqué on peut créer un NullObject, c'est un objet ayant normalement une instance (Singleton) avec des méthodes "mockée".
+>
+> En fonction des situations le NullObject est à éviter. Par exemple si la classe contient beaucoup de méthodes ou que l'implémentation de la méthode du null object n'est pas évidente.
+>
+> Une autre alternative peut-être de lever des exceptions mais il faut donc que le client soit prêt à la recevoir.   
+> ### Composite
+> Le design pattern composite permet de representer des arborescences. Chaque élement à une API commune (`draw` par exemple). Il y a des éléments dit "feuilles" ces éléments représentent en général la fin d'une branche. 
+Tout cela permet d'appeller la méthode `draw` (de mon exemple) pour n'importe quelle élément de mon arborescence.
+>
+> ### Visitor
 > 
