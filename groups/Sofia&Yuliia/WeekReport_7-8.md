@@ -70,3 +70,47 @@ Visitor
 I also understood that the Visitor pattern allows us to keep the data classes simple and move different operations into separate Visitor classes. When we need to evaluate, print, export, or transform something, we just create a new Visitor without touching the original classes. This is very helpful when we have many operations on the same structure. The mechanism of double dispatch ensures the correct method is chosen for each element type.
 
 
+
+## Weekly Report Sofia Demchuk
+
+This week I reviewed what we learned in the previous lesson about the Law of Demeter. I refreshed the main idea: an object should only talk to its direct collaborators. This helps reduce coupling and prevents long “message chains.”
+
+For example, instead of writing something like:
+```smalltalk
+car engine carburetor openFuelValve.
+```
+which breaks the Law of Demeter, we should move behavior closer to the right place:
+```smalltalk
+car speedUp. "Car internally tells the engine what to do"
+```
+This keeps the logic encapsulated and avoids leaking deep references.
+
+I also prepared for the next lesson. I watched the videos on Composite and Visitor design patterns.
+
+**What I understood**
+- Composite allows us to treat single objects and groups of objects the same way.
+For example, both a single Circle and a Diagram with many elements can answer draw:
+```smalltalk
+aGraphic draw. "Works whether it's a Circle, Text, or a whole Diagram"
+```
+Inside a composite:
+```smalltalk
+draw
+   children do: [:each | each draw ].
+```
+- Visitor separates algorithms from the object structure. Instead of spreading logic inside all node classes, we create a visitor:
+```smalltalk
+aNode accept: aVisitor.
+```
+And each node implements:
+
+```smalltalk
+accept: aVisitor
+   aVisitor visitCircle: self.
+```
+This makes it easy to add new operations without changing the entire hierarchy.
+
+
+Finally, I successfully downloaded and set up the **Sokoban** project.
+I started working on the first tasks — counting moves and pushes, and displaying moves.
+
