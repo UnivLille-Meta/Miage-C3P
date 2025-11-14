@@ -1,6 +1,7 @@
 Weekly Report
 
 Yuliia LOS:
+
 This week I focused on understanding three design patterns: Composite, State, and Visitor.
 I studied the PDF files and watched the related MOOC videos.
 
@@ -64,3 +65,4 @@ I learned that the State pattern is useful when an object changes its behavior d
 
 Visitor
 I also understood that the Visitor pattern allows us to keep the data classes simple and move different operations into separate Visitor classes. When we need to evaluate, print, export, or transform something, we just create a new Visitor without touching the original classes. This is very helpful when we have many operations on the same structure. The mechanism of double dispatch ensures the correct method is chosen for each element type.
+
