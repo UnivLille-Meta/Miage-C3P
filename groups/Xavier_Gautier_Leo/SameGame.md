@@ -61,9 +61,13 @@ https://github.com/LeoDefossez/Myg/pull/1
 >
 > `SGScoreElement` est mis à jour à l’aide d’un announcer qui s’active lorsque le score change, de la même façon que l’interface des box est mise à jour lorsque leur état change.
 >
+> Voici la nouvelle fenêtre de jeu  
+> <img src="img/SameGame/UIScore.png" alt="img" width="50%">
+>
 > J’introduis également quelques refactorings pour nettoyer le code :
 > - `SGBoard >> hitBoxOnx: x y: y` dupliquait le code de `SGBoard >> hitBox: aBox`. J’ai donc modifié la méthode `hitBoxOnx:y:` pour qu’elle utilise `hitBox:`.
 > - `SameGame class >> gameWithSize:` size n’ouvre plus de fenêtre pour lancer le jeu, mais renvoie simplement une instance de `SGGame`, ce qui facilite le debugging.
+>
 
 #### Create other strategies of game initialisation
 **Auteur : Gautier Louvier**  
