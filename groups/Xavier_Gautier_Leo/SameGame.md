@@ -34,14 +34,20 @@ https://github.com/LeoDefossez/Myg
 - Add a type of box that give more points (Like a decorator ?)
 - Make a rarity for blocs, and the rarity modify the scores
 
-### Ce que l'on a fait
-> Durant tout le projet, on a décidé d'ajouter nos feature sur des branches, et de créer un pull request pas feature.  
-> C'est pourquoi Chacun des liens que nous fournissons est un lien vers une pull request, ce qui permet de comprendre facilement comment chacune des feature a été ajoutée.
+**Addition of design only**
+- [Richer parametrisation of same game](#Richer-parametrisation-of-same-game)
+- [Add a registry for states](#Add-a-registry-for-states)
 
+### Organisation
+> Durant tout le projet, on a décidé d'ajouter nos feature sur des branches, et de créer une pull request par feature.  
 
 #### Display the number of killed tiles
 **Auteur : Léo Defossez**
-//TODO
+> https://github.com/LeoDefossez/Myg/pull/11
+> Une explication détaillée est disponible sur la pull request.  
+> Celle-ci fait suite à l'ajout de [Score for game](#Score-for-game), dans lequel je ne pensais pas pouvoir modifier le nombre de box tués sur le dernier coup.  
+> Sur cette pull request, j'écris que je me suis rendu compte qu'il existait une interdépendence entre SGGame et SGBoard.  
+> J'ai alors profité de celle-ci pour afficher le nombre de box tués au dernier coup.  
 
 #### MultiColor bloc
 **Auteur : Léo Defossez**
@@ -62,7 +68,7 @@ https://github.com/LeoDefossez/Myg
 #### Refactoring des null states
 **Auteur : Léo Defossez**  
 > https://github.com/LeoDefossez/Myg/pull/3
-> https://github.com/Ducasse/Myg/pull/37
+> https://github.com/Ducasse/Myg/pull/37  
 > In SameGame, all states inherited from a null state.
 > It means that technically, every state is a null state.
 >
@@ -111,3 +117,16 @@ https://github.com/LeoDefossez/Myg/pull/1
 #### Making a serialisation/deserialisation for games
 **Auteur : Xavier Moyon**  
 // TODO
+
+#### Richer parametrisation of same game
+**Auteur : Léo Defossez**
+> https://github.com/LeoDefossez/Myg/pull/13  
+> Ici je refactor simplement la classe principale du jeu `SameGame`.  
+> Je déplace une grande partie de la logique du côté instance, pour offrir une meilleure paramétrisation, et ajouter plus facilement nos features.  
+
+#### Add a registry for states
+**Auteur : Léo Defossez**
+> https://github.com/LeoDefossez/Myg/pull/12  
+> Ici, je crée une classe `SGStateRegistry`, qui permet simplement de récupérer tous les différents states existant.  
+> J'utilise uniquement la méthode `subclasses` lors de l'initialisation de l'objet, ce qui réduit le nombre de querry sur le système.  
+> J'en ai aussi profité pour rendre les stratégies d'initialisation de SGBox, plus simple et modulaire à l'aide de cet objet.  
