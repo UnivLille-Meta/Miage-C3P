@@ -214,6 +214,19 @@ There is an implementation of Miner.
 - Introduce different algorithm for placing mines.
 - Introduce the possibility to replay exactly the same bomb setup.
 - Introduce the possibility to have a radar (with a radar we can see for sure if the tile does not have a bomb). If it has a bomb we just see it and do not die.
-- 
+
+### Myg: Memory Challenges
+
+There is an implementation of Memory. 
+
+- Count the number of matched pair and display it. 
+- Introduce two player modes with counting matched pairs.
+- We could have
+	- a variant where a player can continue to play if he found a matching pair.
+	- a variant here at the max on player can play one pair.
+- Introduce a play again time mode.
+- Introduce cards that match any other cards. Pay attention you should make sure that we can finish the game.
+- Introduce the fact that we can replay the same card setup.
+- Introduce the fact that we can display images.
 
 
