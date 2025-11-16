@@ -19,17 +19,18 @@ https://github.com/LeoDefossez/Myg
 - [Add a "bomb box" that destroy the 8 tiles around itself](#Add-a-bomb-box-that-destroy-the-8-tiles-around-itself)
 - Add a stop condition on the game (make an announcement)
 - Make skins to change appearances
-- Making a serialisation/deserialisation for games, and offer the possibility to replay new games
-- Saving a board and replaying it (Different strategies of game generation)
-- History of moves and time travel
+- Making a serialisation/deserialisation for games
+  - offer a bunch of default games to play 
+  - offer the possibility to replay last game
+  - History of moves and time travel
 - A leaderboard of scores
 - New game mode:
   - infinite blocs
     - limited number of moves
     - Limited time
-- highlight chain of blocs when cursor is on it (Like a mode)
-- Add a type of box that give more points
-- make grayed UI for some moves, so that the user has to remember the board
+  - make grayed UI for some moves, so that the user has to remember the board
+- highlight chain of blocs when cursor is on it
+- Add a type of box that give more points (Like a decorator ?)
 - Make a rarity for blocs, and the rarity modify the scores
 
 ### Ce que l'on a fait
