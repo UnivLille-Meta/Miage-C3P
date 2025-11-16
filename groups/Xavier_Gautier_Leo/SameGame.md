@@ -5,11 +5,11 @@ https://github.com/LeoDefossez/Myg
 
 ### What are the objectives ?
 **Originals challenges**
-- Display the number of killed tiles. 
-- MultiColor. Introduce a kind of tile that matches all the surrounding colors.
-- Cycling colors. The tile will change its color in a circle (red -> blue -> yellow -> red) after each action.
-- Kill the line. Introduce a kind of tile that when clicked, it should eliminate the line.
-- Kill the column. Introduce a kind of tile that when clicked, it should eliminate the column.
+- [Display the number of killed tiles](#Display-the-number-of-killed-tiles)
+- [MultiColor. Introduce a kind of tile that matches all the surrounding colors](#MultiColor-bloc) 
+- [Cycling colors. The tile will change its color in a circle (red -> blue -> yellow -> red) after each action](#Cycling-colors-bloc)
+- [Kill the line. Introduce a kind of tile that when clicked, it should eliminate the line](#Kill-the-line-bloc)
+- [Kill the column. Introduce a kind of tile that when clicked, it should eliminate the column](#Kill-the-column-bloc)
 
 **Our own challenges**
 - [Make different grid size](#ajout-dune-customization-de-la-taille-du-plateau)
@@ -17,17 +17,18 @@ https://github.com/LeoDefossez/Myg
 - [Create other strategies of game initialisation](#Create-other-strategies-of-game-initialisation)
 - [Create other strategies of points calculations](#Create-other-strategies-of-points-calculations)
 - [Add a "bomb box" that destroy the 8 tiles around itself](#Add-a-bomb-box-that-destroy-the-8-tiles-around-itself)
-- Add a stop condition on the game (make an announcement)
+- [Add a stop condition on the game](#Add-a-stop-condition-on-the-game)
+  if no combination done (Then game won't be playable)/Create an announcement (Below the score bar) that say when the game end
+  - Make a list of stop condition that can be activable or not
+    (Time limit, Move limit)
 - Make skins to change appearances
-- Making a serialisation/deserialisation for games
+- [Making a serialisation/deserialisation for games](#Making-a-serialisationdeserialisation-for-games)
   - offer a bunch of default games to play 
   - offer the possibility to replay last game
   - History of moves and time travel
 - A leaderboard of scores
 - New game mode:
   - infinite blocs
-    - limited number of moves
-    - Limited time
   - make grayed UI for some moves, so that the user has to remember the board
 - highlight chain of blocs when cursor is on it
 - Add a type of box that give more points (Like a decorator ?)
@@ -36,6 +37,27 @@ https://github.com/LeoDefossez/Myg
 ### Ce que l'on a fait
 > Durant tout le projet, on a décidé d'ajouter nos feature sur des branches, et de créer un pull request pas feature.  
 > C'est pourquoi Chacun des liens que nous fournissons est un lien vers une pull request, ce qui permet de comprendre facilement comment chacune des feature a été ajoutée.
+
+
+#### Display the number of killed tiles
+**Auteur : Léo Defossez**
+//TODO
+
+#### MultiColor bloc
+**Auteur : Léo Defossez**
+//TODO
+
+#### Cycling colors bloc
+**Auteur : Léo Defossez**
+//TODO
+
+#### Kill the line bloc
+**Auteur : Gautier Louvier**
+//TODO
+
+#### Kill the column bloc
+**Auteur : Gautier Louvier**
+//TODO
 
 #### Refactoring des null states
 **Auteur : Léo Defossez**  
@@ -79,5 +101,13 @@ https://github.com/LeoDefossez/Myg/pull/1
 //TODO
 
 #### Add a "bomb box" that destroy the 8 tiles around itself
+**Auteur : Xavier Moyon**  
+// TODO
+
+#### Add a stop condition on the game
+**Auteur : Gautier Louvier**  
+//TODO
+
+#### Making a serialisation/deserialisation for games
 **Auteur : Xavier Moyon**  
 // TODO
