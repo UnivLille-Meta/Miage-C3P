@@ -6,8 +6,9 @@
 # Lan
 ## FileSystem Exercise
 - Link to the respo: https://github.com/LaCoir/FileSys
-- Completed part:
-  + Warmup: Composite
+- Completed part:  Warmup: Composite + Other (except path)
+- Re-read the slides: Composite, Visitor
+- Reading the codes and the comment of MinerSweeper project
 
 # Julien
 
