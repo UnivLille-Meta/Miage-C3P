@@ -1,4 +1,12 @@
 ## Gautam Demeulemeester
+Cette semaine j'ai exploré le code/test de notre nouveau projet Sokoban. J'ai un peu de mal à tout comprendre notemment pour ce qui est de l'affichage. Je pense dans un premiere temps m'interesser à l'ajout de fonctionnalités suivant :
+
+- Counting moves and push. Introduce the display of moves.
+
+- Paired Target/Box. Introduce pairs of target/box where each box can only go on a target. A version can mix paired and unpaired boxes.
+You can decide for another features.
+
+Je vais commencer par implementer des tests la semaine prochaine bien que j'ai remarqué qu'il existe déja un test testMoveCount qui verifie le nombre de mouvement, je suppose que pour cette première fonctionnalité nous devront uniquement gérer l'affichage de la variable currentMoveCount.
 
 ## HEDDI Abdelkader
 
