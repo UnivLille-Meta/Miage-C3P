@@ -6,9 +6,9 @@ For next week's lecture, you need to do the following tasks and prepare a short 
 
 Lectures are hosted in https://advanced-design-mooc.pharo.org/
 
-- Objects vs. Data
-- About global variables
-- Global to parameter
+- Double dispatch: https://rmod-pharo-mooc.lille.inria.fr/AdvancedDesignMooc/Slides/
+- M6-1 LectureA double dispatch starter: Stone Paper Scissors
+- M6-2 LectureDouble dispatch: Does not have to be symmetrical
 
 ## Extras about language
 
@@ -31,5 +31,4 @@ Add your examples and answers to the report
 
 Next week we will study test quality.
 
-- Read the slides
-- Prepare your questions
+- start [Chess](https://github.com/UnivLille-Meta/Miage-C3P/blob/2025/TP.md)

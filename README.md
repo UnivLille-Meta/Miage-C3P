@@ -8,18 +8,16 @@ Discord channel: https://discord.gg/Wy9eVpGzUm
 
 In this course, you will learn the following topics.
 
-- Test introduction. Unit testing. Fixtures, stimuli, assertions. Test-driven development (TDD). Extreme TDD.
-- TDD, Kata, and Refactoring. Learning how to transform the code with always a running system.
-- Reporting
-- OOP refresh. Classes and methods. Method lookup. Polymorphism. `self` and `super`.
-- Reverse engineering. Exploring an existing code base. Analysing source code. Abstracting details. Looking for documentation outside and inside the project. Tests as documentation.
-- Test Quality. Mutation Analysis. Mutation Score. Equivalent mutants. Analysing surviving mutants.
-- Hook and templates. Hooking behavior using inheritance. Template methods. Overrides and `super` sends.
-- Double dispatch. Single vs. multiple dispatch. Message sends as choices. Double choices. Symmetrical and non-symmetrical double dispatch.
-- Visitor. Extracting operations from class hierarchies. Double dispatch as extension mechanisms. Recursion revisited.
-- Composite. Modelling complex tree-like structures using classes. Recursion revisited 2.
-- Inheritance. Subclassing vs. subtyping. Inheritance vs. composition.
-- Types. Dynamic vs. static message binding. Overrides vs. overwrites. The role of inheritance and interfaces in polymorphism.
+- **Module 01: Test introduction.** Unit testing. Fixtures, stimuli, assertions. Test-driven development (TDD). Extreme TDD.
+- **Module 02: OOP refresh.** Classes and methods. Method lookup. Polymorphism. `self` and `super`.
+- **Module 03: Reverse engineering.** Exploring an existing code base. Analysing source code. Abstracting details. Looking for documentation outside and inside the project. Tests as documentation.
+- **Module 04: Test Quality.** Mutation Analysis. Mutation Score. Equivalent mutants. Analysing surviving mutants.
+- **Module 05: Hook and templates.** Hooking behavior using inheritance. Template methods. Overrides and `super` sends.
+- **Module 06: Double dispatch.** Single vs. multiple dispatch. Message sends as choices. Double choices. Symmetrical and non-symmetrical double dispatch.
+- **Module 07: Visitor.** Extracting operations from class hierarchies. Double dispatch as extension mechanisms. Recursion revisited.
+- **Module 08: Composite.** Modelling complex tree-like structures using classes. Recursion revisited 2.
+- **Module 09: Inheritance.** Subclassing vs. subtyping. Inheritance vs. composition.
+- **Module 10: Types.** Dynamic vs. static message binding. Overrides vs. overwrites. The role of inheritance and interfaces in polymorphism.
 
 ## Course Material
 
@@ -82,8 +80,7 @@ You are going to be graded on
 - Practical Project (in group)
 - **Bonus:** Getting contact with the community to ask questions and help (discord, mailing lists).
 
-:warning: **Big big warning: You must have over 10 on every grade. **
-There will be only one 'Rattrapage / second chance' Examenation.
+Your final grade will be a weighted average of all these grades.
 
 ## FAQ
 
