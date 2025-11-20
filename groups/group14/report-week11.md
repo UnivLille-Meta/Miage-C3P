@@ -13,4 +13,5 @@ On ne peut pas savoir si la qualité des tests est correcte, car on peut avoir d
 563 mutants vivants.
 - Réaliser des tests pour chaque mutant : écrire un test vert - analyser le code et modifier une partie du code - lancer le test (il doit être rouge)
 - Ajouter des tests pour tester chaque cas.
-- Vérfier les asserts
+- Vérifier les asserts
+Il est important d'avoir un coverage élevé (entre 70% et 100%) et un score de mutation de 100% pour connaitre quelle partie de notre code n'est pas testéee et quels tests attrapent des bugs afin de pouvoir minimiser les bugs et de traiter tous les cas de tests.
