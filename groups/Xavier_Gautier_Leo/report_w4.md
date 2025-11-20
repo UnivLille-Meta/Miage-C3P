@@ -1,5 +1,11 @@
 # Week 4 report
 
+# Sommaire
+- [Léo Defossez](#léo-defossez)
+- [Gautier Louvier](#Gautier-Louvier)
+- [Xavier Moyon](#Xavier-Moyon)
+
+
 ## Travail en commun sur UnivLille-Meta/Chess
 > Notre travail est disponible sur ce [dépot](https://github.com/LeoDefossez/Chess).
 >
