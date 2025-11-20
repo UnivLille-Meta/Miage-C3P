@@ -5,7 +5,7 @@ J’ai commencé par mesurer la couverture de tests de la bibliothèque Network-
 J’ai constaté que la couverture était relativement élevée, mais ne suffisait pas à garantir une bonne qualité des tests.
 Il faudrait ajouter d’autres tests pour augmenter la couverture.
 
-![mutationgautam](img/mutationGautam.png)
+![mutationgautam](img/mutation Gautam.png)
 
 J’ai ensuite lancé une analyse sur les classes UUID et UUIDGenerator.
 Le mutation score obtenu était d’environ 37%, en ajoutant UUIDTest, puis UUIDGeneratorTest, le score a augmenté clairement.
