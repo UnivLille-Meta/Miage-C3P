@@ -37,8 +37,26 @@
 > En revanche, si aucun test n’échoue, cela indique qu’il existe une faille dans la suite de tests. 
 > 
 > ### SameGame
+> Le travail est présent [ici](./SameGame.md).
+>  
+> ### Display the number of tiles killed
+> https://github.com/LeoDefossez/Myg/pull/11  
+> Une explication détaillée est disponible sur la pull request.  
+> Celle-ci fait suite à l'ajout de [Score for game](#Score-for-game), dans lequel je ne pensais pas pouvoir modifier le nombre de box tués sur le dernier coup.  
+> Sur cette pull request, j'écris que je me suis rendu compte qu'il existait une interdépendence entre SGGame et SGBoard.  
+> J'ai alors profité de celle-ci pour afficher le nombre de box tués au dernier coup.  
+>
+> #### Richer parametrisation of same game
+> https://github.com/LeoDefossez/Myg/pull/13  
+> Ici je refactor simplement la classe principale du jeu `SameGame`.  
+> Je déplace une grande partie de la logique du côté instance, pour offrir une meilleure paramétrisation, et ajouter plus facilement nos features.  
 > 
-> Le travail est présent [ici](./SameGame.md).  
+> #### Add a registry for states
+> https://github.com/LeoDefossez/Myg/pull/12  
+> Ici, je crée une classe `SGStateRegistry`, qui permet simplement de récupérer tous les différents states existant.  
+> J'utilise uniquement la méthode `subclasses` lors de l'initialisation de l'objet, ce qui réduit le nombre de querry sur le système.  
+> J'en ai aussi profité pour rendre les stratégies d'initialisation de SGBox, plus simple et modulaire à l'aide de cet objet. 
+
 
 ## Gautier Louvier
 
