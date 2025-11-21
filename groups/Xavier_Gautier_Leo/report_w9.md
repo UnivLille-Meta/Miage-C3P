@@ -125,4 +125,67 @@
 
 ## Xavier Moyon
 
-> TODO
+> ### SAME GAME :)
+> Cette semaine j'ai pu travailler sur le SameGame dans le but de rajouter un  > convertisseur de partie. L'objectif est de pouvoir utiliser un objet permettant > de facilement passer d'une chaîne de caractère au format ci-dessous à un SGGame et inversement. Ce convertisseur pourrait notamment nous permettre à court terme de faciliter la création de test et à plus long terme nous permettre d'implémenter un mécanisme de sauvegarde :) !
+> ```
+> | N | Bo | Y |
+>| N | Bo | Y |
+>| N | Bo | Y |
+>```
+> Pour l'instant seul le convertisseur vers le type String est implémenté. 
+> Pour implémenter ce premier convertisseur, j'ai créer un visiteur `SGConvertGameToString` qui a une méthode d'entrée convert et implémente différente méthode spécifique à chaque objets du jeu : 
+> 
+> - visitState : retourne la/les lettre(s) associée(s) au State (R pour rouge Bo pour une bombe)
+> - visitBlock retourne la/les lettre(s) associée(s) au State entouré par des espaces
+> - visitBoard retourne l'ensemble des lettres du tableau séparé par des | et avec des retours à la ligne pour chaque ligne du tableau.
+> - visitGame (Encore a faire) doit retourner la stratégie de jeu ainsi que le tableau. 
+> 
+> Pour être honnête, je n'avais pas pensé à utiliser un visiteur pour cette fonctionnalité car j'avais toujours vu ce design associé à un composite mais c'est Leo Defossez qui m'a proposé cela. Et je trouve que c'était une bonne idée, si je veux changer le visiteur cela impactera qu'une faible partie du code et je pourrais aussi très facilement en rajouter un autre.
+>
+> Pour cette semaine ou pour le début de la semaine prochaine j'aimerai avoir terminé les deux convertisseurs, pour le deuxième ma difficultés va surtout être de réussir à convertir des caractère en objet (SGBox ou Mode de jeux) en évitant au plus possible de faire des if.
+> Ce que je veux absolument éviter c'est le cas suivant car on duplique de l'information.
+> ```smalltalk
+> myBlockString = ' R ' ifTrue[^SGBlock red].
+> myBlockString = ' Y ' ifTrue[^SGBlock yellow].
+> ...
+> myBlockString = ' N ' ifTrue[^SGNullState].
+>```  
+> L'objectif serait de pouvoir réutiliser la méthode  `literal` des states pour savoir lequel correspond
+> 
+>
+> ### Visiteur
+> 
+> Un visiteur est un objet qui va permettre contenir une opération/logique en dehors  de son objet. Cela permet de facilement rajouter de nouvelle opérations sans impacter les autres classes et ça c'est la classe.
+>
+> ### Tests 
+>  
+> Un test c'est avant tout trois POINTS : 
+> - Un context (Je dois acheter trois pommes pour un total de 1.5€ pour faire une tarte aux pommes pour ma maman 🥧🤱)
+> - Un Stimuli (Je n'ai que 1.20€ sur mon compte, c'est la fin du mois)
+> - Une réponse (Erreur paiement impossible : Pas de paiement pas de pommes, pas de pomme pas de tarte aux pommes, pas de tarte aux pommes pas de tarte aux pommes)
+>
+> Pour savoir si un tests traite bien une erreur il faut introduire des défaillance dans le code original et voir si le tests la detecte.
+> Exemple pour notre tarte aux pommes : 
+> - Sans défaillances : 
+> ```smalltalk
+>appleCart >> pay: aBankAccount
+>  self priceForAll > aBankAccount availableMoney ifTrue:[ self error: 'NoMoneyError: you don"t have enough money to buy apple...Sorry get out of my shop Walter White.' ]
+> ...    
+> ```
+> - Avec une défaillance (Je vous laisse la trouver 😉)
+> ```smalltalk
+>appleCart >> pay: aBankAccount
+>  self priceForAll < aBankAccount availableMoney ifTrue:[ self error: 'NoMoneyError: you don"t have enough money to buy apple...Sorry get out of my shop Walter White.' ]
+>...
+> ```
+> Chaques défaillances doit-être testé indépendemment.
+> #### Un problème sur les mutations 🫢
+>
+> Un des problème avec l'insertion de défaillance est que cela augmente la durée des tests. Les tests sont lancé autant de fois qu'il y a de mutations de code. Il est donc crucial de bien jauger l'utilisation des mutants.
+> Pour éviter ce problème il y a plusieurs solutions : 
+> - Ne lancer que les tests qui couvrent ces mutants
+> - Ne faire des mutations que sur le code qui est couvert
+> 
+> Si cependant il reste toujours un grand nombre de mutants alors on peut les lancer aléatoirement 25% d'entre eux tout en conservant un bon score tout en réduisant considérablement le temps d'éxécution.
+> Il existe plusieurs stratégies pour cela, on peut choisir un pourcentage de mutants par classe ou méthode ou par package (la je suppose, mais ce serai la suite logique)
+> Pour optimiser les mutants on peut utiliser des matrices ou des heatMap pour detecter des mutants redondant (`self priceForAll > aBankAccount availableMoney ifTrue:[ self error:` et `self priceForAll <= aBankAccount availableMoney ifFalse:[ self error:`)
