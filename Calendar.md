@@ -12,5 +12,6 @@
 - 08 Week 06-07 Nov  (Rendu Chess) **Module 7:** TDD level 2: Refactoring process Exo: Bloc/Microdown 1 [ No guille Stef les deux ]
 - 09 Week 13-14 Nov **Modules 8 and 9:** Composite + Visitor Exo: Bloc/Microdown 2 [no Stef -> Seb jeudi et vendredi ]
 - 10 Week 20-21 Nov **Module 10:** Test Quality / Exo: Bloc/Microdown 3 [ no Stef -> Guille les 2 ]
-- 11 Week 27-28 Nov **Module 11** Explain your design
-- 12 Week 04-05 Dec **EXAMEN AMPHI:**
+- 27-28 Nov Pas cours
+- 11 Week 04-05 Dec **EXAMEN AMPHI:** M5 - Amphi - A_BACCHUS 8:30 12:15 [ Guille ]
+- 12 Week 11 Decembre Explain your design M5 - Amphi - A_BACCHUS  8:30 11:45 [ Guille Stef]
