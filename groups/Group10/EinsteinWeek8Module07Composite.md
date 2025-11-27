@@ -1,4 +1,4 @@
-# Rapport de la semaine 8- Composite et Refactoring  -- Einstein
+# Rapport de la semaine 8- Composite -- Einstein
 
 ## 1. Définition
 Le pattern `Composite` permet de représenter une structure en arbre (partie–tout).
@@ -47,3 +47,5 @@ Le Composite envoie `draw` à tous ses enfants.
 Composite permet de gérer des objets individuels et des groupes d’objets avec la même interface,
 grâce au polymorphisme.
 Il simplifie le code, enlève les conditions inutiles et rend le système plus clair.
+
+
