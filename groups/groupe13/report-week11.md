@@ -33,3 +33,9 @@ J'ai commencé par l'intégration de l'interface utilisateur en modifiant la cla
 La prochaine étape sera d'implémenter la logique métier en utilisant le Pattern Command. Cela permettra d'encapsuler chaque mouvement dans un objet réversible. Je me concentrerai également sur l'écriture de tests unitaires pour garantir que l'historique des coups est géré correctement et que l'état du jeu reste cohérent après une annulation (tests au vert).
 
 Je n'ai pas de questions pour cette semaine.
+
+## Khalil BOUCHAMA
+
+J'ai étudié le patron de conception Visiteur, qui est une façon de créer de nouvelles opérations ou actions sur une structure d'objets (comme un arbre de calcul ou un document) sans avoir à modifier ces objets de base. Au lieu de surcharger les objets avec de nombreuses méthodes, je définis chaque nouvelle opération comme une classe séparée, appelée "Visiteur". J'ai appris que cette approche est très utile pour maintenir la clarté et la modularité de mon code , car chaque opération gère son propre état et peut être ajoutée facilement sans perturber le reste du système. 
+
+J'ai égaleemnt compris le lien entre le pattern visiteur et le double dispatch. Le pattern Visiteur repose sur le double dispatch par une séquence de deux appels polymorphiques : l'objet de la structure accepte le Visiteur (premier dispatch). Puis, l'objet rappelle la méthode de visite spécifique à son type sur le Visiteur (second dispatch), sélectionnant ainsi l'opération correcte à exécuter.
