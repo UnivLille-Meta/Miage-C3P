@@ -28,6 +28,9 @@
 > [ColumnKillerState](https://github.com/LeoDefossez/Myg/pull/21)
 > 
 > [LineKillerState](https://github.com/LeoDefossez/Myg/pull/17)
+>
+> Après discussion avec léo et la détection d'un grand morceau de code dupliqué j'ai corrigé ça en répondant à l'issue, en fait nous avons remarqué que bomb, columnKiller,rowKiller (anciennement LineKiller) pouvait tous partir d'un rectangle et donc que nous pouvions factoriser le code de leur méthode de destruction de case.
+> [MethodeRectanglePR] (https://github.com/LeoDefossez/Myg/pull/26)
 
 ## Xavier Moyon
 
