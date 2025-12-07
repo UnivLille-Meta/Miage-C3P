@@ -19,3 +19,12 @@ Pour y parvenir, je prévois de structurer un enregistrement propre des états s
 Cette idée constitue le cœur du projet que je compte développer, et qui apportera, je pense une valeur ajoutée au projet Myg tout en me permettant de travailler sur un sujet qui utilise ce que j'ai appris dans cette matiere tout au long du semestre.
 
 Je n’ai pas de questions pour cette semaine.
+
+## Khalil BOUCHAMA
+
+J'ai commencé à implémenter le code pour le projet Sokoban. Je compte implémenter le décompte des actions du personnage avec l'affichage du nombre de poussées de caisses et du nombre de mouvement. 
+
+**Fonctionnalité en cours :** j'ai préparé l’affichage du compteur de mouvements dans la vue (MygSkBoardElement). L’objectif immédiat est que l’UI affiche le label « Moves: 0 » dès l’ouverture d’un niveau, ce qui couvre la première facette du compteur (affichage initial).
+
+**Avancement :** j’ai structuré la démarche TDD pour ce cas. J’ai défini la classe de test MygSkBoardElementTest avec setUp/tearDown pour garantir un espace propre entre chaque test, puis j’ai écrit testInitialMoveCountDisplay (phase RED) qui vérifie que le label existe et contient « Moves: 0 », et je prévois maintenant l’implémentation minimale dans MygSkBoardElement (ajout de la variable d’instance, des accesseurs et du label) pour faire passer ce test (phase GREEN).
+Prochaines étapes : terminer le code de initializeMoveCountLabel pour que le test passe avant de continuer avec la mise à jour dynamique du compteur (tests suivants).
