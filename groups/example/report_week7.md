@@ -1,0 +1,7 @@
+# Alli Rayane 
+
+j’ai implémenté la prise “en passant” et son intégration à la partie. J’ai ajouté enPassantTargetSquares côté MyPawn pour exposer les cases EP disponibles, et adapté targetSquaresLegal: pour combiner forwardMoveSquares, diagonalCaptureSquares et enPassantTargetSquares. Côté partie, j’ai introduit le suivi d’état enPassantTargetSquare avec ses accesseurs, initialisé depuis la FEN lors du chargement, mis à jour après un double pas (case franchie), et réinitialisé après tout autre coup. J’ai aussi étendu MyPawn >> moveTo: pour retirer le pion adverse lors d’une capture en passant (la pièce “derrière” la case EP). Des tests SUnit valident: la création de l’opportunité EP après double pas, l’exécution correcte de la capture, l’expiration après un autre coup, et les cas invalides (mauvaise colonne ou simple pas). Ainsi, la règle “en passant” fonctionne  et reste synchronisée avec l’état du jeu et les positions FEN. 
+
+# Ait ali Ilyas
+
+Je m'etais occupé de faire les tests pour la fonctionnalité en passant ajoutée au projet. J’ai testé tous les cas importants : capture correcte, expiration après un autre coup et les cas où la prise n’est pas possible. J’ai corrigé ce qu’il fallait pour que tous les tests passent. Ça m’a aidé à mieux comprendre comment fonctionne la règle en passant et l’importance d’avoir de bons tests pour vérifier le comportement du jeu.

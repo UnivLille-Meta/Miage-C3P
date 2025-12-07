@@ -1,3 +1,6 @@
+
+# ALLI Rayane 
+
 Au cours de cette semaine,j'ai poursuivi  la mise en œuvre du LRUCache afin de saisir un maximum d'information sur le reverse engineering. Voila le bilan des information que j'ai pût en retirer:
 
 1. Compréhension et analyse comportementale
@@ -11,5 +14,6 @@ cet exercice m’a appris à ignorer stratégiquement les détails secondaires, 
 3. Apports en reverse engineering
 
 D’un point de vue reverse engineering, cette étude m’a permis de confirmer que les opérations INSERT et EVICT constituent des points d’analyse universels pour comprendre le comportement d’un cache. J’ai également constaté qu’environ 80 % de la compréhension globale provient de 20 % du code réellement analysé. Enfin, cet exercice m’a appris à maîtriser l’art du focus : savoir quand approfondir un point et quand le reporter dans un backlog d’analyse pour éviter de se disperser.
+
 
 cette exercice etait interssant et me sera bien utile pour le KATA chess 
