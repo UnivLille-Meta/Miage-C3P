@@ -1,5 +1,81 @@
 ```plantuml
 @startuml
+class SGBoard {
+game
+hitList
+hitBox()
+randomBox()
+reorganizeForEmptyColumn()
+}
+class SGBlueState {
+backgroundRepresentation()
+}
+class SGBoardElement {
+grid
+sameGameBoard
+}
+class SGBox {
+state
+class withState()
+backgroundRepresentation()
+click()
+propageClick()
+}
+class SGGame {
+board
+points
+}
+class SGGreenState {
+backgroundRepresentation()
+}
+class SGNullState {
+backgroundRepresentation()
+}
+class SGBoxElement {
+gridPosition
+board
+box
+click()
+updateBackgroundColor()
+}
+class SGRedState {
+backgroundRepresentation()
+}
+class SGYellowState {
+backgroundRepresentation()
+}
+
+SGNullState <|-- SGBlueState
+SGNullState <|-- SGGreenState
+SGNullState <|-- SGRedState
+SGNullState <|-- SGYellowState
+
+SGBoard <--> SGGame
+
+SGBoard <-- SGBoardElement
+
+SGBox <-- SGNullState
+
+SGBox <-- SGBoxElement
+
+note left of SGNullState::backgroundRepresentation
+^ Color gray
+end note
+
+class SGBlueState
+note bottom: ^ Color lightBlue
+class SGRedState
+note bottom: ^ Color lightRed
+class SGGreenState
+note bottom: ^ Color lightGreen
+class SGYellowState
+note bottom: ^ Color lightYellow
+
+@enduml
+```
+
+```plantuml
+@startuml
 
 class SGBox {
 color
