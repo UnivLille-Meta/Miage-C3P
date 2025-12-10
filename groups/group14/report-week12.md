@@ -8,3 +8,7 @@ Analyse du projet MygMiner, j'ai pu identifier comment j'allais procèder au mod
 Je pense implementer une factory method : 
 > matrixSize: size
   avec size qui sera la valeur de height et width
+>
+# Lan
+Miner: Count the number of selection + number of mines on the board.
+Research about the MVC architecture on the actual design first.
