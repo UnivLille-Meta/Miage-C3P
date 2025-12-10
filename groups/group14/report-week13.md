@@ -25,3 +25,13 @@ Révisions pour l'examen :
 
 Projet Miner : Implémentation des différents algorithmes pour placer les mines : avec design pattern Strategy, commencement par les tests puis implémentation des classes et des méthodes, modification de l'UI
 [voir github](https://github.com/olivia-lang/Miner-Lang_Miroux_Nguyen) + readme et présentation
+
+# Lan
+
+Prepare for the exam:
+- Design Pattern : visitor, composite, template methode, strategy
+- Héritage
+- Mutation tests
+- Loi de Demeter
+
+Project Miner: Count the number of selection + number of mines on the board. Using MVC architecture and Observe design pattern. Adding the test about these 2 new implimentations. More information in the file README.md of MineSweepwer project
