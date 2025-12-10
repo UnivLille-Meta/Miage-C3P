@@ -7,4 +7,4 @@ lien vers notre projet Sokoban : [branche main](https://github.com/K-Boo/Myg)
 
 ### Khalil -> Count Moves
 ### Gautam -> Color Box/Target (https://github.com/K-Boo/Myg/tree/gautam)
-### Abdelkader -> Cancel Button
+### Abdelkader -> Undo Button 
