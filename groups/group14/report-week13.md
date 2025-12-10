@@ -18,4 +18,5 @@ Révisions pour l'examen :
 - Mutation tests
 - Loi de Demeter
 
-Projet Miner : Implémentation des différents algorithmes pour placer les mines [voir github](https://github.com/olivia-lang/Miner-Lang_Miroux_Nguyen) + readme et présentation
+Projet Miner : Implémentation des différents algorithmes pour placer les mines : avec design pattern Strategy, commencement par les tests puis implémentation des classes et des méthodes, modification de l'UI
+[voir github](https://github.com/olivia-lang/Miner-Lang_Miroux_Nguyen) + readme et présentation
