@@ -1,5 +1,10 @@
 # Week 2 report
 
+# Sommaire
+- [Léo Defossez](#léo-defossez)
+- [Gautier Louvier](#Gautier-Louvier)
+- [Xavier Moyon](#Xavier-Moyon)
+
 ## Léo Defossez
 
 ### Think about how to implement the boolean methods `|`, `or:`, `ifTrue:ifFalse:`.

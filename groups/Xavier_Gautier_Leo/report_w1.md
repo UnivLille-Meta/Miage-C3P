@@ -1,5 +1,10 @@
 # Week 1 report
 
+# Sommaire
+- [Léo Defossez](#léo-defossez)
+- [Gautier Louvier](#Gautier-Louvier)
+- [Xavier Moyon](#Xavier-Moyon)
+
 ## Léo Defossez
 
 ### Learn about collections in Pharo and their iterators
@@ -178,7 +183,7 @@
 
 # Week 1 Report 
 
-## Xavier Moyon 
+## Xavier Moyon
 
 ### Learn about collections in Pharo and their iterators
 

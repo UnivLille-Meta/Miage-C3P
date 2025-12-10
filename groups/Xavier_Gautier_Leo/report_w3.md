@@ -1,5 +1,11 @@
 # Week 3 report
 
+# Sommaire
+- [Léo Defossez](#léo-defossez)
+- [Gautier Louvier](#Gautier-Louvier)
+- [Xavier Moyon](#Xavier-Moyon)
+
+
 ## Travail en commun (kata rover)
 
 > ### Point de départ
