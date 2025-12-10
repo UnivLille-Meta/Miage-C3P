@@ -1,3 +1,6 @@
+# Projet MineSweeper
+[Lien du repository](https://github.com/olivia-lang/Miner-Lang_Miroux_Nguyen) 
+
 # Julien
 
 Révisions pour l'examen : 
