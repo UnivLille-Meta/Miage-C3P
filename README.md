@@ -1,8 +1,7 @@
-This is the repository of the MIAGE C3P lectures done by S. Ducasse and G. Polito
+This is the repository of the MIAGE C3P lectures done by S. Ducasse
 
-contact: stephane.ducasse@inria.fr / guillermo.polito@inria.fr
-
-Discord channel: https://discord.gg/MqP32ZB29
+- Contact: stephane.ducasse@inria.fr
+- Discord channel: https://discord.gg/MqP32ZB29
 
 ## Modules
 
@@ -17,7 +16,6 @@ In this course, you will learn the following topics.
 - **Module 07: Visitor.** Extracting operations from class hierarchies. Double dispatch as extension mechanisms. Recursion revisited.
 - **Module 08: Composite.** Modelling complex tree-like structures using classes. Recursion revisited 2.
 - **Module 09: Inheritance.** Subclassing vs. subtyping. Inheritance vs. composition.
-- **Module 10: Types.** Dynamic vs. static message binding. Overrides vs. overwrites. The role of inheritance and interfaces in polymorphism.
 
 ## Course Material
 
@@ -28,17 +26,16 @@ All slides, videos, and tutorials are available in (or linked from) this reposit
 - The official website [https://advanced-design-mooc.pharo.org](https://advanced-design-mooc.pharo.org)
 
 
-
 ## Course Contract
 
-This course proposes a series of teorical lectures and practical exercises.
-Modules are divided in weeks, each in a different folder, and you will find the theory and practice in that folder.
-To pass this course you will need to:
- - pass the exams (see [Calendar.md](Calendar.md))
- - make a presentation (see [Calendar.md](Calendar.md))
- - do at minimum **all** the homework in the exercises (file Exercises.md in each folder)
+This course proposes a series of theoretical lectures and practical exercises.
+Modules are divided into weeks, each in a different folder, and you will find the theory and practice in that folder.
+To pass this course, you will need to:
+ - Pass the exams (see [Calendar.md](Calendar.md))
+ - Make a presentation (see [Calendar.md](Calendar.md))
+ - Do at minimum **all** the homework in the exercises (file Exercises.md in each folder)
  - watch all the videos of the lectures not done during the lectures (yes there are videos for 99% of the support)
- - write (short) weekly reports to tell us your activity. Remember, focus on the important things, and show us that you are learning.
+ - Write (short) weekly reports to tell us your activity. Remember, focus on the important things, and show us that you are learning.
 
 ### Make a group
 
@@ -47,21 +44,21 @@ For example, this is the case for reporting and presentations.
 
 Make your groups and create a folder inside the [Groups](Groups) directory.
 Choose a name for your group and use that as folder name.
+
 Put inside your group folder
  - a file with your full names and emails
  - all your activity and reports
- 
-make recurrent pull requests to update it.
+ - make recurrent pull requests to update it.
 
-For example, imagine that Jeanne D'arc and Tintin LeBelge are together in a group called RevolutionX.
-They create a directory RevolutionX
+For example, imagine that Milou and Tintin are together in a group called MiTin
+They create a directory MiTin
 
 ```
 Groups
-    - RevolutionX
+    - MiTin
         - members.md (names and emails)>
-        - report-week01.md (one section for Jeanne, one for Tintin)
-        - report-week02.md (one section for Jeanne, one for Tintin)
+        - report-week01.md (one section for Milou, one for Tintin)
+        - report-week02.md (one section for Milou, one for Tintin)
 ```
 
 
@@ -77,4 +74,3 @@ Make sure you have correct configured you authentication setup
     - change Icebergs setting, "Metacello Integration" with the value HTTPS
     ![imagen](https://user-images.githubusercontent.com/708322/197169064-c6bf0bd2-762c-4bbe-b48c-daedb2d3aeef.png)
 	- create an access token to be able to push (and make sure of giving it permissions by ticking the check boxes)
-
