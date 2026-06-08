@@ -16,9 +16,9 @@ The calendar is the following:
 
 - 01 Week[04 Sep]: OOP refresh
 - 02 Week[11 Sep]: Hook and templates
-- 03 Week[18 Sep]: Double Dispatch
-- 04 Week[25 Sep]: Law of Demeter
-- 05 Week[2 Oct]: Composite Visitor
+- 03 Week[18 Sep]: Double Dispatch / Law of Demeter 
+- 04 Week[25 Sep]: Delegation vs. Inheritance / 
+- 05 Week[2 Oct]: Composite / Visitor
 - 06 Week[9 Oct]: NullObject
 - Examen [16 Oct]:
 
