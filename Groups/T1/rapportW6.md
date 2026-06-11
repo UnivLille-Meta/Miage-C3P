@@ -1,2 +1,0 @@
-Nadia ::
-I learned this week about some new things like the NullObject pattern and hooks. I installed Blocs and the Myg framework to compile games codes and play some of them tying to understand how it really works. We started as a group planning a game which we would create using things we've learned is previous classes. The upcoming exam motivated me as well to start reviewing exercises and courses in preparation for the coming week.

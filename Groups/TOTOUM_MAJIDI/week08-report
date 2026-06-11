@@ -1,7 +1,0 @@
-# Semaine 08
-
-### Ezzahra
-D'après le cours, et grace à l'exemple illustré, j'ai arrivé à comprendre le "Composite patern" qui utilise le polymorphisme pour traiter les cas sans utiliser la structure conditionnelle (les ifs), repose sur l'implémentation d'une interface commune par tous les éléments, il assure ainsi l'extensibilité du code sans avoir recours à des modifications majeures.
-Ainsi, j'ai vu que le "visitor pattern" assure la modularité, l'extensibilité et l'autonomie des composants, c'est très conseillé pour les application ou on veut donner des choix d'utilisation à l'utilisateur.
-
-En combinant les deux Pattern, on peut ajouter de nouvelles fonctionalités tout en respectant la modularité et l'extensibilité au niveau de l'application.
