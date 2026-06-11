@@ -1,5 +1,5 @@
-Voici le lien de notre depôt : 
 
-https://github.com/naysparrow/Besbas_Leulmi_Bomberman/tree/mohBranch
+## Groups
 
-Nous avons décidé de travailler sur la branche initialement créee par Mohamed car nous n'arrivions pas à merge.
+Each group should create a repo and place its weekly report in separated files.
+See the repository readme.md
