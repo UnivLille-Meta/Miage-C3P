@@ -24,7 +24,7 @@ Extend the previous exercise with:
  - change the existing searches to match a prefix, using `beginsWith:`. How could you avoid repeating code to do this change in a single place?
  - add `path` that returns the path of an entry. Remember that the path is a string that indicates the path from the root. E.g., `/usr/bin/data.bin`
 
-## Visitor (for following module)
+## Visitor
 
 Reimplement the previous using a visitor.
 
