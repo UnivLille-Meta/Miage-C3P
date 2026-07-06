@@ -1,3 +1,5 @@
+preparation
+
 - put pdf of exercises in the folders
 
 - counter

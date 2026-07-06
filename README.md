@@ -17,7 +17,7 @@ Therefore, we drastically cut the contents. The clever and curious (Hermione lik
 ## Lecture preparation
 
 This year you will have to prepare for the lectures in advance!
-- Do not show up in the lectures without having done the preparation described in Week-98 and Week-99
+- Do not show up in the lectures without having done the preparation described in ModulePreparation-01 and ModulePreparation-02
 - You must know how to define a test!
 - You must know how to commit code on github.
 

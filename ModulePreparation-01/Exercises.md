@@ -17,6 +17,14 @@ For that, we first need to take care of the silly obstacles like understanding t
 Later, we will know how to abstract a bit more and care less about details.
 
 
+As summary
+- Pharo installation
+- follow: `ProfStef go` 
+- Coding the counter 
+- Coding the DSL
+
+
+
 ## Step 1: Install Pharo
 Installing Pharo is easier using the Pharo launcher.
 The Pharo launcher is an application that allows you to download different versions of Pharo and managing the installation details for your platform.
@@ -76,6 +84,17 @@ Remember to write the report on:
  - what you did not (and why)
  - what difficulties you found and **more importantly** how did you *overcome* them! You are going to become a professional software engineer, you need to be able to get through problems.
 
+
+
+
+## Step 5: DSL 
+
+You should do the following exercise as described in Chapter 6 of the book
+https://rmod-pharo-mooc.lille.inria.fr/AdvancedDesignMooc/2024-04-01-CompanionExercise.pdf
+
+
+
 ## Git related resources
 
 Check the GlobalResources.md file it contains some slides and tutorials on git.
+
