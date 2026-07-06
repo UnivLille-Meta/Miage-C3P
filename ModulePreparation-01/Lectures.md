@@ -1,8 +1,5 @@
 # Lectures
 
-Follow the the Module 0 of the Mooc: https://advanced-design-mooc.pharo.org/
-
-You can find interesting videos about the Pharo IDE at https://rmod-pharo-mooc.lille.inria.fr/MOOC/PharoMOOC-Videos/FR/
 
 This module presents some lectures from the Pharo Mooc. It helps the reader who wants to follow the syntax used in the slides and do the exercises to learn fast Pharo. Check the exercises and in particular start with `ProfStef new go` and perform the proposed exercises.
 
@@ -27,3 +24,12 @@ The following short videos explain the full language.
 - M0-11 Lecture Class methods 
 - M0-12 Lecture Parenthesis Vs Square Brackets 
 - M0-12 Lecture Iterators 
+
+## Task One: Syntax and concepts
+
+Follow the videos of the Module 0 of the Mooc: https://advanced-design-mooc.pharo.org/
+You can find interesting videos about the Pharo IDE at https://rmod-pharo-mooc.lille.inria.fr/MOOC/PharoMOOC-Videos/FR/
+
+
+## Task Two: Tests
+Follow the vidos of the Module 1 of the Mooc: https://advanced-design-mooc.pharo.org/
