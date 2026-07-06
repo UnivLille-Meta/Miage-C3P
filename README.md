@@ -3,6 +3,7 @@ This is the repository of the MIAGE C3P lectures done by S. Ducasse
 - Contact: stephane.ducasse@inria.fr
 - Discord channel: https://discord.gg/MqP32ZB29
 
+
 ## Testimonies
 
 "J'ai personnellement trouvé le cours très intéressant et rafraîchissant. C'est sûrement le cours où j'ai appris le plus de choses depuis le début de mes études supérieures.
@@ -17,7 +18,7 @@ Therefore, we drastically cut the contents. The clever and curious (Hermione lik
 ## Lecture preparation
 
 This year you will have to prepare for the lectures in advance!
-- Do not show up in the lectures without having done the preparation described in ModulePreparation-01 and ModulePreparation-02
+- Do not show up in the lectures without having done the preparation described in ModulePreparation-01. We evaluate that you should spend around 10 to 12 of concentrated hours on this.  You can find help on the discord channel and encouraged to ask for help.
 - You must know how to define a test!
 - You must know how to commit code on github.
 
