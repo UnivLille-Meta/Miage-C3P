@@ -1,11 +1,8 @@
 # Lectures
 
-
-## Theory
-
 This week you must
 
-### Study the following lectures
+## Study the following lectures
 
 Check the PDFs, watch the videos.
 
@@ -17,6 +14,7 @@ The lectures on Pharo introduction: Module 3 from [https://advanced-design-mooc.
 - hooks and templates
 - the cases of `asString`, `printString`
 
+## Slides
 - http://rmod-pharo-mooc.lille.inria.fr/AdvancedDesignMooc/Slides/M3-2-Essence-07-SelfSendsArePlansForReuse.pdf
 - http://rmod-pharo-mooc.lille.inria.fr/AdvancedDesignMooc/Slides/M3-3-DesignPattern-02-HookAndTemplate.pdf
 
