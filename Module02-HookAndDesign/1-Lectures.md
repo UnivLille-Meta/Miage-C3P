@@ -9,7 +9,7 @@ This week you must
 
 Check the PDFs, watch the videos.
 
-The lectures on Pharo introduction: Module 3 from https://advanced-design-mooc.pharo.org/#module3
+The lectures on Pharo introduction: Module 3 from [https://advanced-design-mooc.pharo.org/#module3](https://advanced-design-mooc.pharo.org/#module3)
 
 - design patterns introduction
 - design patterns are based on messages and polymorphism
