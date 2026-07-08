@@ -1,6 +1,5 @@
 # Lectures
 
-The videos and slides of the lectures are hosted at: https://advanced-design-mooc.pharo.org/
 
 ## Theory
 

@@ -1,7 +1,5 @@
 # Lectures
 
-The versions of the lectures are hosted at: https://advanced-design-mooc.pharo.org/
-
 ## Theory
 
 This week you must check the PDFs, watch the videos of the following lectures. 
