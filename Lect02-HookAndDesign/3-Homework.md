@@ -15,4 +15,6 @@ Share your programs in the report with the answer to those questions.
 
 
 ### Finish the exercises of the preparation
-Finish the exercises that you should have done for the lectures preparation: See the ModulePreparation-01 folder
+Finish the exercises that you should have done for the lecture preparation: See the ModulePreparation-01 folder
+
+### Publish your weekly report 

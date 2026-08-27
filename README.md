@@ -11,6 +11,15 @@ J'ai surtout trouvé que c'était le cours avec le plus de valeur unique \(des "
 
 "J'ai trouvé ça très intéressant, beaucoup plus que prévu ! je regrette de ne pas m'y être mis plus tôt. J'ai enfin l'impression de vraiment faire de la POO ! Ou à l'inverse je me rends que je n'en faisais pas vraiment..." - Anonymous, 2019
 
+## Grading
+Easy it will be 
+
+- Reports
+- Examens
+- Chess project
+- Bonus: asking help on Pharo discord channel /Helping on discord channel  https://discord.gg/QewZMZa
+
+
 ## Extra material
 From 2026/27 on, the lectures went from 48 hours to 24. 
 Therefore, we drastically cut the contents. The clever and curious (Hermione like) students can find all the extra material on the same repository in the '2025' branch.
@@ -23,24 +32,10 @@ This year you will have to prepare for the lectures in advance!
 - You must know how to commit code on github.
 
 
-## Modules
-
-In this course, you will learn the following topics.
-
-- **Module 01: Test introduction.** Unit testing. Fixtures, stimuli, assertions. Test-driven development (TDD). Extreme TDD.
-- **Module 02: OOP refresh.** Classes and methods. Method lookup. Polymorphism. `self` and `super`.
-- **Module 05: Hook and templates.** Hooking behavior using inheritance. Template methods. Overrides and `super` sends.
-- **Module 06: Double dispatch.** Single vs. multiple dispatch. Message sends as choices. Double choices. Symmetrical and non-symmetrical double dispatch.
-- **Module 07: Visitor.** Extracting operations from class hierarchies. Double dispatch as extension mechanisms. Recursion revisited.
-- **Module 08: Composite.** Modelling complex tree-like structures using classes. Recursion revisited 2.
-- **Module 09: Inheritance.** Subclassing vs. subtyping. Inheritance vs. composition.
-
 ## Course Material
 
 All slides, videos, and tutorials are available in (or linked from) this repository.
 
-- Pdfs are hosted under [https://rmod-files.lille.inria.fr/DesignCoffeeClub/](https://rmod-files.lille.inria.fr/DesignCoffeeClub/)
-- Videos are hosted [http://rmod-pharo-mooc.lille.inria.fr/AdvancedDesignMooc/](http://rmod-pharo-mooc.lille.inria.fr/AdvancedDesignMooc/).
 - The official website [https://advanced-design-mooc.pharo.org](https://advanced-design-mooc.pharo.org)
 
 

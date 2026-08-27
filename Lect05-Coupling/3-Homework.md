@@ -1,3 +1,5 @@
-## Homework/Report
+## Homework
 
-You should continue to work on the Chess Katas
+### Continue the Chess Katas
+
+### Publish your weekly report 
