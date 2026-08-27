@@ -8,6 +8,7 @@ This will show you how to
 - build little tools to help 
 - turn data into objects
 
+The original pdf can be found at: 
 - https://github.com/SquareBracketAssociates/booklet-CountryTutorial/releases/tag/latest
 
 
