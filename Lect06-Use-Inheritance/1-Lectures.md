@@ -2,7 +2,7 @@
 
 The versions of the lectures are hosted at: https://advanced-design-mooc.pharo.org/
 
-## Study the following lectures
+### Study the following lectures
 
 https://advanced-design-mooc.pharo.org/
 

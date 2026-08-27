@@ -1,4 +1,4 @@
-## Homework/Report
+# Homework/Report
 
 
 ### Continue the Chess Katas

@@ -1,6 +1,6 @@
 # Visitor Exercises
 
-## Warmup: Composite
+### Warmup: Composite
 
 Implement a file system following in a composite style.
 The file system will have three main classes: `FSEntry`, `FSFile` and `FSDirectory`.
@@ -17,14 +17,14 @@ You have many options here. Take a decision and implement one.
 - search for all elements that match the name
 - if a directory has a (indirect) children with the same name, do you return the parent or the child?
 
-## Other
+### Other
 
 Extend the previous exercise with:
  - add `searchByContents:` that will search for files that contains in their contents the searched string
  - change the existing searches to match a prefix, using `beginsWith:`. How could you avoid repeating code to do this change in a single place?
  - add `path` that returns the path of an entry. Remember that the path is a string that indicates the path from the root. E.g., `/usr/bin/data.bin`
 
-## Visitor
+### Visitor
 
 Reimplement the previous using a visitor.
 

@@ -7,7 +7,7 @@ The versions of the lectures are hosted at: https://advanced-design-mooc.pharo.o
 
 - M9-1 Lecture About coupling and encapsulation from Module 9 from https://advanced-design-mooc.pharo.org/#module9
 
-## Should have watched
+### Should have watched
 
 - https://www.youtube.com/watch?v=ttrmH1o08-E
 - https://youtu.be/x15V77mcTkc
