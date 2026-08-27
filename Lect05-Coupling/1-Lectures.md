@@ -7,7 +7,13 @@ The versions of the lectures are hosted at: https://advanced-design-mooc.pharo.o
 
 - M9-1 Lecture About coupling and encapsulation from Module 9 from https://advanced-design-mooc.pharo.org/#module9
 
-### Should have watched
+- M4-5 LectureSingleton: a Highly Misunderstood Pattern
+
+- M3-5 LectureGlobal to parameter
+
+- M9-5 LectureLearning from a Sokoban implementation
+
+### Should have studied
 
 - https://www.youtube.com/watch?v=ttrmH1o08-E
 - https://youtu.be/x15V77mcTkc

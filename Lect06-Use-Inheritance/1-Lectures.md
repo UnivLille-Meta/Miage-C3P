@@ -10,3 +10,5 @@ https://advanced-design-mooc.pharo.org/
 
 
 - M4-2 Lecture Objects vs. Data - An API perspective studying the class Point https://advanced-design-mooc.pharo.org/#module4
+
+- M5-5 LectureTurning Procedures to Objects
