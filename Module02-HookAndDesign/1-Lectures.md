@@ -1,9 +1,9 @@
 # Lectures
 
-This week you must
+This week you must check the PDFs, watch the videos of the following lectures. 
+The versions of the lectures are hosted at: https://advanced-design-mooc.pharo.org/
 
-## Study the following lectures
-
+### Study the following lectures
 Check the PDFs, watch the videos.
 
 The lectures on Pharo introduction: Module 3 from [https://advanced-design-mooc.pharo.org/#module3](https://advanced-design-mooc.pharo.org/#module3)
@@ -13,7 +13,7 @@ The lectures on Pharo introduction: Module 3 from [https://advanced-design-mooc.
 - M3-3 Lecture Hooks and Template: One of the cornerstones of OOP 
 - M3-4 Lecture Using well asString and printString: A Pharo code idiom
 
-## Slides
+### Slides
 - http://rmod-pharo-mooc.lille.inria.fr/AdvancedDesignMooc/Slides/M3-2-Essence-07-SelfSendsArePlansForReuse.pdf
 - http://rmod-pharo-mooc.lille.inria.fr/AdvancedDesignMooc/Slides/M3-3-DesignPattern-02-HookAndTemplate.pdf
 
