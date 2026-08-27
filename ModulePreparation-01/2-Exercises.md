@@ -22,10 +22,11 @@ As summary
 - follow: `ProfStef go` 
 - Coding the counter 
 - Coding the DSL
+- COding the country flag exercise
 
 
 
-## Step 1: Install Pharo
+## Step 1: Install Pharo 12
 Installing Pharo is easier using the Pharo launcher.
 The Pharo launcher is an application that allows you to download different versions of Pharo and managing the installation details for your platform.
 
@@ -85,14 +86,14 @@ Remember to write the report on:
  - what difficulties you found and **more importantly** how did you *overcome* them! You are going to become a professional software engineer, you need to be able to get through problems.
 
 
-
-
 ## Step 5: DSL 
 
 You should do the following exercise as described in Chapter 6 of the book
 https://rmod-pharo-mooc.lille.inria.fr/AdvancedDesignMooc/2024-04-01-CompanionExercise.pdf
 
+## Step 6: Country
 
+You should do the following exercise as described in the second chapter of the pdf in FlagTutorial in this folder. 
 
 ## Git related resources
 
