@@ -2,7 +2,7 @@
 
 For next week's lecture, you need to do the following tasks and prepare a short report on how you approached them. Each of the following tasks will guide your work with questions. You must answer those questions in the report.
 
-## Practice message dispatch
+### Practice message dispatch
 
 - Write small code examples challenging your knowledge about dispatch.
 - Did the examples work as expected? 
@@ -11,9 +11,8 @@ For next week's lecture, you need to do the following tasks and prepare a short 
 
 Share your programs in the report with the answer to those questions.
 
-### Prepare for next week
+- Finish the exercises that you should have done for the lecture preparation:
 
-Next week we will study reverse engineering.
 
-- Read the slides
-- Prepare your questions
+### Finish the exercises of the preparation
+Finish the exercises that you should have done for the lectures preparation: See the ModulePreparation-01 folder

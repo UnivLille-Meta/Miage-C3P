@@ -35,7 +35,7 @@ Once downloaded, you can open it and see an application that looks like this:
 
 <img width="1088" alt="imagen" src="https://github.com/UnivLille-Meta/Miage23/assets/708322/7a40399c-8e44-42d9-aa8e-bfd9b7a347d5">
 
-Click on the *New* button and create a new Pharo 11 image with the name you want. Finish the creation by clicking on *Create Image*.
+Click on the *New* button and create a new Pharo 12 image with the name you want. Finish the creation by clicking on *Create Image*.
 
 <img width="1088" alt="imagen" src="https://github.com/UnivLille-Meta/Miage23/assets/708322/30a8ebec-688d-4b93-b4ca-b6c1ee9d0188">
 
