@@ -62,7 +62,7 @@ For more, the ProfStef tutorial will guide you through the syntax of the languag
 ## Step 3: Writing classes, methods and tests
 
 The next step to get acquainted to Pharo is to write some *real* code (what's real anyways?).
-For that, follow the PDF tutorial in http://rmod-pharo-mooc.lille.inria.fr/MOOC/PharoMOOC/Week1/Exo-Counter.pdf.
+For that, follow the PDF tutorial in https://rmod-pharo-mooc.lille.inria.fr/MOOC/PharoMOOC/Week1/Exo-Counter.pdf.
 
 This tutorial will guide you on writing a `Counter` class that has `increment` and `decrement` methods using a TDD approach.
 It will also show you how to use the code browser and the debugger a bit.
