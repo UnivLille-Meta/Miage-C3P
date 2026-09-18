@@ -13,4 +13,15 @@ le TDD , le dispatch et le double dispatch
 
 j'ai vu le cours sur self et super, fait l'exo sur le simple dispatch et fait le TP sur flag/Pays
 
+3em SEMAINE: 
 
+J'ai travillé sur le tp ChessGame : 
+  j'ai fait shift+entrer pour rechercher les classes impliqué, j'ai analysé le code .
+  j'ai fait des recherches sur le jeu d'echec, car j'y ai jamais joué , pour comprendre la logique.
+  j'ai  remarqué que dans les different camp : les couleur sont mélangées dés le depart, on a du bleu et de l'orange 
+dans les deux cotés , égalemeent que les differents camps n'attendent pas son tour pour jouer , ils peuvent chacun jouer
+à leur guise sans attendre que l'autre termine ( Et j'ai pensé à Delay pour potentiellement gérer ça) .
+
+Difficultés rencontrés: 
+- j'ai eu du mal pour la compréhension des classes et je cherche encore les autres défaillances du code au fure et à mesure 
+que je vais comprendre la logique du jeu 
