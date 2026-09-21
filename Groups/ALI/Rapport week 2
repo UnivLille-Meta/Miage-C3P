@@ -1,0 +1,26 @@
+# Rapport Week 2
+
+# - Ali Zemouri
+
+## Lect02-HookAndDesign
+
+### Ce qu'on a fait
+
+J'ai réalisé l'exercice **Flag**. Cet exercice m'a permis de mieux comprendre la manipulation des classes dans Pharo ainsi que l'utilisation des **getters et setters**.
+
+J'ai également travaillé sur les lectures suivantes :
+
+* **Lecture: An Introduction to Design Patterns**
+* **Lecture: A Double Dispatch Starter: Stone Paper Scissors**
+
+À travers ces exercices et lectures, j'ai pu mieux comprendre certains concepts de conception et leur utilisation dans Pharo.
+
+### Ce qu'on n'a pas fait
+
+Je n'ai pas encore réalisé les autres exercices prévus dans cette partie du cours.
+
+### Les difficultés rencontrées
+
+J'ai rencontré quelques difficultés lors de l'exercice **Flag**, notamment lors de l'utilisation des classes et des getters/setters, mais j'ai réussi à comprendre leur fonctionnement en avançant dans l'exercice.
+
+J'ai également rencontré une difficulté lors de l'**upload de l'image dans Pharo**. Pharo cherchait le fichier dans un autre dossier que celui où mon image était réellement située. J'ai dû comprendre le fonctionnement du chemin de travail (*working directory*) afin de pouvoir accéder correctement au fichier image.
