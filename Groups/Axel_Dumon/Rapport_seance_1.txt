@@ -1,0 +1,2 @@
+J'ai effectué le parcours StefProf, le compteur ainsi que le début de la classe Die.
+J'ai eu des difficultés à prendre en main la syntaxe car celle utilisée est différente de celles des vidéos due aux changements de versions. J'ai aussi eu du mal à commit mon compteur car je n'avais pas paramétré ma clé ssh pour me connecter à gitlab. Je n'ai pas fini le chapitre 6, j'ai sous estimé le temps que cela me prendrait à faire avec les autres devoirs je m'y prendrais plus tôt la prochaine fois.

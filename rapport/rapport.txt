@@ -1,0 +1,11 @@
+# Dépôt de rapport 
+----
+Mohammad Hossein ESLAHI, MIAGE, Groupe 1, 2026-2027
+----
+### Première semaine :
+- Visionnage des vidéos du module 0 (Core Elements)
+- Exercice du Counter refait pour tester
+- Découverte de la syntaxe de base
+
+**Remarque / rattrapage :**
+Je n'ai pas pu y passer beaucoup de temps cette semaine, donc je n'ai fait que le strict minimum. Je compte bien me rattraper la semaine prochaine : je vais terminer les exercices qui manquent et attaquer directement la suite pour me remettre à niveau.
