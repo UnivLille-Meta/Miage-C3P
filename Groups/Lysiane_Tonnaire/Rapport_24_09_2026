@@ -1,0 +1,33 @@
+Arrêt de travail du 17 au 20 inclus ; j'ai repris le travail lundi et mardi, je n'ai donc pas eu le temps de 
+rattraper l'entièreté de la séance. 
+J'ai donc regardé les vidéos et rattraperai l'exercice chess par la suite.
+
+Notions clés apprises
+
+nil propagation : retourner nil depuis une méthode oblige tous les appelants à faire des tests ifNil:/ifNotNil: 
+mauvaise pratique.
+Objets polymorphes par défaut : préférer retourner une collection vide, 0, etc. plutôt que nil, pour que le client 
+puisse manipuler la valeur sans test.
+Initialisation des objets : bien initialiser les variables d'instance dans initialize pour éviter que l'état par 
+défaut soit nil.
+Null Object Pattern : créer une classe représentant le "cas vide/par défaut" (ex: NoTool) avec des méthodes qui ne 
+font rien, pour éliminer les tests ifNotNil: côté client grâce au polymorphisme.
+Limites du Null Object : API parfois trop large, difficulté de cohabitation avec les objets réels, nécessité d'un 
+consensus entre clients.
+Exceptions vs nil : pour les vraies erreurs, utiliser des exceptions (gérées à la bonne couche) plutôt que nil ou 
+des codes d'erreur.
+Envoi de message = un choix : un message est résolu selon la classe du receveur (principe de base du dispatch simple).
+Double dispatch : mécanisme à deux envois de messages successifs pour choisir un comportement en fonction à la fois 
+du receveur ET de l'argument (ex: vs: puis playAgainstX).
+Absence de conditionnels : le double dispatch permet d'implémenter une logique de choix complexe 
+(Pierre-Papier-Ciseaux) sans aucun if.
+Extensibilité : le double dispatch permet d'ajouter de nouveaux cas (nouvelles classes) sans modifier le code existant
+(ouvert à l'extension, fermé à la modification :proche du principe OCP).
+Asymétrie du double dispatch : contrairement à Pierre-Papier-Ciseaux, le mécanisme peut être à sens unique 
+(ex: un Block qui dit à une GameView comment se dessiner) : pas besoin de symétrie entre les deux classes.
+Remplacement des if imbriqués : le double dispatch remplace élégamment de longues cascades de conditions 
+(isWall, isEmptyBlock, hasPlayer...) par de simples envois de messages polymorphes.
+Lien avec le Visitor Pattern : passer le receveur d'origine en argument du second message (ex: playAgainstStone: 
+aStone) est la base du futur design pattern Visitor.
+Modularité : dans les deux mécanismes (Null Object et double dispatch), l'idée centrale est la même : "un message 
+vaut mieux qu'un if", en délégant la décision aux objets eux-mêmes plutôt qu'en la centralisant.

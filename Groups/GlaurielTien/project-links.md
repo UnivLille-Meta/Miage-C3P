@@ -9,8 +9,9 @@
 
 ### Tien
 
-| Lecture | Project | Link |
-| --- | --- | --- |
-| 1 | MyCounter | https://github.com/nttt1400/MyCounter |
-| 1 | Dice | https://github.com/nttt1400/Dice |
-| 2 | Chess | https://github.com/nttt1400/Chess |
+| Project | Link |
+| --- | --- |
+| MyCounter | https://github.com/nttt1400/MyCounter |
+| Dice | https://github.com/nttt1400/Dice |
+| Chess | https://github.com/nttt1400/Chess |
+| EarthTutorial | https://github.com/nttt1400/EarthTutorial |

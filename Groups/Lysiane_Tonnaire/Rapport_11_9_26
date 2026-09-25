@@ -1,0 +1,35 @@
+Les exemples ont-ils fonctionné comme attendu ? 
+Oui dans l'ensemble : preparer reste identique dans Boisson, 
+mais The et Cafe produisent un résultat différent car self 
+ajouterIngredient déclenche un dispatch dynamique — le lookup 
+part de la classe réelle de l'instance (The ou Cafe), pas de 
+Boisson où preparer est défini. C'est exactement le principe 
+« self sends are plans for reuse » : la méthode preparer est 
+écrite une seule fois mais se comporte différemment selon le 
+récepteur.
+
+Qu'est-ce qui différait entre ce que j'attendais et la réalité ? 
+Au départ, j'ai voulu appeler super ajouterIngredient par erreur 
+dans The, en pensant que cela appellerait le hook par défaut. 
+Or Boisson ne définit pas de comportement réel pour ce hook 
+(juste subclassResponsibility), donc l'appel levait une erreur, 
+ce que je n'avais pas anticipé, pensant que super « remonterait » 
+vers une implémentation utilisable.
+
+Comment ai-je corrigé mes hypothèses et comment ai-je trouvé l'information ? 
+En revisionnant la session Hooks and Template, j'ai compris que les hooks 
+sont volontairement sans implémentation utile dans la classe abstraite 
+(ou lèvent une erreur explicite) : le but est de forcer les sous-classes 
+à répondre, et non de fournir un comportement par défaut via super. 
+J'ai aussi relu la session Message Sends are Plans for Reuse pour confirmer 
+que self (et non super) est l'outil correct pour déléguer aux sous-classes 
+dans un template method. La correction a été de supprimer l'appel super et 
+de laisser self ajouterIngredient faire le dispatch normalement.
+
+Conclusion
+
+Cet exercice confirme la notion centrale du Module 3 : 
+un envoi self message dans une méthode « template » agit comme un point 
+d'extension (hook) que chaque sous-classe peut personnaliser, sans jamais 
+modifier la méthode parente. La confusion entre self et super dans ce contexte 
+est une erreur fréquente que la pratique a permis de clarifier.
