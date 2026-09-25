@@ -1,6 +1,7 @@
 Rapport de Atrari Issam :
 
 
+
 **Semaine 1 :**
 
 Pour cette première semaine, j'ai commencé par la prise en main du langage Pharo et de son environnement. J'ai suivi l'intégralité du tutoriel interactif ProfStef pour un peu comprendre l'interface, la création de classes, etc...
@@ -26,4 +27,26 @@ J'ai repris l'exercice du FlagCountry, mais je suis resté bloqué sur le charge
 **Difficulté rencontré :**
 
 Au début, je pensais que le mécanisme super remontait directement depuis l'objet lui-même. En creusant, j'ai compris qu'il remonte en fait depuis la classe où le super est écrit dans le code, ce qui n'était pas intuitif au premier abord. Le concept de hook m'a aussi demandé plusieurs essais avant de bien comprendre, en testant des petits exemples pour visualiser concrètement à quoi ça sert.
+
+
+
+**Semaine 3 :**
+
+Cette semaine, j'ai mis en place l'environnement pour bosser sur le projet Chess en binôme avec Noé (https://github.com/Noeloisel22/Chess) : installation de Pharo, chargement du projet via Metacello depuis son repo, puis configuration d'Iceberg pour pouvoir push depuis mon PC personnel. J'ai passé quand même un petit peu de temps dans la configuration notamment des clé SSH, le fichier .pub etc...
+
+
+
+Ensuite côté code, j'ai fait le kata "Refactor piece rendering" du README. Au départ : MyChessSquare contenait six méthodes (une par type de pièce) avec des ifTrue:ifFalse: imbriqués pour choisir la lettre à afficher selon la couleur de la pièce et celle de la case. J'ai remplacé cette logique par une table de correspondance (dispatch par table) ce qui fait que chaque sous-classe de MyPiece définit maintenant sa propre glyphTable, un dictionnaire qui associe chaque combinaison de couleurs à la bonne lettre. Et c'est une seule méthode sur MyPiece qui va faire le lookup, sans aucun if. Au début, j'ai commencé par écrire des tests de caractérisation avant de toucher au code existant, pour être sûr de ne rien casser en supprimant l'ancienne logique.
+
+
+
+La principale difficulté a été de bien comprendre le mécanisme derrière, je trouve c'était le bon moment pour le faire, car on avait justement vu en classe le double dispatch, donc c'était le meilleur moment pour "appliquer" ça. Et ça m'a aidé aussi à mieux saisir pourquoi ce genre de mécanisme évite les tests en cascade et rend le code plus facile à étendre.
+
+
+
+J'ai aussi lu les 3 PDF demandés pour lect04 (Composite, Visitor, et les discussions sur Visitor).
+
+
+
+Pour l'instant je n'ai fait qu'avancer sur ce point précis, mais en y prenant mon temps j'ai pu bien comprendre la "leçon" derrière ce kata.
 
