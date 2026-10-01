@@ -1,0 +1,3 @@
+J'ai regardé les vidéos à nouveau, j'ai fini par comprendre celles de la semaine dernière.
+J'ai pris du temps pour regarder le code de Chess et le comprendre. La première chose que j'ai fait c'est des tests unitaires pour prévoir le comportement des pions.
+Je commencerai semaine prochaine l'implémentation car je n'ai pas effectué le TP Flags. Je le rattraperai pour le prochain cours pour pouvoir suivre à un rythme plus calme.
