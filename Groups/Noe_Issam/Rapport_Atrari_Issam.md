@@ -50,3 +50,17 @@ J'ai aussi lu les 3 PDF demandés pour lect04 (Composite, Visitor, et les discus
 
 Pour l'instant je n'ai fait qu'avancer sur ce point précis, mais en y prenant mon temps j'ai pu bien comprendre la "leçon" derrière ce kata.
 
+
+
+**Semaine 4 :**
+
+Cette semaine, j'ai continué sur le projet Chess avec Noé. J'ai fait le kata "Remove nil checks". Au départ, une case vide du plateau c'était contents = nil, du coup fallait tester ça un peu partout dans le code. Pour résoudre ça, j'ai remplacé ça par un Null Object Pattern, avec une classe MyNoPiece qui répond aux mêmes messages qu'une vraie pièce, donc plus besoin de check nil à la main car MyNoPiece va s'en occuper.
+
+
+
+Et pour ça, j'ai gardé la même méthode que la semaine dernière (écrire des tests avant de toucher au code), ce qui m'a bien aidé puisque ça m'a permis de repérer deux autres endroits touchés par le changement (y'avait un filtre sur les pièces adverses dans MyKing et un test vérifiait encore nil directement).
+
+
+
+J'ai aussi revu les vidéos du module Composite/Visitor, parce que certains trucs m'étaient pas hyper clairs au début, notamment le fait de comprendre qui contrôle le parcours de l'arbre entre le visiteur et les objets eux-mêmes. Et en les regardant à nouveau, c'était beaucoup plus clair, en fait ça évite juste d'avoir à tester le type des objets un par un.
+
