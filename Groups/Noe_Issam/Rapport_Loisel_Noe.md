@@ -34,3 +34,13 @@ J'ai ensuite installé et initialisé le projet Chess dans mon image puis explor
 J'ai créé deux sous-classes, MyWhitePawn et MyBlackPawn, héritant de MyPawn afin d'y déléguer les variations de direction et de rangée initiale (forwardSquareFrom:, initialFile, etc.).   
 
 L'exécution des tests a d'abord échoué avec une erreur MessageNotUnderstood: #forwardSquareFrom: sur une instance directe de MyPawn. Ne maîtrisant pas encore la distinction entre le côté instance et le côté classe dans Pharo, j'ai eu recours à l'IA pour m'aider à analyser la trace d'exécution du débogueur. Cela m'a permis de comprendre que l'appel MyPawn black héritait de la méthode générique de MyPiece class >> black et instanciat la classe parente au lieu de ma sous-classe. J'ai ainsi découvert la différence concrète entre l'Instance side (comportement d'une pièce) et le Class side (méthode de fabrique pour créer la bonne sous-classe), ce qui m'a permis de corriger le problème et de faire passer l'ensemble de mes tests au vert.   
+
+
+# Semaine 4
+
+
+Pour commencer j'ai regardé les cours sur les patrons Composite et Visitor, ainsi qu'un résumé des deux vidéos sur le refactoring que j'avais commencé la semaine dernière afin de m'aider à mieux comprendre le projet actuel et ses problèmes (plus loin que ceux évidents comme le manque de tour par tour et les pions mal implémentés) comme la duplication de code et le mélange de responsabilités. 
+
+Ensuite j'ai continué d'avancer sur le chess, pour cela j'ai trouvé important de m'occuper du tour par tour (essentiel dans le jeu d'échec) pour cela j'ai continué de procéder par l'implémentation de tests pour gérer un comportement normal d'un jeu d'échec puis essayer de corriger le comportement de mon code pour valider le test. 
+
+En travaillant sur la mise en place du tour par tour, j'ai d'abord implémenté l'alternance automatique du joueur actif dès qu'un coup était joué. Je me suis cependant rendu compte d'un problème : lorsqu'un coup était interdit, la pièce refusait bien de bouger sur l'échiquier, mais la partie enregistrait quand même l'action dans l'historique et donnait la main à l'adversaire. Le joueur perdait ainsi son tour sur une tentative invalide. Ce problème venait du fait que la méthode de déplacement de la pièce échouait silencieusement sans prévenir le contrôleur de jeu. J'ai donc modifié la méthode pour qu'elle renvoie un booléen validant si le déplacement a réellement eu lieu. J'ai ensuite ajouté une condition dans le gestionnaire de jeu pour bloquer immédiatement l'enregistrement du coup et le changement de joueur si le mouvement est refusé ou si la pièce n'appartient pas au joueur actif.
