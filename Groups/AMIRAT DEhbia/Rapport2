@@ -1,0 +1,28 @@
+Ce que j'ai fait :
+-->
+- Création d'un package séparé nommé CountryTutorial afin de ne pas mélanger ce travail avec les exercices précédents.
+- Vérification du fonctionnement de Roassal avec un premier exemple permettant d'afficher deux carrés.
+- Recherche et récupération du fichier world.svg fourni avec le tutoriel.
+- Vérification que Pharo peut accéder au fichier world.svg.
+- Lecture du contenu du fichier SVG et observation de sa structure XML.
+- Installation de XMLParser avec Metacello.
+- Test de XMLDOMParser pour vérifier que le package XMLParser est correctement installé.
+- Analyse du fichier world.svg avec XMLDOMParser et observation de sa structure contenant plusieurs éléments path.
+- creation de la classe EarthMapCountry avec les trois variables (svgPath , name, code)
+
+
+Ce que j'ai pas fait : 
+- terminer les méthodes de EarthMapCountry 
+- créer les objets et la liste des pays 
+- créer EarthMap et afficher les pays avec Roassal 
+- récupérer les drapeaux avec FlagCDN 
+- créer l’interface avec Spec pour afficher le pays, son code et son drapeau
+
+
+Ce que j'ai apris : 
+- utiliser Roassal pour créer des formes ;
+- lire et vérifier un fichier SVG ;
+- installer et utiliser XMLParser ;
+- lire les données d’un fichier XML ;
+- créer une classe avec des variables d’instance ;
+- créer des méthodes simples pour accéder aux données d’un objet.

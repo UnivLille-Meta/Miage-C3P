@@ -1,0 +1,11 @@
+1. Ce que j'ai fait
+J'ai ajouté le projet Chess dans mon dossier Groups/AMIRAT DEhbia pour pouvoir y faire mes commits, 
+puis je l'ai chargé dans Pharo 13 avec le code du README. J'ai affiché l'échiquier, cliqué sur Play
+pour observer des coups, et exploré le System Browser jusqu'à la classe MyPawn et sa méthode targetSquaresLegal:.
+
+2. Ce que je n'ai pas fait
+Je n'ai pas encore écrit de tests pour les pions ni corrigé de bug, donc pas encore de commit de correction.
+
+3. Problèmes rencontrés
+Je connais peu le jeu, donc j'ai dû apprendre ce que représente chaque élément de l'échiquier, comment chaque 
+pièce se déplace et quelles sont ses règles.

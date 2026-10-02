@@ -1,0 +1,27 @@
+Rapport Preparation 1:
+
+Dehbia AMIRAT
+
+Ce que j'ai fait :
+
+- Prise en main de Pharo 13 et découverte de l'environnement de développement.
+- Création du package `MyCounter` et de la classe `Counter` avec la variable d'instance `count`.
+- Création des méthodes permettant de lire et modifier la valeur du compteur : `count`, `count:`, `increment` et `decrement`.
+- Création de la classe de tests `CounterTest` et réalisation de plusieurs tests unitaires.
+- Mise en place de l'initialisation du compteur à `0` avec la méthode `initialize`.
+- Création de la méthode de classe `startingAt:` permettant de créer un compteur avec une valeur initiale.
+- Amélioration de l'affichage du compteur avec la méthode `printOn:`.
+
+Mes difficultés :
+
+- La prise en main de l'environnement Pharo était un peu déroutante au début, notamment avec l'utilisation du System Browser.
+- Certains tests échouaient avant l'implémentation des méthodes correspondantes. Par exemple, `Counter new count` retournait `nil` avant la mise en place de `initialize`.
+- La découverte d'Iceberg et de la gestion du projet avec Git a également demandé un peu de temps.
+
+Ce que j'en retiens :
+
+- J'ai découvert les bases du développement en Smalltalk avec Pharo et le principe d'envoi de messages aux objets.
+- J'ai appris à créer une classe, ses méthodes et des tests unitaires dans Pharo.
+- J'ai compris l'importance des tests pour vérifier progressivement le comportement d'une classe.
+- J'ai également découvert l'utilisation d'Iceberg pour gérer un projet Pharo avec GitHub.
+
