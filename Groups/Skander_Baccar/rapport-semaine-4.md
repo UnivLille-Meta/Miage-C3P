@@ -1,0 +1,7 @@
+# Rapport — Semaine 4
+
+Cette semaine, je me suis bien remis dans le projet Chess. J'ai relu le code afin de comprendre les bugs présents, puis j'ai testé le jeu pour recenser tous les problèmes. Je pense les avoir tous identifiés : le pion n'avance pas de deux cases en début de partie, il mange devant lui au lieu de manger sur les côtés, le roi ne se fait ni échec ni échec et mat, on peut manger le roi, la partie ne se termine jamais, un joueur peut rejouer autant de fois qu'il veut après avoir déplacé une pièce, le roque n'est pas possible, et la prise en passant n'existe pas non plus.
+
+J'ai lié mon dépôt GitHub à Pharo pour pouvoir committer mon travail, et j'ai commencé à écrire les premiers tests. Je compte continuer le reste des tests ce week-end, puis enchaîner avec les méthodes correspondantes, en suivant une démarche de TDD. J'essaierai aussi d'intégrer des design patterns là où c'est pertinent, d'éviter les conditions au profit du double dispatch, et plus généralement de réutiliser les notions vues en cours. J'ai également regardé les vidéos sur les design patterns cette semaine.
+
+La principale difficulté a été de lire le tas de code qui est assez incompréhensible, rien n'est commenté et des tests sont verts alors que ça ne fonctionne pas, ce week-end et pour la semaine prochaine, je vais essayer de corriger au moins 2 bugs en ayant de bons tests qui fonctionnent et de bien programmer en suivant ce qu'on a appris en cours.
