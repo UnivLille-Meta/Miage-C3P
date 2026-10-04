@@ -1,0 +1,25 @@
+# Rapport Week 3
+
+# - Ali Zemouri
+
+## Lect03-DoubleDispatchAndVisitor
+
+### Ce qu'on a fait
+
+J'ai travaillé sur le **Double Dispatch avec le pattern Visitor** afin de mieux comprendre son fonctionnement et son utilisation dans Pharo.
+
+J'ai également commencé à travailler sur le **Chess Game**. J'ai réussi à connecter mon projet avec **Iceberg** en utilisant une **clé SSH**, ce qui m'a permis de travailler avec le dépôt Git du projet.
+
+J'ai aussi réalisé le cours sur les **tests unitaires** afin de mieux comprendre leur fonctionnement et de pouvoir les utiliser dans le projet **Chess Game**.
+
+### Ce qu'on n'a pas fait
+
+Je n'ai pas encore terminé l'ensemble du projet **Chess Game**. Certains éléments restent encore à réaliser et à approfondir.
+
+### Les difficultés rencontrées
+
+J'ai rencontré quelques difficultés au début avec la compréhension du **Double Dispatch** et du **Visitor**, mais les exercices m'ont permis de mieux comprendre leur fonctionnement.
+
+J'ai également rencontré quelques difficultés lors de la connexion du projet à **Iceberg** avec la clé SSH, mais j'ai réussi à configurer la connexion et à accéder au dépôt.
+
+Enfin, j'ai dû prendre un peu de temps pour comprendre comment fonctionnent les **tests unitaires** dans Pharo afin de pouvoir les appliquer correctement au **Chess Game**.
