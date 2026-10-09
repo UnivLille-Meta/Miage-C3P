@@ -1,3 +1,5 @@
+AISSATOU BILLY DIALLO 
+
 PREMIERE SEMAINE :
 
 REALISATIONS:
@@ -27,6 +29,19 @@ Difficultés rencontrés:
 que je vais comprendre la logique du jeu 
 
 4em SEMAINE: 
+
   j'ai formé mon groupe, continuer l'etude des classes, pour retrouver ce qui cloche :
   On a notamment remarquer qu'on pouvait manger nos alliés(à corriger)
   Aussi qu'on pouvait manger le ROI et que la partie continue meme apres ça .
+
+5eme SEMAINE : 
+
+Le premier problème code identifié concerne la méthode TargetLegal de la classe Pawn. 
+Celle-ci vérifiait la couleur du pion (noir ou blanc) pour déterminer s’il devait monter ou descendre, 
+ce qui nécessitait de tester explicitement chaque cas. Cette approche ne respectait pas le principe OCP (Open/Closed Principle).
+Pour y remédier, j’ai séparé le comportement dans deux classes distinctes : BlackPawn et WhitePawn, 
+chacune définissant sa propre méthode TargetLegal. Ainsi, grâce à self TargetLegal, le comportement est directement déterminé 
+par l’objet receveur, qui exécute la méthode correspondant à sa classe, sans avoir besoin de vérifier sa couleur explicitement.
+
+
+
