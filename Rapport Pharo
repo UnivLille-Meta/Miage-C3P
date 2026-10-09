@@ -43,11 +43,13 @@ Pour y remédier, j’ai séparé le comportement dans deux classes distinctes :
 chacune définissant sa propre méthode TargetLegal. Ainsi, grâce à self TargetLegal, le comportement est directement déterminé 
 par l’objet receveur, qui exécute la méthode correspondant à sa classe, sans avoir besoin de vérifier sa couleur explicitement.
 
-Rectification: Lors de la refactorisation, je me suis rendu compte que le problème ne concernait pas uniquement les pions,
+Rectification de mqa premiere proposition: Lors de la refactorisation, je me suis rendu compte que le problème ne concernait pas uniquement les pions,
 mais l’ensemble des pièces du jeu d’échecs, qui peuvent être noires ou blanches. Pour éviter de répéter la gestion 
 des couleurs dans chaque classe, j’ai choisi de créer deux classes, Black et White, qui héritent de la classe Piece.
 Chaque classe regroupe ensuite les différentes pièces de sa couleur, comme MyPawnBlack, MyKingBlack, MyPawnWhite et MyKingWhite etc.... 
 Cette organisation centralise la gestion des couleurs, limite la duplication du code et facilite l’évolution du jeu.
+
+
 
 
 
