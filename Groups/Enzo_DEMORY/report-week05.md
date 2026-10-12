@@ -1,3 +1,8 @@
+# Rapport
+> DEMORY Enzo - groupe 2 M1 MIAGE
+>
+> Dépot Chess : https://github.com/EnzoDemory/Chess
+
 ## Semaine 5 :
 
 ### Description générale :
@@ -6,7 +11,7 @@ Cette semaine, je me suis essentiellement concentré sur Chess. J'ai terminé le
 la prise en passant, ce qui m'a demandé de mémoriser le dernier coup joué. J'ai aussi fait le kata "Remove nil checks".
 
 
-#### Chess:
+### [Chess](https://github.com/EnzoDemory/Chess)
 
 #### Le kata "Fix Pawn Moves !"
 

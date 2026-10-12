@@ -1,5 +1,7 @@
 # Rapport
 > DEMORY Enzo - groupe 2 M1 MIAGE
+>
+> Dépot Chess : https://github.com/EnzoDemory/Chess
 
 ## Semaine 4 :
 
@@ -33,7 +35,7 @@ le seul changement a été l'ajout de `accept:`, et le visiteur de taille n'a de
 une opération est donc facile, mais ajouter un type d'entrée (symlink, zip) oblige à ajouter un `visit...:` dans tous les
 visiteurs.
 
-#### Chess
+#### [Chess](https://github.com/EnzoDemory/Chess)
 
 J'ai travaillé sur le kata "Fix pawn moves!" en TDD. Après avoir lu le code existant (`MyPiece`, `MyPawn`, `MyChessBoard`,
 `MyChessSquare`), j'ai écrit des tests pour les pions, couvrant les cas suivants.
