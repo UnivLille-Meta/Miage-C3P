@@ -1,0 +1,32 @@
+Rapport : 
+kata : Corrigez les mouvements de pion » 
+Ce que j’ai fait
+
+Commit 1 :
+ fix: le pion n’avance plus sur une case occupée.
+L’ancien code acceptait aussi la case si elle contenait une pièce adverse, donc le pion pouvait manger en avançant tout droit, ce qui est interdit aux échecs. Maintenant, un pion bloqué par n’importe quelle pièce ne bouge plus.
+
+Commit 2 : avance de deux cases
+Avant, le pion avançait seulement d’une case. Maintenant, s’il est encore sur sa rangée de départ (la rangée 2 pour les blancs, la rangée 7 pour les noirs), il peut avancer de deux cases. Il faut que les deux cases devant lui soient vides, car un pion ne peut pas sauter par-dessus une pièce. Après son premier déplacement, il avance d’une seule case à la fois.
+
+Commit 3 : le pion peut manger en diagonale
+Le pion peut manger une pièce adverse placée en diagonale devant lui : il la retire du jeu et prend sa place.
+
+Commit 4 :
+ feat: premiers tests du pion.
+J’ai créé la classe MyPawnTests avec deux tests : un pion bloqué par une pièce devant lui ne peut pas avancer, et un pion sur sa rangée de départ peut avancer de deux cases.
+
+Commit 5 :
+ feat: tests de la double avance et de la capture du pion.
+J’ai ajouté trois tests : un pion qui a déjà bougé ne peut pas avancer de deux cases, un pion mange en diagonale une pièce adverse, et il ne peut pas aller sur une diagonale vide ni manger une pièce de sa couleur.
+
+
+Ce que je n’ai pas fait
+La prise en passant (la règle spéciale du pion) et les autres katas.
+
+Problèmes rencontrés
+Au début, mon origin pointait vers le dépôt du UnivLille (erreur 403 au push), et j’ai dû ajouter mon fork comme nouveau remote.
+
+    Mon code sur GitHub
+Branche : https://github.com/Daby27/Chess/tree/Fix-pawn-moves
+Commits : https://github.com/Daby27/Chess/commits/Fix-pawn-moves
