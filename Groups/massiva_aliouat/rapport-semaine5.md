@@ -1,0 +1,3 @@
+# Rapport de la semaine 5
+
+Cette semaine j’ai révisé le couplage et l’encapsulation. Avec Yasmine nous avons aussi fusionné nos branches Git sur le Chess , comme vous nous l’aviez dit c’était fun! nous avions un peu peur d’avoir des conflits mais le merge s’est bien passé. Nous avons quand même rencontré quelques bugs après la fusion, donc nous avons dû reprendre certaines parties du code, notamment le rendu et les déplacements du pion. Après les corrections, les tests sont de nouveau tous au vert , ce qui est rassurant et nous permet de continuer le projet sur une base plus stable
