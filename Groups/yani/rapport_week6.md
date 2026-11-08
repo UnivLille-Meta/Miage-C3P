@@ -1,6 +1,6 @@
 
 
-lien du repo chess : https://github.com/yannstkk/Miage-C3P
+lien du repo chess : https://github.com/yannstkk/Chess
 
 
 Cette semaine je me suis concentré sur ma deuxième kata : Refactor piece rendering
