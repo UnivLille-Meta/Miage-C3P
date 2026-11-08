@@ -76,5 +76,31 @@ En plus du kata de base, j'ai ajouté quelques ajustements. La pièce de promoti
 
 
 
-Et j'ai aussi lu les 3 PDF demandés pour lect05 (Global to parameter, Singleton et Law of Demeter). 
+Et j'ai aussi lu les 3 PDF demandés pour lect05 (Global to parameter, Singleton et Law of Demeter).
+
+
+
+**Semaine 6 :**
+
+Semaine 6 :
+
+Cette semaine, j'ai essayé de faire un kata plus orienté qualité de code comme vous me l'avez suggéré. Du coup, le but de cette semaine était de nettoyer le code existant sans changer le comportement du jeu. J'ai d'abord écrit des tests de caractérisation dans une nouvelle classe MyChessBoardTest pour avoir une sécurité au cas où, je ferais n'importe quoi.
+
+
+
+Ensuite j'ai supprimé initializePieces dans MyChessBoard, une méthode de 54 lignes que personne n'appelait. 
+
+J'ai découpé initializeFromFENGame: dans MyChessGame, qui faisait 39 lignes, en petites méthodes avec des noms clairs (initializeBoardFrom:, newInfoPane, newPlayButton, initializeLayout). 
+
+J'ai aussi remplacé les halt: de fin de partie dans checkForMate et MyPlayer>>play par une vraie exception MyGameOver, testée avec le mat du fou joué coup par coup. 
+
+Et pour finir, j'ai ajouté les commentaires de classe manquants et rangé les méthodes "as yet unclassified" des pions, de MyKing et de MyPiece dans de vrais protocoles.
+
+
+
+Et le reste du temps, je l'ai passé à réviser les notions du cours, notamment super, le double dispatch, l'héritage, etc. pour l'examen.
+
+
+
+Lien de notre GitHub : https://github.com/Noeloisel22/Chess
 
