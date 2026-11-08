@@ -1,4 +1,8 @@
 
+
+lien du repo chess : https://github.com/yannstkk/Miage-C3P
+
+
 Cette semaine je me suis concentré sur ma deuxième kata : Refactor piece rendering
 
 le problème qui se posait : chaque piece (pawn, king, queen ... etc) avait sa propre methode de render (renderPawn:, renderKing:, renderQueen: ... etc) et 
