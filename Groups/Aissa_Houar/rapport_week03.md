@@ -35,3 +35,5 @@ J'ai résolu ces problèmes en vérifiant les chemins des fichiers, en ajoutant 
 Cet exercice m'a permis de mieux comprendre la création d'interfaces graphiques avec Spec et l'utilisation de Roassal pour afficher des visualisations.
 
 J'ai également appris à récupérer des images depuis Internet avec des requêtes HTTP et à relier les composants d'une interface pour actualiser les informations selon les actions de l'utilisateur.
+
+voici le lien pour le projet chess https://github.com/houar10/Chess
