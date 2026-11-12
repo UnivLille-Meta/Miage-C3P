@@ -1,0 +1,26 @@
+Module 5 — Composite
+But : traiter de la même manière un objet simple et un groupe d’objets.
+Component : interface commune.
+Leaf : objet simple sans enfants (ex. fichier).
+Composite : contient plusieurs objets (ex. dossier).
+Avantages : réutilisation, récursivité, structure en arbre.
+Limite : adapté surtout aux relations partie-tout.
+Exemple : fichiers et dossiers.
+
+Module 6 — Visitor
+But : ajouter de nouvelles opérations sans modifier les classes existantes.
+Visitor : objet qui réalise une opération.
+Accept : permet à l’objet de transmettre le contrôle au visiteur.
+Double dispatch : sélection du comportement selon le type de l’objet et celui du visiteur.
+Avantages : séparation des responsabilités, ajout facile d’opérations.
+Limite : ajouter un nouveau type d’objet peut obliger à modifier les visiteurs.
+
+Exemple : exporter des formes en XML ou calculer leurs surfaces.
+Différences essentielles
+Composite = structure des objets.
+Visitor = opérations sur les objets.
+Composite facilite l’ajout de nouveaux types d’éléments.
+Visitor facilite l’ajout de nouvelles opérations.
+Les deux peuvent être utilisés ensemble pour parcourir et traiter un arbre d’objets.
+
+
