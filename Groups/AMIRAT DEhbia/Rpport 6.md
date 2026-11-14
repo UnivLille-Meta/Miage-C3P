@@ -33,7 +33,7 @@ J'ai créé la classe MyFuzzTests avec un test qui pose 10 pièces au hasard sur
 
 
 
-**Mon projet GitHub :** [Chess](https://github.com/Daby27/Chess)
+Mon projet GitHub : [Chess](https://github.com/Daby27/Chess)
 
 Mon code sur GitHub
 
@@ -42,3 +42,4 @@ Mon code sur GitHub
 - [Kata 3 : Refactor piece rendering](https://github.com/Daby27/Chess/tree/Refactor-piece-rendering)
 - [Kata 4 : Implement more bot gaming strategies](https://github.com/Daby27/Chess/tree/Implement-more-bot-gaming-strategies)
 - [Kata 5 : Fuzz the board](https://github.com/Daby27/Chess/tree/Fuzz-the-board)
+
