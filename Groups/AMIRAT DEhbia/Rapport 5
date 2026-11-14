@@ -28,5 +28,7 @@ Problèmes rencontrés
 Au début, mon origin pointait vers le dépôt du UnivLille (erreur 403 au push), et j’ai dû ajouter mon fork comme nouveau remote.
 
     Mon code sur GitHub
+Mon projet GitHub : https://github.com/Daby27/Chess
+
 Branche : https://github.com/Daby27/Chess/tree/Fix-pawn-moves
 Commits : https://github.com/Daby27/Chess/commits/Fix-pawn-moves
