@@ -56,3 +56,12 @@ Pour la capture, j'ai voulu m'assurer qu'une pièce prise ne conservait pas de r
 
 J'ajoute également le lien du github : https://github.com/Noeloisel22/Chess
 
+
+# Semaine 6
+
+Pour cette dernière semaine j'ai révisé le cours en prévision de l'examen et suivi votre conseil pour le projet Chess en me concentrant sur la qualité du code plus que sur les règles des échecs.
+
+Je me suis occupé de la gestion des menaces de la classe MyKing avec le patron Visitor via MyThreatVisitor, couplé au Double Dispatch avec la méthode acceptVisitor: sur MyPiece et MyNoPiece. Cette structure permet d'éliminer les vérifications de type manuelles et fluidifie le parcours de l'échiquier.
+
+En plus, une optimisation de la gestion mémoire a été réalisée par l'application du patron Flyweight. En instaurant une instance unique partagée pour les cases vides grâce à une initialisation sur MyNoPiece class >> uniqueInstance, le système évite la création inutile d'objets éphémères successifs lors des déplacements.
+

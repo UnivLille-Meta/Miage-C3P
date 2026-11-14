@@ -1,0 +1,2 @@
+# Rapport de la semaine 6
+Cette semaine, j’ai révisé les notions du cours pour préparer l’examen. J’ai également continué à travailler sur le projet Chess avec mon binôme Yasmine Mezrague. Le projet est disponible sur GitHub : git@github.com:MassivaAlt/Chess.git
