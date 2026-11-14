@@ -1,0 +1,44 @@
+rapport 6 : 
+Pawn-promotion
+
+commit 1 : feat: promotion du pion en dame 
+Quand un pion arrive sur la dernière rangée (la 8 pour les blancs, la 1 pour les noirs), il est remplacé par une dame de sa couleu 
+
+commit 2:
+feat: tests de la promotion du pion. 
+J'ai ajouté trois tests : un pion blanc qui arrive sur la rangée 8 devient une dame blanche, un pion noir qui arrive sur la rangée 1 devient une dame noire, et un pion qui n'est pas au bout du plateau reste un pion. 
+
+
+Refactor-piece-rendering 
+commit 1 : 
+feat: tests des lettres affichées pour les pièces.
+
+J'ai créé la classe MyChessSquareTests avec deux tests qui vérifient la lettre affichée pour chaque pièce, blanche ou noire, sur une case claire et sur une case sombre. Ces tests serviront à vérifier que le nettoyage du code ne change pas l'affichage.
+
+refactor: une seule méthode pour choisir la lettre d'une pièce.
+
+Avant, les six méthodes qui affichent les pièces (pion, fou, roi, cavalier, dame, tour) répétaient la même logique. Maintenant, une méthode commune choisit la lettre selon la couleur de la pièce et la couleur de la case, et chaque méthode donne seulement ses deux lettres. L'affichage n'a pas changé, et les tests restent verts.
+
+
+
+Implement more bot gaming strategies
+
+feat: le bot mange une pièce adverse quand c'est possible, avec ses tests.
+
+Avant, le bot jouait toujours un coup au hasard. Maintenant, il cherche d'abord un coup qui mange une pièce adverse et le joue, sauf le roi, car aux échecs on ne mange pas le roi. S'il n'y a rien à manger, il joue au hasard comme avant. J'ai aussi créé la classe MyPlayerTests avec trois tests : le bot choisit de manger une pièce adverse, il ne renvoie rien quand il n'y a rien à manger, et il ne mange pas le roi.
+Fuzz the board 
+Commit 1 :
+feat: un test avec des plateaux au hasard.
+J'ai créé la classe MyFuzzTests avec un test qui pose 10 pièces au hasard sur un plateau vide, 100 fois de suite, et vérifie que les coups légaux de chaque pièce visent une case qui existe, vide ou occupée par une pièce adverse.
+
+
+
+**Mon projet GitHub :** [Chess](https://github.com/Daby27/Chess)
+
+Mon code sur GitHub
+
+- [Kata 1 : Fix pawn moves](https://github.com/Daby27/Chess/tree/Fix-pawn-moves)
+- [Kata 2 : Pawn promotion](https://github.com/Daby27/Chess/tree/Pawn-promotion)
+- [Kata 3 : Refactor piece rendering](https://github.com/Daby27/Chess/tree/Refactor-piece-rendering)
+- [Kata 4 : Implement more bot gaming strategies](https://github.com/Daby27/Chess/tree/Implement-more-bot-gaming-strategies)
+- [Kata 5 : Fuzz the board](https://github.com/Daby27/Chess/tree/Fuzz-the-board)
