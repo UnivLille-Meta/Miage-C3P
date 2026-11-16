@@ -1,0 +1,18 @@
+A retenir :
+
+refactoring : Le refactoring consiste à restructurer du code existant pour en améliorer la 
+lisibilité, la maintenabilité et la qualité, sans changer son comportement.
+
+Méthode longue : Extract Method
+Répétition: remove duplication
+nom peu claire: rename
+Classe trop "riche" : Extract Class
+Méthode mal situé : Move
+If/conditions : polymorphisme
+
+rester à chaque correction 
+
+Méthodo :
+Comprendre - Tester - Identifier les Code Smells - Choisir un refactring - Modifier
+Tester - Repeter - Verif la qualité finale
+
