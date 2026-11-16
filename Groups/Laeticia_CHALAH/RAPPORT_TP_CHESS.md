@@ -10,6 +10,17 @@ J’ai commencé par le kata **Fix pawn moves**, car il permettait de comprendre
 2. modifier le code ;
 3. relancer le test pour vérifier la correction.
 
+## Lien vers mon projet Chess
+
+Le code source et l'historique de mes commits
+sont disponibles dans mon fork GitHub :
+
+https://github.com/chalahlaeticia/Chess
+
+Ce dépôt contient les modifications réalisées
+pour les différents katas du TP.
+
+
 ---
 
 ## Kata 1 — Fix pawn moves
